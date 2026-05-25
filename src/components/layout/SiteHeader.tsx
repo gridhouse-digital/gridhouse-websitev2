@@ -8,6 +8,7 @@ function useScrolled(threshold = 40): boolean {
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > threshold);
+    handler();
     window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, [threshold]);
@@ -22,10 +23,10 @@ export default function SiteHeader() {
     <>
       <div className="fixed top-0 inset-x-0 z-30 px-4 pt-3 pointer-events-none">
         <header
-          className={`pointer-events-auto flex items-center justify-between px-5 rounded-sm border transition-all duration-300 ease-out shadow-nav-pill backdrop-blur-2xl backdrop-saturate-150 ${
+          className={`pointer-events-auto flex items-center justify-between px-5 rounded-sm border transition-all duration-300 ease-out shadow-nav-pill backdrop-saturate-150 ${
             scrolled
               ? "h-11 bg-ink-deep/90 border-white/[0.05] backdrop-blur-3xl"
-              : "h-14 bg-ink-deep/70 border-white/[0.07]"
+              : "h-14 bg-ink-deep/70 border-white/[0.07] backdrop-blur-2xl"
           }`}
         >
           <Link
