@@ -79,6 +79,31 @@ body {
     text-transform: uppercase;
     font-weight: 400;
   }
+
+  /* Top-edge glow line on hover */
+  .glow-surface {
+    position: relative;
+  }
+  .glow-surface::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,69,0,0.55), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .glow-surface:hover::before {
+    opacity: 1;
+  }
+
+  /* Base perspective for magnetic tilt hook */
+  .magnetic-card {
+    transform-style: preserve-3d;
+    perspective: 600px;
+  }
 }
 
 /* Form controls — sharp, dark, focus accent */
