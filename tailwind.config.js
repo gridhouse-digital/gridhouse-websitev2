@@ -46,6 +46,11 @@ export default {
       maxWidth: {
         rail: "1440px",
       },
+      boxShadow: {
+        'glow-accent':        '0 0 40px -10px rgba(255,69,0,0.35), 0 25px 60px -15px rgba(255,69,0,0.3)',
+        'glow-accent-subtle': '0 20px 60px -20px rgba(255,69,0,0.25)',
+        'nav-pill':           'inset 0 1px 0 rgba(255,255,255,0.05), 0 8px 32px rgba(0,0,0,0.5)',
+      },
       backgroundImage: {
         "ignition-overlay":
           "linear-gradient(to bottom right, rgba(255, 184, 0, 0.4), transparent, rgba(154, 0, 255, 0.3))",
