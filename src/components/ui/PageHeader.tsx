@@ -20,8 +20,8 @@ export default function PageHeader({ label, title, description, meta }: Props) {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         titleRef.current,
-        { y: 24, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
+        { y: 30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.1, ease: "expo.out" },
       );
     }, titleRef);
     return () => ctx.revert();
