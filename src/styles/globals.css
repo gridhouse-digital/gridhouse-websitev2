@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Syncopate", "Space Grotesk", system-ui, sans-serif;
+  --color-accent: #ff4500;
+  --color-ink: #0f0f0f;
+  --color-ink-deep: #0a0a0a;
+  --color-shell: #f4f3ed;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  background-color: var(--color-ink);
+  color: #ffffff;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ink);
+  color: #ffffff;
+  line-height: 1.5;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* Tech grid background utilities (augmented from gridstyle.html) */
+@layer utilities {
+  .bg-tech-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .bg-tech-grid-16 {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .bg-tech-grid-32 {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .bg-tech-grid-64 {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+
+  .text-mono-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
+
+/* Form controls — sharp, dark, focus accent */
+@layer components {
+  .field-input {
+    @apply w-full bg-black/40 border border-white/10 px-4 py-3 text-white text-sm font-body font-light placeholder-white/30 outline-none transition-colors;
+  }
+  .field-input:focus {
+    border-color: rgba(255, 69, 0, 0.6);
+    box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.15);
+  }
+  .field-label {
+    @apply text-mono-label text-white/50 mb-2 block;
+  }
+}
+
+/* Reduced motion — respected by GSAP and canvas effects in code */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,56 @@
+import { Icon } from "@iconify/react";
+import type { CaseStudy } from "../../data/caseStudies";
+import StatusBadge from "./StatusBadge";
+
+interface Props {
+  caseStudy: CaseStudy;
+}
+
+export default function CaseStudyCard({ caseStudy }: Props) {
+  return (
+    <article className="group flex flex-col border border-white/10 bg-white/[0.02] hover:border-accent/40 transition-colors">
+      <div className="aspect-video bg-ink-deep bg-tech-grid relative flex items-center justify-center border-b border-white/10">
+        <Icon
+          icon="solar:code-square-linear"
+          className="w-12 h-12 text-white/15"
+          aria-hidden
+        />
+        <span className="absolute top-3 left-3 text-mono-label text-accent">
+          {caseStudy.kind.toUpperCase()}
+        </span>
+        <span className="absolute top-3 right-3 text-mono-label text-white/40">
+          / {caseStudy.id}
+        </span>
+      </div>
+      <div className="p-6 flex flex-col gap-4 flex-1">
+        <h3 className="text-white text-lg font-display font-light leading-snug">
+          {caseStudy.title}
+        </h3>
+        <p className="text-white/60 text-sm font-light">{caseStudy.problem}</p>
+        <p className="text-white/80 text-sm font-light border-l border-accent/40 pl-3">
+          {caseStudy.solution}
+        </p>
+        <div className="mt-auto flex flex-col gap-3">
+          <ul className="flex flex-wrap gap-2">
+            {caseStudy.stack.map((s) => (
+              <li
+                key={s}
+                className="text-mono-label text-white/60 border border-white/15 px-2 py-1"
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
+          <div className="flex items-center justify-between border-t border-white/10 pt-3">
+            <StatusBadge label={caseStudy.status} variant="active" />
+            <Icon
+              icon="solar:arrow-right-up-linear"
+              className="w-4 h-4 text-white/40 group-hover:text-accent transition-colors"
+              aria-hidden
+            />
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
