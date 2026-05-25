@@ -13,7 +13,7 @@ const STATUS_COLORS: Record<Insight["status"], string> = {
 
 export default function InsightCard({ insight }: Props) {
   return (
-    <article className="group flex flex-col gap-4 p-6 border border-white/10 bg-white/[0.02] hover:border-accent/30 transition-colors">
+    <article className="glow-surface group flex flex-col gap-4 p-6 border border-accent/[0.15] bg-white/[0.02] bg-gradient-to-br from-accent/[0.06] to-transparent transition-all duration-400 hover:border-accent/[0.4] hover:shadow-glow-accent-subtle">
       <div className="flex items-center justify-between">
         <span className="text-mono-label text-accent">{insight.category}</span>
         <span className={`text-mono-label ${STATUS_COLORS[insight.status]}`}>
@@ -23,7 +23,7 @@ export default function InsightCard({ insight }: Props) {
       <h3 className="text-white text-lg font-display font-light leading-snug">
         {insight.title}
       </h3>
-      <p className="text-white/60 text-sm font-light flex-1">{insight.excerpt}</p>
+      <p className="text-white/50 text-sm font-light flex-1">{insight.excerpt}</p>
       <div className="flex items-center justify-between border-t border-white/10 pt-3">
         <span className="text-mono-label text-white/40">{insight.readTime} read</span>
         <Icon
