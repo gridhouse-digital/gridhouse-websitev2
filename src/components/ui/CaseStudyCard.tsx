@@ -1,14 +1,22 @@
+import { useRef, type RefObject } from "react";
 import { Icon } from "@iconify/react";
 import type { CaseStudy } from "../../data/caseStudies";
 import StatusBadge from "./StatusBadge";
+import { useMagneticTilt } from "../../hooks/useMagneticTilt";
 
 interface Props {
   caseStudy: CaseStudy;
 }
 
 export default function CaseStudyCard({ caseStudy }: Props) {
+  const ref = useRef<HTMLElement>(null);
+  useMagneticTilt(ref);
+
   return (
-    <article className="group flex flex-col border border-white/10 bg-white/[0.02] hover:border-accent/40 transition-colors">
+    <article
+      ref={ref as RefObject<HTMLElement>}
+      className="glow-surface magnetic-card group flex flex-col border border-accent/[0.15] bg-white/[0.02] bg-gradient-to-br from-accent/[0.06] to-transparent transition-all duration-400 hover:border-accent/[0.5] hover:shadow-glow-accent-subtle"
+    >
       <div className="aspect-video bg-ink-deep bg-tech-grid relative flex items-center justify-center border-b border-white/10">
         <Icon
           icon="solar:code-square-linear"
@@ -26,8 +34,8 @@ export default function CaseStudyCard({ caseStudy }: Props) {
         <h3 className="text-white text-lg font-display font-light leading-snug">
           {caseStudy.title}
         </h3>
-        <p className="text-white/60 text-sm font-light">{caseStudy.problem}</p>
-        <p className="text-white/80 text-sm font-light border-l border-accent/40 pl-3">
+        <p className="text-white/50 text-sm font-light">{caseStudy.problem}</p>
+        <p className="text-white/[0.38] text-sm font-light border-l border-accent/40 pl-3">
           {caseStudy.solution}
         </p>
         <div className="mt-auto flex flex-col gap-3">
