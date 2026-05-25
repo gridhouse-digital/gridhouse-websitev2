@@ -20,15 +20,15 @@ const CONNECT_LINKS = [
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-ink-deep px-6 md:px-12 py-16">
-      <div className="max-w-rail mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
+    <footer className="border-t border-white/10 bg-ink-deep px-4 sm:px-6 md:px-12 py-12 md:py-16">
+      <div className="max-w-rail mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
         <div className="md:col-span-5 flex flex-col items-start gap-4">
           <img
             src="/gridhouse-logo.svg"
             alt="Gridhouse Digital"
             width={2400}
             height={720}
-            className="h-20 w-auto max-w-none block"
+            className="h-10 md:h-14 lg:h-16 w-auto max-w-none block"
             draggable={false}
           />
           <p className="text-white/60 text-sm font-light max-w-md">

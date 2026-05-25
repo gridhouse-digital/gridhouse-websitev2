@@ -24,7 +24,7 @@ export default function ServiceCard({ service }: Props) {
         aria-hidden
         className="absolute left-0 top-0 bottom-0 w-px bg-accent/0 group-hover:bg-accent transition-colors duration-300 pointer-events-none"
       />
-      <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
         <div className="lg:col-span-3 flex flex-col gap-3">
           <TerminalLabel variant="accent">MODULE / {service.id}</TerminalLabel>
           <h3 className="text-white text-display-sm font-display font-light leading-tight transition-colors group-hover:text-accent">

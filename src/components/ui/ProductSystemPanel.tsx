@@ -23,8 +23,8 @@ export default function ProductSystemPanel({ product }: Props) {
         </div>
         <StatusBadge label={product.status} variant={LIFECYCLE_VARIANT[product.lifecycle]} />
       </header>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/5">
-        <div className="bg-ink p-8 flex flex-col gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5">
+        <div className="bg-ink p-5 sm:p-6 md:p-8 flex flex-col gap-4">
           <h3 className="text-white text-display-sm font-display font-light leading-tight">
             {product.name}
           </h3>
@@ -42,7 +42,7 @@ export default function ProductSystemPanel({ product }: Props) {
             </div>
           </dl>
         </div>
-        <div className="bg-ink p-8 flex flex-col gap-6">
+        <div className="bg-ink p-5 sm:p-6 md:p-8 flex flex-col gap-6">
           <div>
             <span className="text-mono-label text-accent">Capabilities</span>
             <ul className="mt-3 flex flex-col gap-2">

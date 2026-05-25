@@ -75,7 +75,7 @@ export default function HomePage() {
         <GridRails />
         <div className="flex flex-col lg:flex-row flex-1">
         {/* LEFT — editorial column */}
-        <div className="relative flex flex-col justify-between flex-1 p-6 md:p-12 pb-16 lg:border-r border-white/10">
+        <div className="relative flex flex-col justify-between flex-1 p-4 sm:p-6 md:p-12 pb-16 lg:border-r border-white/10">
           <div className="flex items-center justify-between">
             <TerminalLabel variant="accent">AI-FIRST BUILD MODE</TerminalLabel>
             <span className="text-mono-label text-white/40">/ 089</span>
@@ -119,11 +119,11 @@ export default function HomePage() {
           </dl>
         </div>
         {/* RIGHT — system column */}
-        <div className="relative flex flex-col w-full lg:w-[40%] min-h-[600px] lg:min-h-[700px] border-t lg:border-t-0 lg:border-l border-white/10">
-          <div className="relative flex-[1.2] min-h-[320px] border-b border-white/10">
+        <div className="relative flex flex-col w-full lg:w-[40%] min-h-[400px] sm:min-h-[500px] lg:min-h-[700px] border-t lg:border-t-0 lg:border-l border-white/10">
+          <div className="relative flex-[1.2] min-h-[200px] sm:min-h-[260px] md:min-h-[320px] border-b border-white/10">
             <WebGLPanel label="SIMULATION_MATRIX / 14.2" seed={14.2} />
           </div>
-          <div className="relative flex-1 min-h-[260px] bg-accent overflow-hidden group">
+          <div className="relative flex-1 min-h-[180px] sm:min-h-[220px] md:min-h-[260px] bg-accent overflow-hidden group">
             <div className="absolute inset-0 bg-ignition-overlay mix-blend-overlay transition-transform duration-[2000ms] group-hover:scale-125 group-hover:rotate-3" />
             <div className="absolute inset-0 bg-dot-grid opacity-30" />
             <div className="relative p-6 md:p-8 h-full flex flex-col justify-between">
@@ -152,7 +152,7 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES PREVIEW */}
-      <section className="relative px-6 md:px-12 py-20">
+      <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20">
         <div className="max-w-rail mx-auto flex flex-col gap-10">
           <div className="flex items-end justify-between flex-wrap gap-4">
             <SectionHeader
@@ -189,7 +189,7 @@ export default function HomePage() {
       </section>
 
       {/* INDUSTRIES PREVIEW */}
-      <section className="relative px-6 md:px-12 py-20 border-t border-white/10 bg-tech-grid-32">
+      <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 border-t border-white/10 bg-tech-grid-32">
         <div className="max-w-rail mx-auto flex flex-col gap-10">
           <div className="flex items-end justify-between flex-wrap gap-4">
             <SectionHeader
@@ -286,7 +286,7 @@ export default function HomePage() {
       </section>
 
       {/* PRODUCTS PREVIEW */}
-      <section className="relative px-6 md:px-12 py-20 border-t border-white/10">
+      <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 border-t border-white/10">
         <div className="max-w-rail mx-auto flex flex-col gap-10">
           <SectionHeader
             label="SYSTEMS / 03"
@@ -308,8 +308,8 @@ export default function HomePage() {
       </section>
 
       {/* PROOF / METRICS */}
-      <section className="relative px-6 md:px-12 py-20 border-t border-white/10 bg-ink-deep">
-        <div className="max-w-rail mx-auto grid grid-cols-1 md:grid-cols-4 gap-px bg-white/5">
+      <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 border-t border-white/10 bg-ink-deep">
+        <div className="max-w-rail mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5">
           {[
             { k: "9", l: "MODULES SHIPPED", note: "across the operating system" },
             { k: "8", l: "CORE SERVICES", note: "from web to AI agents" },
@@ -331,7 +331,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA SECTION */}
-      <section className="relative px-6 md:px-12 py-24 border-t border-white/10">
+      <section className="relative px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-24 border-t border-white/10">
         <div className="max-w-rail mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
             <TerminalLabel variant="accent">DEPLOY / 04</TerminalLabel>

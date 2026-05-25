@@ -24,7 +24,7 @@ export default function InsightsPage() {
           { label: "Format", value: "Notes / drafts" },
         ]}
       />
-      <section className="px-6 md:px-12 py-12 border-b border-white/10">
+      <section className="px-4 sm:px-6 md:px-12 py-8 sm:py-10 md:py-12 border-b border-white/10">
         <div className="max-w-rail mx-auto flex flex-wrap gap-2">
           <FilterPill
             label="ALL"
@@ -41,7 +41,7 @@ export default function InsightsPage() {
           ))}
         </div>
       </section>
-      <section className="px-6 md:px-12 py-16">
+      <section className="px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16">
         <div className="max-w-rail mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((i) => (
             <InsightCard key={i.id} insight={i} />
@@ -70,7 +70,7 @@ function FilterPill({
     <button
       type="button"
       onClick={onClick}
-      className={`text-mono-label px-3 py-1.5 border transition-colors ${
+      className={`text-mono-label px-3 py-2 sm:py-1.5 border transition-colors ${
         active
           ? "bg-accent text-white border-accent"
           : "border-white/15 text-white/60 hover:text-white hover:border-white/40"

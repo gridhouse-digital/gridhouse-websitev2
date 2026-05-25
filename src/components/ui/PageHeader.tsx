@@ -28,7 +28,7 @@ export default function PageHeader({ label, title, description, meta }: Props) {
   }, [reduced]);
 
   return (
-    <section className="relative border-b border-white/5 px-6 md:px-12 py-16 md:py-24 overflow-hidden">
+    <section className="relative border-b border-white/5 px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 overflow-hidden">
       <GridRails />
       <div className="relative max-w-rail mx-auto flex flex-col gap-6">
         <TerminalLabel variant="accent">{label}</TerminalLabel>
@@ -44,7 +44,7 @@ export default function PageHeader({ label, title, description, meta }: Props) {
           </p>
         )}
         {meta && meta.length > 0 && (
-          <dl className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 border-t border-white/10 pt-6">
+          <dl className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-8 border-t border-white/10 pt-6">
             {meta.map((m) => (
               <div key={m.label} className="flex flex-col gap-1">
                 <dt className="text-mono-label text-white/40">{m.label}</dt>

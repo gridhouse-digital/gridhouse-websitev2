@@ -21,7 +21,7 @@ export default function SiteHeader() {
 
   return (
     <>
-      <div className="fixed top-0 inset-x-0 z-30 px-4 pt-3 pointer-events-none">
+      <div className="fixed top-0 inset-x-0 z-30 px-3 sm:px-4 pt-2 sm:pt-3 pointer-events-none">
         <header
           className={`pointer-events-auto flex items-center justify-between px-5 rounded-sm border transition-all duration-300 ease-out shadow-nav-pill backdrop-saturate-150 ${
             scrolled
@@ -83,7 +83,7 @@ export default function SiteHeader() {
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="lg:hidden text-white/70 hover:text-white p-2"
+              className="lg:hidden text-white/70 hover:text-white p-3"
               aria-label="Open navigation"
             >
               <Icon icon="solar:hamburger-menu-linear" className="w-5 h-5" />
@@ -93,7 +93,7 @@ export default function SiteHeader() {
       </div>
 
       {/* Spacer so page content starts below the fixed pill */}
-      <div className="h-[72px]" aria-hidden />
+      <div className="h-[60px] sm:h-[72px]" aria-hidden />
 
       <MobileNav open={open} onClose={() => setOpen(false)} />
     </>

@@ -33,7 +33,7 @@ export default function MobileNav({ open, onClose }: Props) {
           <button
             type="button"
             onClick={onClose}
-            className="text-white/70 hover:text-white p-2"
+            className="text-white/70 hover:text-white p-3"
             aria-label="Close navigation"
           >
             <Icon icon="solar:close-square-linear" className="w-5 h-5" />
