@@ -8,11 +8,12 @@ export function useMagneticTilt(ref: RefObject<HTMLElement | null>): void {
     const el = ref.current;
     if (!el || reduced) return;
 
+    el.style.transition = "transform 0.1s ease, box-shadow 0.4s ease, border-color 0.4s ease";
+
     const onMove = (e: MouseEvent) => {
       const rect = el.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      el.style.transition = "transform 0.1s ease, box-shadow 0.4s ease, border-color 0.4s ease";
       el.style.transform = `perspective(600px) rotateY(${x * 8}deg) rotateX(${-y * 6}deg) translateZ(4px)`;
     };
 

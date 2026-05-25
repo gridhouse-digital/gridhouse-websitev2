@@ -102,7 +102,6 @@ body {
   /* Base perspective for magnetic tilt hook */
   .magnetic-card {
     transform-style: preserve-3d;
-    perspective: 600px;
   }
 }
 
@@ -128,5 +127,9 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .glow-surface:hover::before {
+    opacity: 0;
   }
 }
