@@ -46,18 +46,21 @@ export default function HomePage() {
       );
       const lineCount = lines.length;
       const afterDelay = 0.2 + lineCount * 0.12 + 1.2;
-      gsap.fromTo(
-        [subCopyRef.current, ctaRef.current],
-        { opacity: 0, y: 12 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "expo.out",
-          stagger: 0.1,
-          delay: afterDelay,
-        },
-      );
+      const fadeTargets = [subCopyRef.current, ctaRef.current].filter(Boolean);
+      if (fadeTargets.length) {
+        gsap.fromTo(
+          fadeTargets,
+          { opacity: 0, y: 12 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "expo.out",
+            stagger: 0.1,
+            delay: afterDelay,
+          },
+        );
+      }
     }, heroRef);
     return () => ctx.revert();
   }, [reduced]);
