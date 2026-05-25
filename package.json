@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@iconify/react": "^6.0.2",
+    "@portabletext/react": "^6.2.0",
+    "@sanity/client": "^7.22.0",
     "gsap": "^3.15.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",

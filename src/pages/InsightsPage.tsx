@@ -1,15 +1,28 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import PageHeader from "../components/ui/PageHeader";
 import InsightCard from "../components/ui/InsightCard";
-import { INSIGHTS, INSIGHT_CATEGORIES } from "../data/insights";
+import { INSIGHTS, INSIGHT_CATEGORIES, type Insight } from "../data/insights";
+import { sanityClient, insightsQuery } from "../lib/sanity";
 
 export default function InsightsPage() {
   const [active, setActive] = useState<string | null>(null);
+  const [posts, setPosts] = useState<Insight[]>(INSIGHTS as Insight[]);
+
+  useEffect(() => {
+    sanityClient
+      .fetch<Insight[]>(insightsQuery)
+      .then((data) => {
+        if (data && data.length > 0) setPosts(data);
+      })
+      .catch(() => {
+        // silently fall back to static data
+      });
+  }, []);
 
   const filtered = useMemo(() => {
-    if (!active) return INSIGHTS;
-    return INSIGHTS.filter((i) => i.category === active);
-  }, [active]);
+    if (!active) return posts;
+    return posts.filter((i) => i.category === active);
+  }, [active, posts]);
 
   return (
     <>
@@ -18,7 +31,7 @@ export default function InsightsPage() {
         title="Notes on AI, operations, and digital systems."
         description="Working notes, drafts, and research threads from the build queue. Most pieces are unfinished — published when they're useful, not before."
         meta={[
-          { label: "Items", value: String(INSIGHTS.length).padStart(2, "0") },
+          { label: "Items", value: String(posts.length).padStart(2, "0") },
           { label: "Categories", value: String(INSIGHT_CATEGORIES.length).padStart(2, "0") },
           { label: "Cadence", value: "Irregular" },
           { label: "Format", value: "Notes / drafts" },
@@ -44,7 +57,7 @@ export default function InsightsPage() {
       <section className="px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16">
         <div className="max-w-rail mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((i) => (
-            <InsightCard key={i.id} insight={i} />
+            <InsightCard key={i.id ?? i.slug} insight={i} />
           ))}
         </div>
         {filtered.length === 0 && (

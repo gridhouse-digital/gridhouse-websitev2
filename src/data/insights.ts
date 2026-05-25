@@ -2,11 +2,13 @@ export type InsightStatus = "Published" | "Draft" | "Research";
 
 export interface Insight {
   id: string;
+  slug?: string;
   category: string;
   title: string;
   readTime: string;
   status: InsightStatus;
   excerpt: string;
+  publishedAt?: string;
 }
 
 export const INSIGHT_CATEGORIES: readonly string[] = [

@@ -8,6 +8,7 @@ import IndustriesPage from "../pages/IndustriesPage";
 import WorkPage from "../pages/WorkPage";
 import ProcessPage from "../pages/ProcessPage";
 import InsightsPage from "../pages/InsightsPage";
+import InsightDetailPage from "../pages/InsightDetailPage";
 import ContactPage from "../pages/ContactPage";
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
       { path: "work", element: <WorkPage /> },
       { path: "process", element: <ProcessPage /> },
       { path: "insights", element: <InsightsPage /> },
+      { path: "insights/:slug", element: <InsightDetailPage /> },
       { path: "contact", element: <ContactPage /> },
       { path: "*", element: <NotFoundPage /> },
     ],
