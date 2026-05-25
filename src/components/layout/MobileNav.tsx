@@ -10,7 +10,7 @@ interface Props {
 export default function MobileNav({ open, onClose }: Props) {
   return (
     <div
-      className={`fixed inset-0 z-50 lg:hidden transition-opacity ${
+      className={`fixed inset-0 z-50 xl:hidden transition-opacity ${
         open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
       }`}
       role="dialog"

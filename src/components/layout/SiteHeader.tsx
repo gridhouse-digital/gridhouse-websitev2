@@ -44,7 +44,7 @@ export default function SiteHeader() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden xl:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
               <NavLink
                 key={link.to}
@@ -76,14 +76,14 @@ export default function SiteHeader() {
           <div className="flex items-center gap-3">
             <Link
               to="/contact"
-              className="hidden lg:inline-flex text-mono-label text-accent border border-accent/40 bg-accent/[0.05] px-4 py-2 transition-all duration-300 hover:bg-accent/[0.12] hover:border-accent/70"
+              className="hidden xl:inline-flex text-mono-label text-accent border border-accent/40 bg-accent/[0.05] px-4 py-2 transition-all duration-300 hover:bg-accent/[0.12] hover:border-accent/70"
             >
               Start a Project
             </Link>
             <button
               type="button"
               onClick={() => setOpen(true)}
-              className="lg:hidden text-white/70 hover:text-white p-3"
+              className="xl:hidden text-white/70 hover:text-white p-3"
               aria-label="Open navigation"
             >
               <Icon icon="solar:hamburger-menu-linear" className="w-5 h-5" />
