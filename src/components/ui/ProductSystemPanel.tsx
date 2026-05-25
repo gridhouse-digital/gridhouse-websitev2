@@ -15,7 +15,7 @@ const LIFECYCLE_VARIANT: Record<Product["lifecycle"], "active" | "muted" | "acce
 
 export default function ProductSystemPanel({ product }: Props) {
   return (
-    <article className="border border-white/10 bg-white/[0.02] backdrop-blur-sm">
+    <article className="glow-surface border border-accent/[0.15] bg-white/[0.02] bg-gradient-to-br from-accent/[0.06] to-transparent backdrop-blur-sm transition-all duration-400 hover:border-accent/[0.35] hover:shadow-glow-accent-subtle">
       <header className="flex items-center justify-between border-b border-white/10 px-6 py-3">
         <div className="flex items-center gap-3">
           <TerminalLabel variant="accent">SYSTEM / {product.id}</TerminalLabel>
@@ -28,7 +28,7 @@ export default function ProductSystemPanel({ product }: Props) {
           <h3 className="text-white text-display-sm font-display font-light leading-tight">
             {product.name}
           </h3>
-          <p className="text-white/70 text-body-md font-light">
+          <p className="text-white/50 text-body-md font-light">
             {product.description}
           </p>
           <dl className="grid grid-cols-2 gap-4 mt-2 border-t border-white/10 pt-4">
