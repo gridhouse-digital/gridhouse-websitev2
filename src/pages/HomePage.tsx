@@ -25,6 +25,8 @@ const HERO_LINES = [
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const reduced = usePrefersReducedMotion();
+  const subCopyRef = useRef<HTMLParagraphElement | null>(null);
+  const ctaRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (reduced || !heroRef.current) return;
@@ -32,13 +34,28 @@ export default function HomePage() {
       const lines = gsap.utils.toArray<HTMLElement>("[data-hero-line]");
       gsap.fromTo(
         lines,
-        { y: 30, opacity: 0 },
+        { y: 40, opacity: 0 },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          stagger: 0.09,
-          ease: "power3.out",
+          duration: 1.2,
+          stagger: 0.12,
+          ease: "expo.out",
+          delay: 0.2,
+        },
+      );
+      const lineCount = lines.length;
+      const afterDelay = 0.2 + lineCount * 0.12 + 1.2;
+      gsap.fromTo(
+        [subCopyRef.current, ctaRef.current],
+        { opacity: 0, y: 12 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "expo.out",
+          stagger: 0.1,
+          delay: afterDelay,
         },
       );
     }, heroRef);
@@ -71,12 +88,12 @@ export default function HomePage() {
               </span>
             ))}
           </h1>
-          <p className="text-white/70 text-body-md font-light max-w-xl mb-8">
+          <p ref={subCopyRef} className="text-white/50 text-body-md font-light max-w-xl mb-8">
             Gridhouse Digital designs and builds websites, portals, web apps,
             automations, and AI-powered workflows that help teams operate faster,
             work smarter, and scale with confidence.
           </p>
-          <div className="flex flex-wrap items-center gap-4 mb-10">
+          <div ref={ctaRef} className="flex flex-wrap items-center gap-4 mb-10">
             <CTAButton variant="primary" to="/contact" icon="solar:arrow-right-linear">
               Start a project
             </CTAButton>
