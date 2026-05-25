@@ -1,4 +1,4 @@
-import { useRef, type RefObject } from "react";
+import { useRef } from "react";
 import { Icon } from "@iconify/react";
 import type { CaseStudy } from "../../data/caseStudies";
 import StatusBadge from "./StatusBadge";
@@ -14,8 +14,8 @@ export default function CaseStudyCard({ caseStudy }: Props) {
 
   return (
     <article
-      ref={ref as RefObject<HTMLElement>}
-      className="glow-surface magnetic-card group flex flex-col border border-accent/[0.15] bg-white/[0.02] bg-gradient-to-br from-accent/[0.06] to-transparent transition-all duration-400 hover:border-accent/[0.5] hover:shadow-glow-accent-subtle"
+      ref={ref}
+      className="glow-surface magnetic-card group flex flex-col border border-accent/[0.15] bg-white/[0.02] bg-gradient-to-br from-accent/[0.06] to-transparent backdrop-blur-sm transition-all duration-400 hover:border-accent/[0.4] hover:shadow-glow-accent-subtle"
     >
       <div className="aspect-video bg-ink-deep bg-tech-grid relative flex items-center justify-center border-b border-white/10">
         <Icon
@@ -35,7 +35,7 @@ export default function CaseStudyCard({ caseStudy }: Props) {
           {caseStudy.title}
         </h3>
         <p className="text-white/50 text-sm font-light">{caseStudy.problem}</p>
-        <p className="text-white/[0.38] text-sm font-light border-l border-accent/40 pl-3">
+        <p className="text-white/50 text-sm font-light border-l border-accent/40 pl-3">
           {caseStudy.solution}
         </p>
         <div className="mt-auto flex flex-col gap-3">
