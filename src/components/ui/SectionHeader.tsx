@@ -20,7 +20,7 @@ export default function SectionHeader({
   return (
     <header className={`flex flex-col gap-4 ${alignClass} ${className}`}>
       {label && <TerminalLabel variant="accent">{label}</TerminalLabel>}
-      <h2 className="font-display font-light text-white text-display-md">
+      <h2 className="font-display font-normal text-white text-display-md">
         {title}
       </h2>
       {description && (

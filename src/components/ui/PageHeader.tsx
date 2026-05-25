@@ -39,7 +39,7 @@ export default function PageHeader({ label, title, description, meta }: Props) {
           {title}
         </h1>
         {description && (
-          <p className="text-white/60 text-body-md font-light max-w-2xl">
+          <p className="text-white/50 text-body-md font-light max-w-2xl">
             {description}
           </p>
         )}
