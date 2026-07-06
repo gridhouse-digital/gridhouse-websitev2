@@ -119,6 +119,274 @@ body {
   }
 }
 
+/* ============================================================
+   PREMIUM POLISH — selection, scrollbar (both themes)
+   ============================================================ */
+::selection {
+  background: rgba(255, 69, 0, 0.32);
+}
+html {
+  scrollbar-color: #2e2e2e #0c0c0c;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e2e2e;
+  border: 2px solid #0c0c0c;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4500;
+}
+html.theme-light {
+  scrollbar-color: #c4c0b6 #eceae3;
+}
+.theme-light ::-webkit-scrollbar-track {
+  background: #eceae3;
+}
+.theme-light ::-webkit-scrollbar-thumb {
+  background: #c4c0b6;
+  border-color: #eceae3;
+}
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: #ff4500;
+}
+
+/* ============================================================
+   THEME SYSTEM
+   Dark is the default — Tailwind utilities are untouched.
+   `.theme-light` on <html> remaps the color utilities used across
+   the site through CSS variables. `.theme-fixed-dark` subtrees
+   (hero video section, intro overlay) re-declare the dark values,
+   so cinematic media sections keep the dark treatment.
+   ============================================================ */
+
+.theme-light {
+  color-scheme: light;
+  /* text (warm ink on paper; low alphas boosted for readability) */
+  --gh-t-100: #1c1b19;
+  --gh-t-80: rgba(28, 27, 25, 0.84);
+  --gh-t-75: rgba(28, 27, 25, 0.8);
+  --gh-t-70: rgba(28, 27, 25, 0.77);
+  --gh-t-65: rgba(28, 27, 25, 0.74);
+  --gh-t-60: rgba(28, 27, 25, 0.7);
+  --gh-t-55: rgba(28, 27, 25, 0.66);
+  --gh-t-50: rgba(28, 27, 25, 0.62);
+  --gh-t-45: rgba(28, 27, 25, 0.58);
+  --gh-t-40: rgba(28, 27, 25, 0.55);
+  --gh-t-35: rgba(28, 27, 25, 0.5);
+  --gh-t-30: rgba(28, 27, 25, 0.45);
+  --gh-t-25: rgba(28, 27, 25, 0.4);
+  --gh-t-20: rgba(28, 27, 25, 0.32);
+  --gh-t-15: rgba(28, 27, 25, 0.25);
+  --gh-t-06: rgba(28, 27, 25, 0.07);
+  /* borders */
+  --gh-br-05: rgba(28, 27, 25, 0.08);
+  --gh-br-07: rgba(28, 27, 25, 0.09);
+  --gh-br-10: rgba(28, 27, 25, 0.13);
+  --gh-br-15: rgba(28, 27, 25, 0.17);
+  --gh-br-20: rgba(28, 27, 25, 0.22);
+  --gh-br-30: rgba(28, 27, 25, 0.32);
+  --gh-br-40: rgba(28, 27, 25, 0.42);
+  --gh-br-60: rgba(28, 27, 25, 0.55);
+  /* surfaces */
+  --gh-s-01: rgba(255, 255, 255, 0.45);
+  --gh-s-02: rgba(255, 255, 255, 0.75);
+  --gh-s-03: rgba(255, 255, 255, 0.8);
+  --gh-s-05: rgba(28, 27, 25, 0.12);
+  --gh-s-06: rgba(28, 27, 25, 0.08);
+  --gh-s-10: rgba(28, 27, 25, 0.09);
+  --gh-s-hover: rgba(28, 27, 25, 0.05);
+  --gh-ink: #f6f4ef;
+  --gh-ink-80: rgba(246, 244, 239, 0.86);
+  --gh-inkdeep: #efece5;
+  --gh-inkdeep-90: rgba(255, 255, 255, 0.88);
+  --gh-inkdeep-70: rgba(255, 255, 255, 0.72);
+  --gh-input-bg: #ffffff;
+  /* accent text darkened for AA contrast on paper; emerald likewise */
+  --gh-acc-rgb: 195, 62, 0;
+  --gh-emerald: #047857;
+}
+
+.theme-light .theme-fixed-dark {
+  color-scheme: dark;
+  --gh-t-100: #ffffff;
+  --gh-t-80: rgba(255, 255, 255, 0.8);
+  --gh-t-75: rgba(255, 255, 255, 0.75);
+  --gh-t-70: rgba(255, 255, 255, 0.7);
+  --gh-t-65: rgba(255, 255, 255, 0.65);
+  --gh-t-60: rgba(255, 255, 255, 0.6);
+  --gh-t-55: rgba(255, 255, 255, 0.55);
+  --gh-t-50: rgba(255, 255, 255, 0.5);
+  --gh-t-45: rgba(255, 255, 255, 0.45);
+  --gh-t-40: rgba(255, 255, 255, 0.4);
+  --gh-t-35: rgba(255, 255, 255, 0.35);
+  --gh-t-30: rgba(255, 255, 255, 0.3);
+  --gh-t-25: rgba(255, 255, 255, 0.25);
+  --gh-t-20: rgba(255, 255, 255, 0.2);
+  --gh-t-15: rgba(255, 255, 255, 0.15);
+  --gh-t-06: rgba(255, 255, 255, 0.06);
+  --gh-br-05: rgba(255, 255, 255, 0.05);
+  --gh-br-07: rgba(255, 255, 255, 0.07);
+  --gh-br-10: rgba(255, 255, 255, 0.1);
+  --gh-br-15: rgba(255, 255, 255, 0.15);
+  --gh-br-20: rgba(255, 255, 255, 0.2);
+  --gh-br-30: rgba(255, 255, 255, 0.3);
+  --gh-br-40: rgba(255, 255, 255, 0.4);
+  --gh-br-60: rgba(255, 255, 255, 0.6);
+  --gh-s-01: rgba(255, 255, 255, 0.01);
+  --gh-s-02: rgba(255, 255, 255, 0.02);
+  --gh-s-03: rgba(255, 255, 255, 0.03);
+  --gh-s-05: rgba(255, 255, 255, 0.05);
+  --gh-s-06: rgba(255, 255, 255, 0.06);
+  --gh-s-10: rgba(255, 255, 255, 0.1);
+  --gh-s-hover: rgba(255, 255, 255, 0.05);
+  --gh-ink: #0f0f0f;
+  --gh-ink-80: rgba(15, 15, 15, 0.8);
+  --gh-inkdeep: #0a0a0a;
+  --gh-inkdeep-90: rgba(10, 10, 10, 0.9);
+  --gh-inkdeep-70: rgba(10, 10, 10, 0.7);
+  --gh-input-bg: rgba(0, 0, 0, 0.4);
+  --gh-acc-rgb: 255, 69, 0;
+  --gh-emerald: #34d399;
+}
+
+html.theme-light,
+.theme-light body {
+  background-color: #f6f4ef;
+  color: #1c1b19;
+}
+
+/* --- utility remaps (only active under .theme-light) --- */
+.theme-light .text-white { color: var(--gh-t-100); }
+.theme-light .text-white\/80 { color: var(--gh-t-80); }
+.theme-light .text-white\/75 { color: var(--gh-t-75); }
+.theme-light .text-white\/70 { color: var(--gh-t-70); }
+.theme-light .text-white\/65 { color: var(--gh-t-65); }
+.theme-light .text-white\/60 { color: var(--gh-t-60); }
+.theme-light .text-white\/55 { color: var(--gh-t-55); }
+.theme-light .text-white\/50 { color: var(--gh-t-50); }
+.theme-light .text-white\/45 { color: var(--gh-t-45); }
+.theme-light .text-white\/40 { color: var(--gh-t-40); }
+.theme-light .text-white\/35 { color: var(--gh-t-35); }
+.theme-light .text-white\/30 { color: var(--gh-t-30); }
+.theme-light .text-white\/25 { color: var(--gh-t-25); }
+.theme-light .text-white\/20 { color: var(--gh-t-20); }
+.theme-light .text-white\/15 { color: var(--gh-t-15); }
+.theme-light .text-white\/\[0\.06\] { color: var(--gh-t-06); }
+.theme-light .hover\:text-white:hover { color: var(--gh-t-100); }
+
+.theme-light .text-accent { color: rgb(var(--gh-acc-rgb)); }
+.theme-light .text-accent\/70 { color: rgba(var(--gh-acc-rgb), 0.78); }
+.theme-light .text-accent\/60 { color: rgba(var(--gh-acc-rgb), 0.7); }
+.theme-light .hover\:text-accent:hover { color: rgb(var(--gh-acc-rgb)); }
+.theme-light .hover\:text-accent\/80:hover { color: rgba(var(--gh-acc-rgb), 0.85); }
+.theme-light .group:hover .group-hover\:text-accent { color: rgb(var(--gh-acc-rgb)); }
+.theme-light .group:hover .group-hover\:text-accent\/70 { color: rgba(var(--gh-acc-rgb), 0.78); }
+.theme-light .text-emerald-400 { color: var(--gh-emerald); }
+
+.theme-light .border-white\/5 { border-color: var(--gh-br-05); }
+.theme-light .border-white\/\[0\.05\] { border-color: var(--gh-br-05); }
+.theme-light .border-white\/\[0\.07\] { border-color: var(--gh-br-07); }
+.theme-light .border-white\/10 { border-color: var(--gh-br-10); }
+.theme-light .border-white\/15 { border-color: var(--gh-br-15); }
+.theme-light .border-white\/20 { border-color: var(--gh-br-20); }
+.theme-light .border-white\/30 { border-color: var(--gh-br-30); }
+.theme-light .hover\:border-white\/40:hover { border-color: var(--gh-br-40); }
+.theme-light .hover\:border-white\/60:hover { border-color: var(--gh-br-60); }
+
+.theme-light .bg-ink { background-color: var(--gh-ink); }
+.theme-light .bg-ink\/80 { background-color: var(--gh-ink-80); }
+.theme-light .bg-ink-deep { background-color: var(--gh-inkdeep); }
+.theme-light .bg-ink-deep\/90 { background-color: var(--gh-inkdeep-90); }
+.theme-light .bg-ink-deep\/70 { background-color: var(--gh-inkdeep-70); }
+.theme-light .bg-white\/\[0\.01\] { background-color: var(--gh-s-01); }
+.theme-light .bg-white\/\[0\.02\] { background-color: var(--gh-s-02); }
+.theme-light .bg-white\/\[0\.03\] { background-color: var(--gh-s-03); }
+.theme-light .bg-white\/\[0\.06\] { background-color: var(--gh-s-06); }
+.theme-light .bg-white\/5 { background-color: var(--gh-s-05); }
+.theme-light .bg-white\/10 { background-color: var(--gh-s-10); }
+.theme-light .bg-black\/40 { background-color: var(--gh-input-bg); }
+.theme-light .hover\:bg-white\/5:hover,
+.theme-light .hover\:bg-white\/\[0\.02\]:hover,
+.theme-light .hover\:bg-white\/\[0\.025\]:hover,
+.theme-light .hover\:bg-white\/\[0\.03\]:hover { background-color: var(--gh-s-hover); }
+
+.theme-light .focus-visible\:ring-white\/40:focus-visible { --tw-ring-color: rgba(28, 27, 25, 0.35); }
+
+.theme-light .from-ink-deep {
+  --tw-gradient-from: var(--gh-inkdeep) var(--tw-gradient-from-position);
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+/* Anything sitting on a solid accent surface keeps white text */
+.theme-light .bg-accent.text-white,
+.theme-light .bg-accent .text-white { color: #ffffff; }
+.theme-light .bg-accent .text-white\/80 { color: rgba(255, 255, 255, 0.8); }
+.theme-light .bg-accent .text-white\/70 { color: rgba(255, 255, 255, 0.7); }
+.theme-light .bg-accent .text-white\/60 { color: rgba(255, 255, 255, 0.6); }
+
+/* component classes compiled via @apply need explicit remaps */
+.theme-light .field-input {
+  background-color: var(--gh-input-bg);
+  border-color: var(--gh-br-15);
+  color: var(--gh-t-100);
+}
+.theme-light .field-input::placeholder { color: var(--gh-t-30); }
+.theme-light .field-label { color: var(--gh-t-50); }
+
+/* tech grid lines flip to ink on paper */
+.theme-light .bg-tech-grid {
+  background-image:
+    linear-gradient(rgba(28, 27, 25, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 27, 25, 0.05) 1px, transparent 1px);
+}
+.theme-light .bg-tech-grid-16 {
+  background-image:
+    linear-gradient(rgba(28, 27, 25, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 27, 25, 0.06) 1px, transparent 1px);
+}
+.theme-light .bg-tech-grid-32 {
+  background-image:
+    linear-gradient(rgba(28, 27, 25, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 27, 25, 0.045) 1px, transparent 1px);
+}
+.theme-light .bg-tech-grid-64 {
+  background-image:
+    linear-gradient(rgba(28, 27, 25, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 27, 25, 0.04) 1px, transparent 1px);
+}
+
+/* header pill shadow softens on light */
+.theme-light .shadow-nav-pill {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 8px 32px rgba(28, 27, 25, 0.14);
+}
+
+/* theme-aware logo swap */
+.gh-logo-light { display: none; }
+.theme-light .gh-logo-light { display: block; }
+.theme-light .gh-logo-dark { display: none; }
+
+/* smooth cross-fade while toggling (skipped under reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition:
+      background-color 0.35s ease,
+      color 0.35s ease,
+      border-color 0.35s ease,
+      box-shadow 0.35s ease,
+      fill 0.35s ease !important;
+  }
+}
+
 /* Reduced motion — respected by GSAP and canvas effects in code */
 @media (prefers-reduced-motion: reduce) {
   *,

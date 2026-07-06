@@ -1,10 +1,12 @@
 import { Icon } from "@iconify/react";
+import { Link } from "react-router-dom";
 import type { Product } from "../../data/products";
 import StatusBadge from "./StatusBadge";
 import TerminalLabel from "./TerminalLabel";
 
 interface Props {
   product: Product;
+  cta?: { label: string; to: string };
 }
 
 const LIFECYCLE_VARIANT: Record<Product["lifecycle"], "active" | "muted" | "accent"> = {
@@ -13,7 +15,7 @@ const LIFECYCLE_VARIANT: Record<Product["lifecycle"], "active" | "muted" | "acce
   Development: "muted",
 };
 
-export default function ProductSystemPanel({ product }: Props) {
+export default function ProductSystemPanel({ product, cta }: Props) {
   return (
     <article className="glow-surface border border-accent/[0.15] bg-white/[0.02] bg-gradient-to-br from-accent/[0.06] to-transparent backdrop-blur-sm transition-all duration-400 hover:border-accent/[0.35] hover:shadow-glow-accent-subtle">
       <header className="flex items-center justify-between border-b border-white/10 px-6 py-3">
@@ -76,6 +78,18 @@ export default function ProductSystemPanel({ product }: Props) {
           </div>
         </div>
       </div>
+      {cta && (
+        <div className="border-t border-white/10 px-6 py-4 flex items-center justify-between">
+          <span className="text-mono-label text-white/30">INTERESTED?</span>
+          <Link
+            to={cta.to}
+            className="text-mono-label text-accent hover:text-accent/80 inline-flex items-center gap-1.5 transition-colors"
+          >
+            {cta.label}
+            <Icon icon="solar:arrow-right-linear" className="w-3 h-3" aria-hidden />
+          </Link>
+        </div>
+      )}
     </article>
   );
 }

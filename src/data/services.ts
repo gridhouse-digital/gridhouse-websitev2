@@ -5,11 +5,14 @@ export interface Service {
   problemsSolved: string[];
   deliverables: string[];
   bestFitClients: string[];
+  featured?: boolean;
+  learnMoreTo?: string;
 }
 
 export const SERVICES: readonly Service[] = [
   {
     id: "01",
+    featured: true,
     title: "AI-First Website Design & Development",
     description:
       "Marketing sites and brand presences engineered around the way modern teams actually work — content-driven, instrumented, and ready for AI-assisted operations from day one.",
@@ -29,6 +32,8 @@ export const SERVICES: readonly Service[] = [
   },
   {
     id: "02",
+    featured: true,
+    learnMoreTo: "/products",
     title: "Web Apps & Client Portals",
     description:
       "Operational platforms that move teams off spreadsheets and email chains: client portals, internal tools, dashboards, and bespoke web apps with auth, roles, and audit trails.",
@@ -65,6 +70,8 @@ export const SERVICES: readonly Service[] = [
   },
   {
     id: "04",
+    featured: true,
+    learnMoreTo: "/products",
     title: "AI Agents & Intelligent Assistants",
     description:
       "Domain-specific AI agents that triage support, answer policy questions, run intake, and assist staff — with guardrails, retrieval, and human-in-the-loop where it matters.",
@@ -82,6 +89,7 @@ export const SERVICES: readonly Service[] = [
   },
   {
     id: "05",
+    learnMoreTo: "/products",
     title: "Healthcare Compliance / Training Platforms",
     description:
       "Compliance training and credentialing platforms for healthcare staffing and care agencies — built on WordPress, LearnDash, JotForm, and automation, with AI-assisted support.",

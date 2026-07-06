@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import { NAV_LINKS } from "../../data/nav";
+import { useTheme } from "../../hooks/useTheme";
 import MobileNav from "./MobileNav";
 
 function useScrolled(threshold = 40): boolean {
@@ -18,6 +19,7 @@ function useScrolled(threshold = 40): boolean {
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const scrolled = useScrolled();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
@@ -39,7 +41,15 @@ export default function SiteHeader() {
               alt="Gridhouse Digital"
               width={2400}
               height={720}
-              className="h-8 md:h-10 lg:h-12 w-auto max-w-none block transition-opacity duration-300 opacity-100 group-hover:opacity-70"
+              className="gh-logo-dark h-8 md:h-10 lg:h-12 w-auto max-w-none block transition-opacity duration-300 opacity-100 group-hover:opacity-70"
+              draggable={false}
+            />
+            <img
+              src="/gridhouse-logo-light.svg"
+              alt="Gridhouse Digital"
+              width={2400}
+              height={720}
+              className="gh-logo-light h-8 md:h-10 lg:h-12 w-auto max-w-none transition-opacity duration-300 opacity-100 group-hover:opacity-70"
               draggable={false}
             />
           </Link>
@@ -80,6 +90,23 @@ export default function SiteHeader() {
             >
               Start a Project
             </Link>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="text-white/60 hover:text-accent p-2.5 transition-colors duration-300"
+              aria-label={
+                theme === "light"
+                  ? "Switch to dark theme"
+                  : "Switch to light theme"
+              }
+            >
+              <Icon
+                icon={
+                  theme === "light" ? "solar:moon-linear" : "solar:sun-2-linear"
+                }
+                className="w-[18px] h-[18px]"
+              />
+            </button>
             <button
               type="button"
               onClick={() => setOpen(true)}

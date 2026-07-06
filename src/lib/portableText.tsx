@@ -11,7 +11,7 @@ export const portableTextComponents: PortableTextComponents = {
       </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="font-display font-normal text-white text-xl leading-snug mt-8 mb-3">
+      <h3 className="font-display font-normal text-white text-xl leading-snug mt-10 mb-2">
         {children}
       </h3>
     ),
@@ -51,20 +51,21 @@ export const portableTextComponents: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="flex flex-col gap-2 mb-6 pl-4">{children}</ul>
+      <ul className="flex flex-col gap-3 mb-6 pl-0">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="flex flex-col gap-2 mb-6 pl-4 list-decimal">{children}</ol>
+      <ol className="flex flex-col gap-3 mb-6 pl-4 list-decimal">{children}</ol>
     ),
   },
   listItem: {
     bullet: ({ children }) => (
-      <li className="text-white/75 font-light text-body-md flex gap-2 before:content-['—'] before:text-accent before:shrink-0">
-        {children}
+      <li className="text-white/75 font-light text-body-md flex gap-3 items-start">
+        <span className="text-accent shrink-0 mt-[0.35em] leading-none">—</span>
+        <span>{children}</span>
       </li>
     ),
     number: ({ children }) => (
-      <li className="text-white/75 font-light text-body-md">{children}</li>
+      <li className="text-white/75 font-light text-body-md pl-1">{children}</li>
     ),
   },
   types: {
@@ -74,6 +75,21 @@ export const portableTextComponents: PortableTextComponents = {
           src={value?.asset?.url}
           alt={value?.alt ?? ""}
           className="w-full border border-white/10"
+        />
+        {value?.caption && (
+          <figcaption className="mt-3 text-center text-mono-label text-white/40">
+            {value.caption}
+          </figcaption>
+        )}
+      </figure>
+    ),
+    videoEmbed: ({ value }) => (
+      <figure className="my-10">
+        <video
+          src={value?.url}
+          controls
+          playsInline
+          className="w-full border border-white/10 bg-black"
         />
         {value?.caption && (
           <figcaption className="mt-3 text-center text-mono-label text-white/40">

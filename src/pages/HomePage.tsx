@@ -2,13 +2,12 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
-import GridRails from "../components/ui/GridRails";
 import TerminalLabel from "../components/ui/TerminalLabel";
 import CTAButton from "../components/ui/CTAButton";
 import StatusBadge from "../components/ui/StatusBadge";
 import SectionHeader from "../components/ui/SectionHeader";
 import HeroTicker from "../components/visuals/HeroTicker";
-import WebGLPanel from "../components/visuals/WebGLPanel";
+import HeroCityGrid from "../components/visuals/HeroCityGrid";
 import ProductSystemPanel from "../components/ui/ProductSystemPanel";
 import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
@@ -16,10 +15,16 @@ import { PRODUCTS } from "../data/products";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 const HERO_LINES = [
-  { text: "Engineering", color: "text-white" },
-  { text: "AI-first digital", color: "text-white/80" },
-  { text: "systems for", color: "text-white/60" },
-  { text: "operators.", color: "text-accent" },
+  { text: "Build the systems", color: "text-white" },
+  { text: "that run your", color: "text-white/75" },
+  { text: "digital operations.", color: "text-accent" },
+];
+
+const HERO_PILLS = [
+  "AI Websites",
+  "Automation Systems",
+  "Compliance Platforms",
+  "Agent Workflows",
 ];
 
 export default function HomePage() {
@@ -27,6 +32,7 @@ export default function HomePage() {
   const reduced = usePrefersReducedMotion();
   const subCopyRef = useRef<HTMLParagraphElement | null>(null);
   const ctaRef = useRef<HTMLDivElement | null>(null);
+  const pillsRef = useRef<HTMLUListElement | null>(null);
 
   useEffect(() => {
     if (reduced || !heroRef.current) return;
@@ -46,7 +52,7 @@ export default function HomePage() {
       );
       const lineCount = lines.length;
       const afterDelay = 0.2 + lineCount * 0.12 + 1.2;
-      const fadeTargets = [subCopyRef.current, ctaRef.current].filter(Boolean);
+      const fadeTargets = [subCopyRef.current, ctaRef.current, pillsRef.current].filter(Boolean);
       if (fadeTargets.length) {
         gsap.fromTo(
           fadeTargets,
@@ -70,85 +76,56 @@ export default function HomePage() {
       {/* HERO */}
       <section
         ref={heroRef}
-        className="relative min-h-[85vh] flex flex-col border-b border-white/10 overflow-hidden"
+        className="theme-fixed-dark relative min-h-[92vh] flex flex-col border-b border-white/10 overflow-hidden"
       >
-        <GridRails />
-        <div className="flex flex-col lg:flex-row flex-1">
-        {/* LEFT — editorial column */}
-        <div className="relative flex flex-col justify-between flex-1 p-4 sm:p-6 md:p-12 pb-16 lg:border-r border-white/10">
-          <div className="flex items-center justify-between">
-            <TerminalLabel variant="accent">AI-FIRST BUILD MODE</TerminalLabel>
-            <span className="text-mono-label text-white/40">/ 089</span>
-          </div>
-          <h1 className="font-display font-light text-white text-display-lg leading-[1.05] tracking-tight mt-12 mb-10">
-            {HERO_LINES.map((line, i) => (
-              <span
-                key={i}
-                data-hero-line
-                className={`block ${line.color}`}
-              >
-                {line.text}
-              </span>
-            ))}
-          </h1>
-          <p ref={subCopyRef} className="text-white/50 text-body-md font-light max-w-xl mb-8">
-            Gridhouse Digital designs and builds websites, portals, web apps,
-            automations, and AI-powered workflows that help teams operate faster,
-            work smarter, and scale with confidence.
-          </p>
-          <div ref={ctaRef} className="flex flex-wrap items-center gap-4 mb-10">
-            <CTAButton variant="primary" to="/contact" icon="solar:arrow-right-linear">
-              Start a project
-            </CTAButton>
-            <CTAButton variant="secondary" to="/services">
-              View capabilities
-            </CTAButton>
-          </div>
-          <dl className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-white/10 pt-6 max-w-2xl">
-            <Meta label="Client focus" value="Healthcare / SMB / Operations" />
-            <Meta label="Core stack" value="Web / Automation / AI agents" />
-            <Meta
-              label="Status"
-              value={
-                <span className="inline-flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse-dot" />
-                  Online
-                </span>
-              }
-            />
-          </dl>
-        </div>
-        {/* RIGHT — system column */}
-        <div className="relative flex flex-col w-full lg:w-[40%] min-h-[400px] sm:min-h-[500px] lg:min-h-[700px] border-t lg:border-t-0 lg:border-l border-white/10">
-          <div className="relative flex-[1.2] min-h-[200px] sm:min-h-[260px] md:min-h-[320px] border-b border-white/10">
-            <WebGLPanel label="SIMULATION_MATRIX / 14.2" seed={14.2} />
-          </div>
-          <div className="relative flex-1 min-h-[180px] sm:min-h-[220px] md:min-h-[260px] bg-accent overflow-hidden group">
-            <div className="absolute inset-0 bg-ignition-overlay mix-blend-overlay transition-transform duration-[2000ms] group-hover:scale-125 group-hover:rotate-3" />
-            <div className="absolute inset-0 bg-dot-grid opacity-30" />
-            <div className="relative p-6 md:p-8 h-full flex flex-col justify-between">
-              <div className="flex items-center justify-between">
-                <span className="text-mono-label text-white/80">SYSTEM_OVERRIDE</span>
-                <span className="text-mono-label text-white/60">ACTIVE</span>
+        <HeroCityGrid />
+        <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-6 md:px-12 py-20 md:py-24">
+          <div className="w-full">
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-4">
+                <TerminalLabel variant="accent">AI OPERATIONS STUDIO</TerminalLabel>
+                <span className="text-mono-label text-white/40">/ 089</span>
               </div>
-              <div>
-                <h2 className="text-white text-display-sm font-display font-light leading-tight mb-2">
-                  Ignition sequence engaged.
-                </h2>
-                <p className="text-white/80 text-sm font-light max-w-xs">
-                  Live build mode. New systems are being deployed for operators
-                  every cycle.
-                </p>
+              <h1 className="font-display font-light text-white text-[clamp(38px,5.8vw,80px)] leading-[1.05] tracking-[-0.04em] mt-10 mb-8">
+                {HERO_LINES.map((line, i) => (
+                  <span
+                    key={i}
+                    data-hero-line
+                    className={`block ${line.color}`}
+                  >
+                    {line.text}
+                  </span>
+                ))}
+              </h1>
+              <p ref={subCopyRef} className="text-white/60 text-body-md font-light max-w-xl mb-8">
+                Gridhouse Digital designs and builds AI-powered websites,
+                automation systems, compliance platforms, and operational tools
+                for healthcare teams and growing businesses.
+              </p>
+              <div ref={ctaRef} className="flex flex-wrap items-center gap-4 mb-10">
+                <CTAButton variant="primary" to="/contact" icon="solar:arrow-right-linear">
+                  Start a project
+                </CTAButton>
+                <CTAButton variant="secondary" to="/services">
+                  Explore services
+                </CTAButton>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-mono-label text-white/70">/// 089</span>
-                <Icon icon="solar:bolt-circle-linear" className="w-5 h-5 text-white" aria-hidden />
-              </div>
+              <ul ref={pillsRef} className="flex flex-wrap gap-2 border-t border-white/10 pt-6">
+                {HERO_PILLS.map((pill) => (
+                  <li
+                    key={pill}
+                    className="text-mono-label text-white/65 border border-white/15 bg-white/[0.03] backdrop-blur-sm px-3 py-2 transition-all duration-300 hover:border-accent/60 hover:text-white hover:-translate-y-0.5"
+                  >
+                    {pill}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
+        <div className="relative z-10">
+          <HeroTicker />
         </div>
-        <HeroTicker />
       </section>
 
       {/* SERVICES PREVIEW */}
@@ -307,27 +284,49 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PROOF / METRICS */}
+      {/* PROOF / OUTCOMES */}
       <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 border-t border-white/10 bg-ink-deep">
-        <div className="max-w-rail mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5">
-          {[
-            { k: "9", l: "MODULES SHIPPED", note: "across the operating system" },
-            { k: "8", l: "CORE SERVICES", note: "from web to AI agents" },
-            { k: "5", l: "SECTOR FOCUSES", note: "healthcare-led" },
-            { k: "24h", l: "RESPONSE TARGET", note: "for new project intake" },
-          ].map((s) => (
-            <div key={s.l} className="bg-ink p-8 flex flex-col gap-3">
-              <span className="text-mono-label text-accent">{s.l}</span>
-              <span className="text-white text-display-md font-display font-light">
-                {s.k}
-              </span>
-              <span className="text-white/40 text-sm font-light">{s.note}</span>
-            </div>
-          ))}
+        <div className="max-w-rail mx-auto flex flex-col gap-8">
+          <div className="flex items-center gap-3">
+            <span className="text-mono-label text-accent">OUTCOMES / 03</span>
+            <span className="text-mono-label text-white/30">WHAT ACTUALLY SHIPS</span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
+            {[
+              {
+                sector: "HEALTHCARE",
+                headline: "Spreadsheet credentialing replaced with auditable records",
+                detail: "A home care agency moved staff training and credential tracking from email chains into a structured LMS with automated expiry reminders and AI-assisted intake.",
+              },
+              {
+                sector: "OPERATIONS",
+                headline: "Tier-1 support handled by an AI agent before staff see it",
+                detail: "A retrieval-augmented intake agent answers policy and how-to questions directly, escalating only real issues — with full conversational context attached.",
+              },
+              {
+                sector: "TRAINING",
+                headline: "Hours of unused video turned into published courses",
+                detail: "An AI-assisted production pipeline converted unedited lecture and SOP recordings into structured, captioned LMS courses in weeks rather than months.",
+              },
+            ].map((o) => (
+              <div key={o.sector} className="bg-ink p-6 md:p-8 flex flex-col gap-4">
+                <span className="text-mono-label text-accent">{o.sector}</span>
+                <h3 className="text-white text-display-sm font-display font-light leading-tight">
+                  {o.headline}
+                </h3>
+                <p className="text-white/45 text-sm font-light leading-relaxed">{o.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-white/10">
+            <p className="text-mono-label text-white/30">
+              * CLIENT DETAILS ANONYMISED. CASE-LEVEL SPECIFICS AVAILABLE UNDER NDA.
+            </p>
+            <Link to="/work" className="text-mono-label text-white/50 hover:text-accent inline-flex items-center gap-2 transition-colors">
+              View all engagements <Icon icon="solar:arrow-right-linear" className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
-        <p className="max-w-rail mx-auto mt-6 text-mono-label text-white/40">
-          * INDICATORS REPRESENT CURRENT SYSTEM TARGETS, NOT MARKETING METRICS.
-        </p>
       </section>
 
       {/* CTA SECTION */}
@@ -368,14 +367,5 @@ export default function HomePage() {
         </div>
       </section>
     </>
-  );
-}
-
-function Meta({ label, value }: { label: string; value: React.ReactNode }) {
-  return (
-    <div className="flex flex-col gap-1">
-      <dt className="text-mono-label text-white/40">{label}</dt>
-      <dd className="text-white text-sm font-light">{value}</dd>
-    </div>
   );
 }

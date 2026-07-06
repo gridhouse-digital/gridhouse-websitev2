@@ -70,25 +70,48 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="px-6 md:px-12 py-20 border-t border-white/10">
+      <section className="px-4 sm:px-6 md:px-12 py-16 md:py-20 border-t border-white/10">
         <div className="max-w-rail mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4">
             <SectionHeader label="LEADERSHIP / 03" title="Founder profile" />
           </div>
-          <article className="lg:col-span-8 border border-white/10 bg-white/[0.02] p-8 flex flex-col md:flex-row gap-6">
-            <div className="w-24 h-24 border border-accent/40 bg-ink-deep flex items-center justify-center shrink-0">
-              <Icon icon="solar:user-linear" className="w-10 h-10 text-accent" aria-hidden />
-            </div>
-            <div className="flex flex-col gap-3">
-              <span className="text-mono-label text-accent">FOUNDER</span>
+          <article className="lg:col-span-8 border border-white/10 bg-white/[0.02] p-6 md:p-8 flex flex-col gap-6">
+            <div className="flex flex-col gap-1">
+              <span className="text-mono-label text-accent">FOUNDER / GRIDHOUSE DIGITAL</span>
               <h3 className="text-white text-display-sm font-display font-light leading-tight">
-                Operator-led, engineer-built.
+                Adeyemi Oyinlola
               </h3>
-              <p className="text-white/65 text-body-md font-light">
-                Gridhouse is led by a builder with a decade across web platforms,
-                healthcare operations, and AI tooling — translating real
-                operational requirements into systems that ship.
-              </p>
+            </div>
+            <p className="text-white/65 text-body-md font-light max-w-2xl">
+              Adeyemi is the founder of Gridhouse Digital. His work focuses on turning complex
+              workflows into clean, usable digital systems — from compliance training platforms
+              and internal dashboards to AI-powered assistants and automation infrastructure.
+              He helps organizations modernize their operations without adding unnecessary
+              technical complexity.
+            </p>
+            <ul className="flex flex-col gap-2">
+              {[
+                "Builds SaaS platforms, internal applications, AI assistants, and workflow automation systems — as well as the websites that front them",
+                "Healthcare compliance and training platforms — WordPress, LearnDash, JotForm, Supabase, and custom integrations",
+                "Works with healthcare agencies, service businesses, and growth-focused teams",
+                "Combines product strategy, system design, web development, and automation architecture",
+              ].map((point) => (
+                <li key={point} className="flex items-start gap-2 text-white/60 text-sm font-light">
+                  <Icon icon="solar:arrow-right-linear" className="w-3 h-3 mt-1 text-accent shrink-0" aria-hidden />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="pt-2 border-t border-white/10">
+              <a
+                href="https://www.linkedin.com/in/aoyinlola/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-mono-label text-white/50 hover:text-accent transition-colors"
+              >
+                <Icon icon="solar:linkedin-linear" className="w-4 h-4" aria-hidden />
+                linkedin.com/in/aoyinlola
+              </a>
             </div>
           </article>
         </div>

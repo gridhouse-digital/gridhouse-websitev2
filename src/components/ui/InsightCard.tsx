@@ -26,7 +26,7 @@ export default function InsightCard({ insight }: Props) {
       </h3>
       <p className="text-white/50 text-sm font-light flex-1">{insight.excerpt}</p>
       <div className="flex items-center justify-between border-t border-white/10 pt-3">
-        <span className="text-mono-label text-white/40">{insight.readTime} read</span>
+        <span className="text-mono-label text-white/40">{insight.readTime ? `${insight.readTime} read` : insight.category}</span>
         <Icon
           icon="solar:arrow-right-linear"
           className="w-4 h-4 text-white/40 group-hover:text-accent transition-colors"

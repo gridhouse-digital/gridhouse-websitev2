@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import PageHeader from "../components/ui/PageHeader";
 import ProcessStep from "../components/ui/ProcessStep";
 import TerminalLabel from "../components/ui/TerminalLabel";
+import PageCTA from "../components/ui/PageCTA";
 import { PROCESS_PHASES, AI_DELIVERY_NOTES } from "../data/process";
 
 export default function ProcessPage() {
@@ -56,6 +57,14 @@ export default function ProcessPage() {
           </aside>
         </div>
       </section>
+      <PageCTA
+        headline="Ready to run this pipeline on your operation?"
+        subtext="Engagements start with a structured discovery sprint — fixed scope, defined outputs, no open-ended retainer required upfront."
+        primaryLabel="Start a project"
+        primaryTo="/contact"
+        secondaryLabel="View our work"
+        secondaryTo="/work"
+      />
     </>
   );
 }

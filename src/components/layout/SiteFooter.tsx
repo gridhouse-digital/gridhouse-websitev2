@@ -28,7 +28,15 @@ export default function SiteFooter() {
             alt="Gridhouse Digital"
             width={2400}
             height={720}
-            className="h-10 md:h-14 lg:h-16 w-auto max-w-none block"
+            className="gh-logo-dark h-10 md:h-14 lg:h-16 w-auto max-w-none block"
+            draggable={false}
+          />
+          <img
+            src="/gridhouse-logo-light.svg"
+            alt="Gridhouse Digital"
+            width={2400}
+            height={720}
+            className="gh-logo-light h-10 md:h-14 lg:h-16 w-auto max-w-none"
             draggable={false}
           />
           <p className="text-white/60 text-sm font-light max-w-md">

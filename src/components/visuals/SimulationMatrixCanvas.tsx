@@ -191,7 +191,7 @@ export default function SimulationMatrixCanvas({
   return (
     <canvas
       ref={canvasRef}
-      className={`absolute inset-0 w-full h-full block bg-[#050505] opacity-60 hover:opacity-100 transition-opacity duration-1000 ${className}`}
+      className={`absolute inset-0 w-full h-full block bg-[#050505] ${className}`}
       aria-hidden
     />
   );

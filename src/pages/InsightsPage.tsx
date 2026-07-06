@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
 import PageHeader from "../components/ui/PageHeader";
 import InsightCard from "../components/ui/InsightCard";
+import PageCTA from "../components/ui/PageCTA";
 import { INSIGHTS, INSIGHT_CATEGORIES, type Insight } from "../data/insights";
 import { sanityClient, insightsQuery } from "../lib/sanity";
 
@@ -66,6 +67,12 @@ export default function InsightsPage() {
           </p>
         )}
       </section>
+      <PageCTA
+        headline="Want to talk through any of these topics?"
+        subtext="Most of what we write about, we build. If a piece connects to a problem you're working on, let's talk."
+        primaryLabel="Start a conversation"
+        primaryTo="/contact"
+      />
     </>
   );
 }
