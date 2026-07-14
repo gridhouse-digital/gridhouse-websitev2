@@ -9,7 +9,11 @@
   --font-mono: "Syncopate", "Space Grotesk", system-ui, sans-serif;
   --color-accent: #ff4500;
   --color-ink: #0f0f0f;
+  --color-ink-rgb: 15, 15, 15;
   --color-ink-deep: #0a0a0a;
+  --color-ink-deep-rgb: 10, 10, 10;
+  --color-void: #050505;
+  --color-success: #34d399;
   --color-shell: #f4f3ed;
 }
 
@@ -34,6 +38,13 @@ body {
   color: #ffffff;
   line-height: 1.5;
   font-family: "Space Grotesk", system-ui, sans-serif;
+}
+
+/* Display typography — ragged headlines balance across lines (GHACS) */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
 }
 
 /* Tech grid background utilities (augmented from gridstyle.html) */
@@ -103,6 +114,25 @@ body {
   .magnetic-card {
     transform-style: preserve-3d;
   }
+
+  /* GHACS image placeholder — striped slot for pending product screenshots */
+  .ph-surface {
+    background-color: #1e1c1a;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.06) 0 1px,
+      transparent 1px 12px
+    );
+  }
+}
+
+.theme-light .ph-surface {
+  background-color: #e7e5dd;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(28, 27, 25, 0.08) 0 1px,
+    transparent 1px 12px
+  );
 }
 
 /* Form controls — sharp, dark, focus accent */
@@ -193,23 +223,23 @@ html.theme-light {
   --gh-br-30: rgba(28, 27, 25, 0.32);
   --gh-br-40: rgba(28, 27, 25, 0.42);
   --gh-br-60: rgba(28, 27, 25, 0.55);
-  /* surfaces */
-  --gh-s-01: rgba(255, 255, 255, 0.45);
-  --gh-s-02: rgba(255, 255, 255, 0.75);
-  --gh-s-03: rgba(255, 255, 255, 0.8);
+  /* surfaces — GHACS raised: cards read as near-solid white on warm paper */
+  --gh-s-01: rgba(255, 255, 255, 0.55);
+  --gh-s-02: rgba(255, 255, 255, 0.85);
+  --gh-s-03: rgba(255, 255, 255, 0.88);
   --gh-s-05: rgba(28, 27, 25, 0.12);
   --gh-s-06: rgba(28, 27, 25, 0.08);
   --gh-s-10: rgba(28, 27, 25, 0.09);
   --gh-s-hover: rgba(28, 27, 25, 0.05);
-  --gh-ink: #f6f4ef;
-  --gh-ink-80: rgba(246, 244, 239, 0.86);
+  --gh-ink: #f4f3ed;
+  --gh-ink-80: rgba(244, 243, 237, 0.86);
   --gh-inkdeep: #efece5;
   --gh-inkdeep-90: rgba(255, 255, 255, 0.88);
   --gh-inkdeep-70: rgba(255, 255, 255, 0.72);
   --gh-input-bg: #ffffff;
-  /* accent text darkened for AA contrast on paper; emerald likewise */
-  --gh-acc-rgb: 195, 62, 0;
-  --gh-emerald: #047857;
+  /* accent text darkened for AA contrast on paper (GHACS accent-text #C43500) */
+  --gh-acc-rgb: 196, 53, 0;
+  --gh-success: #047857;
 }
 
 .theme-light .theme-fixed-dark {
@@ -252,12 +282,12 @@ html.theme-light {
   --gh-inkdeep-70: rgba(10, 10, 10, 0.7);
   --gh-input-bg: rgba(0, 0, 0, 0.4);
   --gh-acc-rgb: 255, 69, 0;
-  --gh-emerald: #34d399;
+  --gh-success: #34d399;
 }
 
 html.theme-light,
 .theme-light body {
-  background-color: #f6f4ef;
+  background-color: #f4f3ed; /* GHACS light bg — matches the `shell` token */
   color: #1c1b19;
 }
 
@@ -287,7 +317,7 @@ html.theme-light,
 .theme-light .hover\:text-accent\/80:hover { color: rgba(var(--gh-acc-rgb), 0.85); }
 .theme-light .group:hover .group-hover\:text-accent { color: rgb(var(--gh-acc-rgb)); }
 .theme-light .group:hover .group-hover\:text-accent\/70 { color: rgba(var(--gh-acc-rgb), 0.78); }
-.theme-light .text-emerald-400 { color: var(--gh-emerald); }
+.theme-light .text-success { color: var(--gh-success); }
 
 .theme-light .border-white\/5 { border-color: var(--gh-br-05); }
 .theme-light .border-white\/\[0\.05\] { border-color: var(--gh-br-05); }
@@ -371,6 +401,9 @@ html.theme-light,
 .gh-logo-light { display: none; }
 .theme-light .gh-logo-light { display: block; }
 .theme-light .gh-logo-dark { display: none; }
+/* inside fixed-dark subtrees (footer, deep bands) the dark-surface logo stays */
+.theme-light .theme-fixed-dark .gh-logo-dark { display: block; }
+.theme-light .theme-fixed-dark .gh-logo-light { display: none; }
 
 /* smooth cross-fade while toggling (skipped under reduced motion) */
 @media (prefers-reduced-motion: no-preference) {

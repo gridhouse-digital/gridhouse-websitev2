@@ -86,7 +86,7 @@ export default function HomePage() {
                 <TerminalLabel variant="accent">AI OPERATIONS STUDIO</TerminalLabel>
                 <span className="text-mono-label text-white/40">/ 089</span>
               </div>
-              <h1 className="font-display font-light text-white text-[clamp(38px,5.8vw,80px)] leading-[1.05] tracking-[-0.04em] mt-10 mb-8">
+              <h1 className="font-display font-light text-white text-display-hero mt-10 mb-8">
                 {HERO_LINES.map((line, i) => (
                   <span
                     key={i}

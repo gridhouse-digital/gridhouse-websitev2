@@ -69,7 +69,7 @@ export default function HeroCityGrid() {
         className="absolute inset-0 hidden md:block"
         style={{
           background:
-            "linear-gradient(to right, #0F0F0F 8%, rgba(15,15,15,0.82) 32%, rgba(15,15,15,0.35) 52%, rgba(15,15,15,0) 70%)",
+            "linear-gradient(to right, var(--color-ink) 8%, rgba(var(--color-ink-rgb),0.82) 32%, rgba(var(--color-ink-rgb),0.35) 52%, rgba(var(--color-ink-rgb),0) 70%)",
         }}
       />
       {/* Mobile: city becomes a supporting backdrop, text contrast from below */}
@@ -77,7 +77,7 @@ export default function HeroCityGrid() {
         className="absolute inset-0 md:hidden"
         style={{
           background:
-            "linear-gradient(to top, rgba(15,15,15,0.94) 18%, rgba(15,15,15,0.62) 48%, rgba(15,15,15,0.3) 75%, rgba(15,15,15,0.55))",
+            "linear-gradient(to top, rgba(var(--color-ink-rgb),0.94) 18%, rgba(var(--color-ink-rgb),0.62) 48%, rgba(var(--color-ink-rgb),0.3) 75%, rgba(var(--color-ink-rgb),0.55))",
         }}
       />
       {/* Vignette + top/bottom frame fade */}
@@ -85,14 +85,14 @@ export default function HeroCityGrid() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(130% 95% at 55% 45%, transparent 55%, rgba(10,10,10,0.55) 100%)",
+            "radial-gradient(130% 95% at 55% 45%, transparent 55%, rgba(var(--color-ink-deep-rgb),0.55) 100%)",
         }}
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(15,15,15,0.65), transparent 20%, transparent 72%, rgba(15,15,15,0.92))",
+            "linear-gradient(to bottom, rgba(var(--color-ink-rgb),0.65), transparent 20%, transparent 72%, rgba(var(--color-ink-rgb),0.92))",
         }}
       />
       {/* Extra darkening over the bottom-right corner where the video's
@@ -101,7 +101,7 @@ export default function HeroCityGrid() {
         className="absolute bottom-0 right-0 h-[36%] w-[40%]"
         style={{
           background:
-            "radial-gradient(closest-side at 66% 76%, rgba(10,10,10,0.92), rgba(10,10,10,0.45) 62%, transparent)",
+            "radial-gradient(closest-side at 66% 76%, rgba(var(--color-ink-deep-rgb),0.92), rgba(var(--color-ink-deep-rgb),0.45) 62%, transparent)",
         }}
       />
     </div>

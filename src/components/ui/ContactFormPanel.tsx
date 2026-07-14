@@ -66,7 +66,7 @@ export default function ContactFormPanel() {
 
   if (status === "success") {
     return (
-      <div className="border border-emerald-500/30 bg-emerald-500/5 p-10 flex flex-col gap-4">
+      <div className="border border-success-deep/30 bg-success-deep/5 p-10 flex flex-col gap-4">
         <TerminalLabel variant="accent">REQUEST RECEIVED</TerminalLabel>
         <h3 className="text-white text-display-sm font-display font-light">
           Intake confirmed.

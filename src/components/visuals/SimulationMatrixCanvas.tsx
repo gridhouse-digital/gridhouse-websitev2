@@ -180,7 +180,7 @@ export default function SimulationMatrixCanvas({
   if (failed) {
     return (
       <div
-        className={`absolute inset-0 bg-[#050505] bg-tech-grid-16 ${className}`}
+        className={`absolute inset-0 bg-void bg-tech-grid-16 ${className}`}
         aria-hidden
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/40" />
@@ -191,7 +191,7 @@ export default function SimulationMatrixCanvas({
   return (
     <canvas
       ref={canvasRef}
-      className={`absolute inset-0 w-full h-full block bg-[#050505] ${className}`}
+      className={`absolute inset-0 w-full h-full block bg-void ${className}`}
       aria-hidden
     />
   );

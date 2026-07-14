@@ -19,7 +19,7 @@ export default function PageCTA({
   secondaryTo,
 }: PageCTAProps) {
   return (
-    <section className="relative border-t border-white/10 bg-ink-deep overflow-hidden">
+    <section className="theme-fixed-dark relative border-t border-white/10 bg-ink-deep overflow-hidden">
       <GridRails />
       <div className="relative max-w-rail mx-auto px-4 sm:px-6 md:px-12 py-14 sm:py-16 md:py-20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-8">
         <div className="flex flex-col gap-3 max-w-2xl">

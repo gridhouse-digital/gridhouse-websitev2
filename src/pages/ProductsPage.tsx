@@ -7,7 +7,10 @@ import { sanityClient, productsQuery } from "../lib/sanity";
 
 const PRODUCT_CTAS: Record<string, { label: string; to: string }> = {
   "01": { label: "Discuss HOMS early access", to: "/contact" },
-  "02": { label: "Scope a compliance platform deployment", to: "/contact" },
+  "02": {
+    label: "View platform details",
+    to: "/products/compliance-training",
+  },
   "03": { label: "Pilot an intake agent", to: "/contact" },
 };
 

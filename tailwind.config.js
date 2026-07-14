@@ -7,9 +7,11 @@ export default {
         accent: "#FF4500",
         ink: "#0F0F0F",
         "ink-deep": "#0A0A0A",
+        void: "#050505", // canvas / WebGL backplates (was bg-[#050505])
         shell: "#F4F3ED",
-        "text-muted": "#71717A",
-        reserved: "#FFF80A",
+        "text-muted": "#71717A", // neutral mid-gray (= zinc-500); dots, muted UI
+        success: "#34D399", // status-positive (= emerald-400); light theme remaps via --gh-success
+        "success-deep": "#10B981", // status-positive surfaces/borders (= emerald-500)
       },
       fontFamily: {
         display: [
@@ -39,9 +41,12 @@ export default {
         "display-sm": ["clamp(22px, 2.5vw, 32px)", { lineHeight: "1.1", letterSpacing: "-0.03em" }],
         "display-md": ["clamp(28px, 4vw, 48px)", { lineHeight: "1.05", letterSpacing: "-0.04em" }],
         "display-lg": ["clamp(48px, 7vw, 96px)", { lineHeight: "1", letterSpacing: "-0.05em" }],
+        "display-hero": ["clamp(38px, 5.8vw, 80px)", { lineHeight: "1.05", letterSpacing: "-0.04em" }],
+        "display-numeral": ["64px", { lineHeight: "1" }],
       },
       letterSpacing: {
         mono: "0.16em",
+        display: "-0.04em",
       },
       maxWidth: {
         rail: "1440px",
@@ -55,8 +60,6 @@ export default {
         '400': '400ms',
       },
       backgroundImage: {
-        "ignition-overlay":
-          "linear-gradient(to bottom right, rgba(255, 184, 0, 0.4), transparent, rgba(154, 0, 255, 0.3))",
         "shell-border":
           "linear-gradient(to bottom, rgba(113,113,122,0.4), rgba(39,39,42,0.4), rgba(0,0,0,0.8))",
       },

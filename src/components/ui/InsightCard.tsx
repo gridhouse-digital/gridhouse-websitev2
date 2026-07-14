@@ -7,7 +7,7 @@ interface Props {
 }
 
 const STATUS_COLORS: Record<Insight["status"], string> = {
-  Published: "text-emerald-400",
+  Published: "text-success",
   Draft: "text-accent",
   Research: "text-white/40",
 };

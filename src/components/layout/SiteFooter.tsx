@@ -20,7 +20,7 @@ const CONNECT_LINKS = [
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-white/10 bg-ink-deep px-4 sm:px-6 md:px-12 py-12 md:py-16">
+    <footer className="theme-fixed-dark border-t border-white/10 bg-ink-deep px-4 sm:px-6 md:px-12 py-12 md:py-16">
       <div className="max-w-rail mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
         <div className="md:col-span-5 flex flex-col items-start gap-4">
           <img

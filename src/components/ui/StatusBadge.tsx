@@ -5,8 +5,8 @@ interface Props {
 }
 
 const DOT: Record<NonNullable<Props["variant"]>, string> = {
-  active: "bg-emerald-400",
-  muted: "bg-zinc-500",
+  active: "bg-success",
+  muted: "bg-text-muted",
   accent: "bg-accent",
 };
 

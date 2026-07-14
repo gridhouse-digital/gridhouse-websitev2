@@ -10,7 +10,7 @@ export default function IndustryPanel({ industry }: Props) {
   const featured = industry.featured;
   return (
     <article
-      className={`group relative overflow-hidden border p-5 sm:p-6 md:p-8 transform-gpu transition-all duration-300 ease-out will-change-transform hover:scale-[1.01] hover:shadow-[0_20px_60px_-20px_rgba(255,69,0,0.25)] ${
+      className={`group relative overflow-hidden border p-5 sm:p-6 md:p-8 transform-gpu transition-all duration-300 ease-out will-change-transform hover:scale-[1.01] hover:shadow-glow-accent-subtle ${
         featured
           ? "border-accent/40 border-l-2 border-l-accent bg-accent/[0.04] hover:border-accent/70 hover:bg-accent/[0.08]"
           : "border-white/10 hover:border-accent/40 hover:bg-white/[0.03]"

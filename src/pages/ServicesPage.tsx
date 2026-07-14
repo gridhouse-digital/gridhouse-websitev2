@@ -71,7 +71,7 @@ export default function ServicesPage() {
                 to="/contact"
                 className="group bg-ink p-6 flex flex-col gap-4 hover:bg-white/[0.03] transition-colors relative overflow-hidden"
               >
-                <span className="font-display font-light text-[64px] leading-none text-white/[0.06] absolute top-3 right-5 select-none">
+                <span className="font-display font-light text-display-numeral text-white/[0.06] absolute top-3 right-5 select-none">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <Icon icon={pkg.icon} className="w-7 h-7 text-accent" aria-hidden />
