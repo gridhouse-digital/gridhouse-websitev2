@@ -34,7 +34,7 @@ export const COMPLIANCE_TRAINING_DETAIL: ProductDetail = {
   eyebrow: "Healthcare Academy & Compliance System",
   headline: "Simplify healthcare training and bulletproof your compliance.",
   intro: {
-    lead: "Gridhouse Healthcare Academy & Compliance System",
+    lead: "Gridhouse OLTL/ODP Training & Compliance System",
     text: " — the all-in-one platform designed to empower your staff, centralize your records, and keep your organization fully compliant without the administrative headache.",
   },
   hero: {
@@ -43,7 +43,7 @@ export const COMPLIANCE_TRAINING_DETAIL: ProductDetail = {
   },
   overview: {
     title: "The modern healthcare organization needs modern tools",
-    text: "Managing employee training, credential tracking, and compliance audits shouldn't require endless spreadsheets and scattered files. Gridhouse Healthcare Academy & Compliance System brings everything under one roof. From onboarding new hires to tracking ongoing certifications and surviving audits with ease, our system gives both administrators and employees the tools they need to succeed.",
+    text: "Managing employee training, credential tracking, and compliance audits shouldn't require endless spreadsheets and scattered files. Gridhouse OLTL/ODP Training & Compliance System brings everything under one roof. From onboarding new hires to tracking ongoing certifications and surviving audits with ease, our system gives both administrators and employees the tools they need to succeed.",
   },
   features: [
     {
