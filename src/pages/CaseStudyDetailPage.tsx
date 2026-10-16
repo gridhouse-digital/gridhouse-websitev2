@@ -7,6 +7,7 @@ import { portableTextComponents } from "../lib/portableText";
 import TerminalLabel from "../components/ui/TerminalLabel";
 import GridRails from "../components/ui/GridRails";
 import { CASE_STUDIES } from "../data/caseStudies";
+import { replaceRetiredProductNames } from "../data/naming";
 
 interface CaseStudyDetail {
   _id?: string;
@@ -57,7 +58,12 @@ export default function CaseStudyDetailPage() {
 
   const study =
     resolvedSlug === slug && remoteStudy
-      ? { ...staticStudy, ...remoteStudy, evidenceBasis: remoteStudy.evidenceBasis || staticStudy?.evidenceBasis }
+      ? {
+          ...staticStudy,
+          ...remoteStudy,
+          title: replaceRetiredProductNames(remoteStudy.title),
+          evidenceBasis: remoteStudy.evidenceBasis || staticStudy?.evidenceBasis,
+        }
       : staticStudy;
   const loading = !staticStudy && resolvedSlug !== slug;
 

@@ -12,7 +12,7 @@ const STARTER_PACKAGES = [
     label: "Compliance Modernisation",
     description: "Replace credential spreadsheets and ad-hoc training with an auditable LMS + workflow layer.",
     modules: ["05", "03"],
-    moduleCodes: ["CPT", "AUTO"],
+    moduleCodes: ["COMPLIANCE", "AUTO"],
     icon: "solar:shield-check-linear",
   },
   {

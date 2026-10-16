@@ -3,6 +3,7 @@ import PageHeader from "../components/ui/PageHeader";
 import CaseStudyCard from "../components/ui/CaseStudyCard";
 import PageCTA from "../components/ui/PageCTA";
 import { CASE_STUDIES, type CaseStudy } from "../data/caseStudies";
+import { replaceRetiredProductNames } from "../data/naming";
 import { sanityClient, caseStudiesQuery } from "../lib/sanity";
 
 const CLIENT_KINDS = new Set(["Client System", "Private Engagement", "Prototype"]);
@@ -26,6 +27,7 @@ export default function WorkPage() {
             ? {
                 ...local,
                 ...remote,
+                title: replaceRetiredProductNames(remote.title || local.title),
                 displayId: remote.displayId || local.displayId,
                 evidenceBasis: remote.evidenceBasis || local.evidenceBasis,
               }

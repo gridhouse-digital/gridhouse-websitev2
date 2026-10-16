@@ -29,7 +29,7 @@ export const CASE_STUDIES: readonly CaseStudy[] = [
     id: "01",
     displayId: "01",
     slug: "healthcare-compliance-training-platform",
-    title: "Healthcare Compliance Training Platform",
+    title: "Gridhouse Compliance",
     kind: "Client System",
     featured: true,
     clientLabel: "Regional home care agency",

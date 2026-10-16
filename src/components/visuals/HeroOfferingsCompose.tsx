@@ -11,10 +11,11 @@ const CAPABILITIES = SERVICES.slice(0, 4).map((s) => ({
 }))
 
 const PRODUCT_ITEMS = PRODUCTS.slice(0, 4).map((p) => ({
+  id: p.id,
   code: p.code,
   name: p.name,
   lifecycle: p.lifecycle,
-  href: p.code === 'CPT' ? '/products/compliance-training' : '/products',
+  href: p.href ?? '/products',
 }))
 
 interface Props {
@@ -91,14 +92,16 @@ export default function HeroOfferingsCompose({ className = '' }: Props) {
               </div>
               <ul className="flex flex-col gap-2">
                 {PRODUCT_ITEMS.map((item) => (
-                  <li key={item.code}>
+                  <li key={item.id}>
                     <Link
                       to={item.href}
                       className="group flex items-start gap-3 border border-white/10 bg-white/[0.02] px-3 py-3 transition-colors hover:border-accent/30 hover:bg-accent/[0.04]"
                     >
-                      <span className="shrink-0 border border-accent/25 bg-accent/[0.08] px-1.5 py-0.5 text-mono-label text-accent">
-                        {item.code}
-                      </span>
+                      {item.code ? (
+                        <span className="shrink-0 border border-accent/25 bg-accent/[0.08] px-1.5 py-0.5 text-mono-label text-accent">
+                          {item.code}
+                        </span>
+                      ) : null}
                       <span className="min-w-0 flex-1">
                         <span className="block truncate text-sm font-normal text-white/80 group-hover:text-white">
                           {item.name}

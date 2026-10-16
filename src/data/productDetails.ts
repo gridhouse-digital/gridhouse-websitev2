@@ -31,10 +31,10 @@ export interface ProductDetail {
 export const COMPLIANCE_TRAINING_DETAIL: ProductDetail = {
   slug: "compliance-training",
   productId: "02",
-  eyebrow: "Healthcare Academy & Compliance System",
+  eyebrow: "Training & compliance for OLTL/ODP providers",
   headline: "Simplify healthcare training and bulletproof your compliance.",
   intro: {
-    lead: "Gridhouse OLTL/ODP Training & Compliance System",
+    lead: "Gridhouse Compliance",
     text: " — the all-in-one platform designed to empower your staff, centralize your records, and keep your organization fully compliant without the administrative headache.",
   },
   hero: {
@@ -43,7 +43,7 @@ export const COMPLIANCE_TRAINING_DETAIL: ProductDetail = {
   },
   overview: {
     title: "The modern healthcare organization needs modern tools",
-    text: "Managing employee training, credential tracking, and compliance audits shouldn't require endless spreadsheets and scattered files. Gridhouse OLTL/ODP Training & Compliance System brings everything under one roof. From onboarding new hires to tracking ongoing certifications and surviving audits with ease, our system gives both administrators and employees the tools they need to succeed.",
+    text: "Managing employee training, credential tracking, and compliance audits shouldn't require endless spreadsheets and scattered files. Gridhouse Compliance brings everything under one roof. From onboarding new hires to tracking ongoing certifications and surviving audits with ease, our system gives both administrators and employees the tools they need to succeed.",
   },
   features: [
     {
@@ -168,8 +168,7 @@ export const COMPLIANCE_TRAINING_DETAIL: ProductDetail = {
   ],
   cta: {
     headline: "Ready to transform your compliance management?",
-    subtext:
-      "Join the healthcare organizations that trust Gridhouse to streamline their training, protect their licenses, and empower their teams.",
+    subtext: "See how Gridhouse Compliance fits your agency.",
     primaryLabel: "Schedule your personalized demo",
   },
 };

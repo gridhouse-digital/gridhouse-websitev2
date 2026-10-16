@@ -1,6 +1,10 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { CASE_STUDIES } from "../../data/caseStudies";
+import {
+  COMPLIANCE_DEMO_HEADING,
+  COMPLIANCE_DEMO_INTEREST,
+} from "../../data/naming";
 
 const SITE_URL = "https://gridhouse.digital";
 const DEFAULT_IMAGE = `${SITE_URL}/images/hero-video-poster.jpg`;
@@ -8,11 +12,15 @@ const DEFAULT_DESCRIPTION =
   "Gridhouse Digital builds AI-native operational systems for regulated and workflow-heavy businesses.";
 
 const pages: Record<string, { title: string; description: string }> = {
-  "/": { title: "Gridhouse Digital — AI-First Digital Systems", description: DEFAULT_DESCRIPTION },
+  "/": { title: "Gridhouse Digital: AI-Native Operational Systems", description: DEFAULT_DESCRIPTION },
   "/work": { title: "Work — Gridhouse Digital", description: "Selected operational systems, prototypes, and internal products built by Gridhouse Digital." },
   "/services": { title: "Services — Gridhouse Digital", description: "AI-first websites, web applications, automation, agents, compliance platforms, and product strategy." },
   "/products": { title: "Products — Gridhouse Digital", description: "Operational products built for healthcare, compliance, training, and workflow-heavy teams." },
-  "/products/compliance-training": { title: "Compliance Training Platform — Gridhouse Digital", description: "A managed compliance and training platform for healthcare agencies." },
+  "/products/compliance-training": {
+    title: "Gridhouse Compliance — Gridhouse Digital",
+    description:
+      "Gridhouse Compliance is training and compliance for Pennsylvania ODP and OLTL providers. Track required staff training, issue certificates, and catch overdue staff before inspections.",
+  },
   "/industries": { title: "Industries — Gridhouse Digital", description: "Digital systems for healthcare, professional services, SMB operations, and regulated teams." },
   "/process": { title: "Process — Gridhouse Digital", description: "A structured delivery model built around two-week sprints, weekly reviews, and working systems." },
   "/insights": { title: "Insights — Gridhouse Digital", description: "Practical analysis on AI, operational systems, automation, compliance, and digital transformation." },
@@ -36,17 +44,23 @@ function setMeta(selector: string, attribute: "name" | "property", key: string, 
 
 export default function RouteMetadata() {
   const { pathname } = useLocation();
+  const [searchParams] = useSearchParams();
+  const complianceDemo =
+    pathname === "/contact" && searchParams.get("interest") === COMPLIANCE_DEMO_INTEREST;
 
   useEffect(() => {
     const caseSlug = pathname.match(/^\/work\/([^/]+)$/)?.[1];
     const insightSlug = pathname.match(/^\/insights\/([^/]+)$/)?.[1];
     const study = caseSlug ? CASE_STUDIES.find((item) => item.slug === caseSlug) : undefined;
     const fallbackTitle = titleCase(caseSlug || insightSlug || "Page");
-    const metadata = pages[pathname] || (caseSlug
+    const pageMetadata = pages[pathname] || (caseSlug
       ? { title: `${study?.title || fallbackTitle} — Gridhouse Digital`, description: study?.problem || DEFAULT_DESCRIPTION }
       : insightSlug
         ? { title: `${fallbackTitle} — Gridhouse Digital`, description: "A Gridhouse Digital insight on operational systems, AI, and workflow design." }
         : { title: "Page Not Found — Gridhouse Digital", description: DEFAULT_DESCRIPTION });
+    const metadata = complianceDemo
+      ? { ...pageMetadata, title: `${COMPLIANCE_DEMO_HEADING} — Gridhouse Digital` }
+      : pageMetadata;
     const canonical = `${SITE_URL}${pathname === "/" ? "" : pathname}`;
     const noIndex = pathname.startsWith("/demo/") || (!pages[pathname] && !caseSlug && !insightSlug);
     const type = insightSlug ? "article" : "website";
@@ -88,7 +102,7 @@ export default function RouteMetadata() {
       });
       document.head.appendChild(script);
     }
-  }, [pathname]);
+  }, [pathname, complianceDemo]);
 
   return null;
 }
