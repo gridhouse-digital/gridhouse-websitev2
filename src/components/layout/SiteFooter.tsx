@@ -44,6 +44,21 @@ export default function SiteFooter() {
             automation, AI agents, and operational platforms — built to scale.
           </p>
           <span className="text-mono-label text-white/40">CANADA / REMOTE — WORLDWIDE</span>
+          <a
+            href="https://www.jotform.com/partnership/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-block rounded-xl transition-opacity duration-300 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            <img
+              src="/jotform-partner-badge.png"
+              alt="Jotform Partner"
+              width={342}
+              height={222}
+              className="h-16 md:h-20 w-auto"
+              draggable={false}
+            />
+          </a>
         </div>
         <FooterColumn title="Platform" items={PLATFORM_LINKS} />
         <FooterColumn title="Systems" items={SYSTEMS_LINKS} />
