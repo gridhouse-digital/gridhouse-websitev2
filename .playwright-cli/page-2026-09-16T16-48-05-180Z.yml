@@ -1,0 +1,157 @@
+- generic [ref=f8e3]:
+  - banner [ref=f8e4]:
+    - link "Gridhouse Digital — home" [ref=f8e5] [cursor=pointer]:
+      - /url: /
+      - img "Gridhouse Digital" [ref=f8e6]
+    - navigation [ref=f8e7]:
+      - link "Home" [ref=f8e8] [cursor=pointer]:
+        - /url: /
+      - link "Work" [ref=f8e12] [cursor=pointer]:
+        - /url: /work
+      - link "Capabilities" [ref=f8e13] [cursor=pointer]:
+        - /url: /services
+      - link "Products" [ref=f8e14] [cursor=pointer]:
+        - /url: /products
+      - link "Company" [ref=f8e15] [cursor=pointer]:
+        - /url: /about
+    - generic [ref=f8e16]:
+      - link "Start a Project" [ref=f8e17] [cursor=pointer]:
+        - /url: /contact
+      - button "Switch to light theme" [ref=f8e18] [cursor=pointer]
+  - main [ref=f8e27]:
+    - generic [ref=f8e29]:
+      - generic [ref=f8e30]: CONTACT / INTAKE
+      - heading "Initialize a project request." [level=1] [ref=f8e32]
+      - paragraph [ref=f8e33]: Tell us about the operation. We'll come back with a structured scope and a delivery plan within 24 hours.
+      - generic [ref=f8e34]:
+        - generic [ref=f8e35]:
+          - term [ref=f8e36]: Channel
+          - definition [ref=f8e37]: hello@gridhouse.digital
+        - generic [ref=f8e38]:
+          - term [ref=f8e39]: Location
+          - definition [ref=f8e40]: Canada / Remote
+        - generic [ref=f8e41]:
+          - term [ref=f8e42]: Response
+          - definition [ref=f8e43]: Within 24h
+        - generic [ref=f8e44]:
+          - term [ref=f8e45]: Availability
+          - definition [ref=f8e46]: Selected projects
+    - generic [ref=f8e48]:
+      - generic [ref=f8e50]:
+        - generic [ref=f8e51]:
+          - generic [ref=f8e52]: INITIALIZE_REQUEST
+          - generic [ref=f8e54]: FORM / 01
+        - generic [ref=f8e55]:
+          - generic [ref=f8e56]:
+            - generic [ref=f8e57]: Name*
+            - textbox [ref=f8e58]
+          - generic [ref=f8e59]:
+            - generic [ref=f8e60]: Email*
+            - textbox [ref=f8e61]
+          - generic [ref=f8e62]:
+            - generic [ref=f8e63]: Company
+            - textbox [ref=f8e64]
+          - generic [ref=f8e65]:
+            - generic [ref=f8e66]: Website
+            - textbox "https://" [ref=f8e67]
+          - generic [ref=f8e68]:
+            - generic [ref=f8e69]: Service interest
+            - combobox [ref=f8e70]:
+              - option "Select…" [disabled] [selected]
+              - option "AI-First Website Design & Development"
+              - option "Web Apps & Client Portals"
+              - option "Workflow Automation"
+              - option "AI Agents & Intelligent Assistants"
+              - option "Healthcare Compliance / Training Platforms"
+              - option "UX, Product Strategy & Design Systems"
+              - option "Cloud, DevOps & Platform Setup"
+              - option "AI Video / Course Production"
+          - generic [ref=f8e71]:
+            - generic [ref=f8e72]: Budget range
+            - combobox [ref=f8e73]:
+              - option "Select…" [disabled] [selected]
+              - option "Under $10k"
+              - option "$10k – $25k"
+              - option "$25k – $75k"
+              - option "$75k – $150k"
+              - option "$150k+"
+          - generic [ref=f8e74]:
+            - generic [ref=f8e75]: Timeline
+            - combobox [ref=f8e76]:
+              - option "Select…" [disabled] [selected]
+              - option "Ready now"
+              - option "1–2 months"
+              - option "3–6 months"
+              - option "6+ months"
+              - option "Exploratory"
+        - generic [ref=f8e77]:
+          - generic [ref=f8e78]: Project description*
+          - textbox "Tell us about the system you need to build…" [ref=f8e79]
+        - generic [ref=f8e80]:
+          - generic [ref=f8e81]: POST → /api/contact
+          - button "Initialize" [ref=f8e82] [cursor=pointer]
+      - complementary [ref=f8e86]:
+        - article [ref=f8e87]:
+          - generic [ref=f8e88]: AVAILABILITY
+          - generic [ref=f8e90]: Accepting selected projects
+          - paragraph [ref=f8e94]: We onboard a small number of new engagements per quarter so each client gets a real system, not a queued ticket.
+          - generic [ref=f8e95]:
+            - generic [ref=f8e96]:
+              - term [ref=f8e97]: Response
+              - definition [ref=f8e98]: Within 24h
+            - generic [ref=f8e99]:
+              - term [ref=f8e100]: Location
+              - definition [ref=f8e101]: Canada / Remote
+        - article [ref=f8e102]:
+          - generic [ref=f8e103]: DIRECT CHANNEL
+          - heading "Skip the form. Email the founder." [level=3] [ref=f8e104]
+          - link "hello@gridhouse.digital" [ref=f8e105] [cursor=pointer]:
+            - /url: mailto:hello@gridhouse.digital
+        - article [ref=f8e106]:
+          - generic [ref=f8e107]: EXPECTED FIT
+          - paragraph [ref=f8e109]: Healthcare agencies, ops-heavy SMBs, professional services, and AI-first operators tend to be the strongest fit.
+  - contentinfo [ref=f8e110]:
+    - generic [ref=f8e111]:
+      - generic [ref=f8e112]:
+        - img "Gridhouse Digital" [ref=f8e113]
+        - paragraph [ref=f8e114]: AI-native operational systems for regulated and workflow-heavy businesses — digital products, automation, and intelligent agents designed around the work.
+        - generic [ref=f8e115]: CANADA / REMOTE — WORLDWIDE
+      - generic [ref=f8e116]:
+        - generic [ref=f8e117]: Platform
+        - list [ref=f8e118]:
+          - listitem [ref=f8e119]:
+            - link "Capabilities" [ref=f8e120] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=f8e121]:
+            - link "Products" [ref=f8e122] [cursor=pointer]:
+              - /url: /products
+          - listitem [ref=f8e123]:
+            - link "Work" [ref=f8e124] [cursor=pointer]:
+              - /url: /work
+      - generic [ref=f8e125]:
+        - generic [ref=f8e126]: Systems
+        - list [ref=f8e127]:
+          - listitem [ref=f8e128]:
+            - link "Industries" [ref=f8e129] [cursor=pointer]:
+              - /url: /industries
+          - listitem [ref=f8e130]:
+            - link "Process" [ref=f8e131] [cursor=pointer]:
+              - /url: /process
+          - listitem [ref=f8e132]:
+            - link "Insights" [ref=f8e133] [cursor=pointer]:
+              - /url: /insights
+          - listitem [ref=f8e134]:
+            - link "Company" [ref=f8e135] [cursor=pointer]:
+              - /url: /about
+      - generic [ref=f8e136]:
+        - generic [ref=f8e137]: Connect
+        - list [ref=f8e138]:
+          - listitem [ref=f8e139]:
+            - link "Contact" [ref=f8e140] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=f8e141]:
+            - link "hello@gridhouse.digital" [ref=f8e142] [cursor=pointer]:
+              - /url: mailto:hello@gridhouse.digital
+    - generic [ref=f8e143]:
+      - generic [ref=f8e144]: © 2026 GRIDHOUSE DIGITAL. ALL RIGHTS RESERVED.
+      - generic [ref=f8e145]: DESIGNED AND ENGINEERED BY GRIDHOUSE

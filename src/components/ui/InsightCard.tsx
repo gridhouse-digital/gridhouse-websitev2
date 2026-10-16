@@ -9,7 +9,7 @@ interface Props {
 const STATUS_COLORS: Record<Insight["status"], string> = {
   Published: "text-success",
   Draft: "text-accent",
-  Research: "text-white/40",
+  Research: "text-white/60",
 };
 
 export default function InsightCard({ insight }: Props) {
@@ -24,9 +24,9 @@ export default function InsightCard({ insight }: Props) {
       <h3 className="text-white text-lg font-display font-light leading-snug">
         {insight.title}
       </h3>
-      <p className="text-white/50 text-sm font-light flex-1">{insight.excerpt}</p>
+      <p className="text-white/70 text-body-sm font-normal flex-1">{insight.excerpt}</p>
       <div className="flex items-center justify-between border-t border-white/10 pt-3">
-        <span className="text-mono-label text-white/40">{insight.readTime ? `${insight.readTime} read` : insight.category}</span>
+        <span className="text-mono-label text-white/55">{insight.readTime ? `${insight.readTime} read` : insight.category}</span>
         <Icon
           icon="solar:arrow-right-linear"
           className="w-4 h-4 text-white/40 group-hover:text-accent transition-colors"

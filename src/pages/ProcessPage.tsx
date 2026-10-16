@@ -42,7 +42,7 @@ export default function ProcessPage() {
                 {AI_DELIVERY_NOTES.map((note) => (
                   <li
                     key={note}
-                    className="flex items-start gap-2 text-white/70 text-sm font-light"
+                    className="flex items-start gap-2 text-white/70 text-sm font-normal"
                   >
                     <Icon
                       icon="solar:cpu-bolt-linear"

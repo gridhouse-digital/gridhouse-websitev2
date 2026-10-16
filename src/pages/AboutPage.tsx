@@ -33,7 +33,7 @@ export default function AboutPage() {
             label="MISSION / 01"
             title="Move teams from manual work to designed systems."
           />
-          <div className="text-white/70 text-body-md font-light flex flex-col gap-4">
+          <div className="text-white/70 text-body-md font-normal flex flex-col gap-4">
             <p>
               We work with healthcare agencies, professional services, and
               ops-heavy SMBs. The pattern is consistent: spreadsheets and
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 <h3 className="text-white text-base font-display font-light leading-snug">
                   {p.title}
                 </h3>
-                <p className="text-white/55 text-sm font-light">{p.body}</p>
+                <p className="text-white/55 text-sm font-normal">{p.body}</p>
               </article>
             ))}
           </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
                 Adeyemi Oyinlola
               </h3>
             </div>
-            <p className="text-white/65 text-body-md font-light max-w-2xl">
+            <p className="text-white/65 text-body-md font-normal max-w-2xl">
               Adeyemi is the founder of Gridhouse Digital. His work focuses on turning complex
               workflows into clean, usable digital systems — from compliance training platforms
               and internal dashboards to AI-powered assistants and automation infrastructure.
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 "Works with healthcare agencies, service businesses, and growth-focused teams",
                 "Combines product strategy, system design, web development, and automation architecture",
               ].map((point) => (
-                <li key={point} className="flex items-start gap-2 text-white/60 text-sm font-light">
+                <li key={point} className="flex items-start gap-2 text-white/60 text-sm font-normal">
                   <Icon icon="solar:arrow-right-linear" className="w-3 h-3 mt-1 text-accent shrink-0" aria-hidden />
                   <span>{point}</span>
                 </li>
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 href="https://www.linkedin.com/in/aoyinlola/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-mono-label text-white/50 hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 text-mono-label text-white/55 hover:text-accent transition-colors py-2 -my-2"
               >
                 <Icon icon="solar:linkedin-linear" className="w-4 h-4" aria-hidden />
                 linkedin.com/in/aoyinlola

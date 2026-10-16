@@ -1,0 +1,452 @@
+- generic [ref=f9e3]:
+  - banner [ref=f9e4]:
+    - link "Gridhouse Digital — home" [ref=f9e5] [cursor=pointer]:
+      - /url: /
+      - img "Gridhouse Digital" [ref=f9e6]
+    - navigation [ref=f9e7]:
+      - link "Home" [ref=f9e8] [cursor=pointer]:
+        - /url: /
+      - link "Work" [ref=f9e13] [cursor=pointer]:
+        - /url: /work
+      - link "Capabilities" [ref=f9e14] [cursor=pointer]:
+        - /url: /services
+      - link "Products" [ref=f9e15] [cursor=pointer]:
+        - /url: /products
+      - link "Company" [ref=f9e16] [cursor=pointer]:
+        - /url: /about
+    - generic [ref=f9e17]:
+      - link "Start a Project" [ref=f9e18] [cursor=pointer]:
+        - /url: /contact
+      - button "Switch to light theme" [ref=f9e19] [cursor=pointer]
+  - main [ref=f9e28]:
+    - generic [ref=f9e36]:
+      - generic [ref=f9e37]:
+        - generic [ref=f9e38]: AI-NATIVE OPERATIONAL SYSTEMS
+        - heading "Turn complex operations into systems that move." [level=1] [ref=f9e41]:
+          - generic [ref=f9e42]: Turn complex operations
+          - generic [ref=f9e43]: into systems
+          - generic [ref=f9e44]: that move.
+        - paragraph [ref=f9e45]: Gridhouse designs digital products, automation, and intelligent agents around the way regulated and workflow-heavy teams actually work — with deep experience in healthcare operations.
+        - generic [ref=f9e46]:
+          - link "Start a project" [ref=f9e47] [cursor=pointer]:
+            - /url: /contact
+          - link "View selected work" [ref=f9e51] [cursor=pointer]:
+            - /url: /work
+        - paragraph [ref=f9e53]: Product engineering · Workflow automation · Intelligent agents
+      - img "Credential intake and compliance routing, representative interface" [ref=f9e55]:
+        - generic [aria-hidden] [ref=f9e56]:
+          - generic [ref=f9e59]:
+            - generic [ref=f9e60]: Representative workflow
+            - generic [ref=f9e63]: Gridhouse / System view
+          - generic [ref=f9e64]:
+            - generic [ref=f9e65]:
+              - generic [ref=f9e66]:
+                - generic [ref=f9e67]:
+                  - paragraph [ref=f9e68]: AI + automation layer
+                  - heading [level=3] [ref=f9e69]: Credential intake and compliance routing
+                - generic [ref=f9e70]: Guardrails active
+              - list [ref=f9e71]:
+                - listitem [ref=f9e72]:
+                  - generic [ref=f9e73]: "01"
+                  - paragraph [ref=f9e80]: Intake
+                  - paragraph [ref=f9e81]: Credential received
+                - listitem [ref=f9e82]:
+                  - generic [ref=f9e83]: "02"
+                  - paragraph [ref=f9e90]: Retrieval
+                  - paragraph [ref=f9e91]: Policy and staff record matched
+                - listitem [ref=f9e92]:
+                  - generic [ref=f9e93]: "03"
+                  - paragraph [ref=f9e100]: Validation
+                  - paragraph [ref=f9e101]: Requirements checked
+                - listitem [ref=f9e102]:
+                  - generic [ref=f9e103]: "04"
+                  - paragraph [ref=f9e110]: Action
+                  - paragraph [ref=f9e111]: Record updated or escalated
+            - complementary [ref=f9e112]:
+              - generic [ref=f9e113]: Operational result
+              - list [ref=f9e114]:
+                - listitem [ref=f9e115]:
+                  - generic [ref=f9e120]: Audit trail written
+                - listitem [ref=f9e121]:
+                  - generic [ref=f9e126]: Expiry workflow scheduled
+                - listitem [ref=f9e127]:
+                  - generic [ref=f9e132]: Exception sent for review
+              - generic [ref=f9e133]:
+                - paragraph [ref=f9e134]: Human control
+                - paragraph [ref=f9e135]: Defined exceptions pause the workflow and route context to an operator.
+    - generic [ref=f9e136]:
+      - generic [ref=f9e137]:
+        - generic [ref=f9e139]: TECH STACK
+        - generic [ref=f9e140]: ":"
+      - generic [ref=f9e142]:
+        - generic [ref=f9e143]:
+          - generic [ref=f9e144]:
+            - generic [ref=f9e147]: React
+            - generic [ref=f9e148]: /
+          - generic [ref=f9e149]:
+            - generic [ref=f9e155]: Next.js
+            - generic [ref=f9e156]: /
+          - generic [ref=f9e157]:
+            - generic [ref=f9e161]: TypeScript
+            - generic [ref=f9e162]: /
+          - generic [ref=f9e163]:
+            - generic [ref=f9e166]: Tailwind CSS
+            - generic [ref=f9e167]: /
+          - generic [ref=f9e168]:
+            - generic [ref=f9e171]: Node.js
+            - generic [ref=f9e172]: /
+          - generic [ref=f9e173]:
+            - generic [ref=f9e179]: Postgres
+            - generic [ref=f9e180]: /
+          - generic [ref=f9e181]:
+            - generic [ref=f9e186]: Supabase
+            - generic [ref=f9e187]: /
+          - generic [ref=f9e188]:
+            - generic [ref=f9e191]: WordPress
+            - generic [ref=f9e192]: /
+          - generic [ref=f9e193]:
+            - generic [ref=f9e195]: InstaWP
+            - generic [ref=f9e196]: /
+          - generic [ref=f9e197]:
+            - generic [ref=f9e199]: LearnDash
+            - generic [ref=f9e200]: /
+          - generic [ref=f9e201]:
+            - generic [ref=f9e203]: JotForm
+            - generic [ref=f9e204]: /
+          - generic [ref=f9e205]:
+            - generic [ref=f9e208]: n8n
+            - generic [ref=f9e209]: /
+          - generic [ref=f9e210]:
+            - generic [ref=f9e213]: Make
+            - generic [ref=f9e214]: /
+          - generic [ref=f9e215]:
+            - generic [ref=f9e218]: Claude
+            - generic [ref=f9e219]: /
+          - generic [ref=f9e220]:
+            - generic [ref=f9e223]: OpenAI
+            - generic [ref=f9e224]: /
+          - generic [ref=f9e225]:
+            - generic [ref=f9e228]: GSAP
+            - generic [ref=f9e229]: /
+          - generic [ref=f9e230]:
+            - generic [ref=f9e233]: Stripe
+            - generic [ref=f9e234]: /
+          - generic [ref=f9e235]:
+            - generic [ref=f9e240]: Cloudflare
+            - generic [ref=f9e241]: /
+          - generic [ref=f9e242]:
+            - generic [ref=f9e245]: Vercel
+            - generic [ref=f9e246]: /
+          - generic [ref=f9e247]:
+            - generic [ref=f9e251]: AWS
+            - generic [ref=f9e252]: /
+          - generic [ref=f9e253]:
+            - generic [ref=f9e257]: GitHub Actions
+            - generic [ref=f9e258]: /
+        - generic [aria-hidden] [ref=f9e259]:
+          - generic [ref=f9e260]:
+            - generic [ref=f9e263]: React
+            - generic [ref=f9e264]: /
+          - generic [ref=f9e265]:
+            - generic [ref=f9e271]: Next.js
+            - generic [ref=f9e272]: /
+          - generic [ref=f9e273]:
+            - generic [ref=f9e277]: TypeScript
+            - generic [ref=f9e278]: /
+          - generic [ref=f9e279]:
+            - generic [ref=f9e282]: Tailwind CSS
+            - generic [ref=f9e283]: /
+          - generic [ref=f9e284]:
+            - generic [ref=f9e287]: Node.js
+            - generic [ref=f9e288]: /
+          - generic [ref=f9e289]:
+            - generic [ref=f9e295]: Postgres
+            - generic [ref=f9e296]: /
+          - generic [ref=f9e297]:
+            - generic [ref=f9e302]: Supabase
+            - generic [ref=f9e303]: /
+          - generic [ref=f9e304]:
+            - generic [ref=f9e307]: WordPress
+            - generic [ref=f9e308]: /
+          - generic [ref=f9e309]:
+            - generic [ref=f9e311]: InstaWP
+            - generic [ref=f9e312]: /
+          - generic [ref=f9e313]:
+            - generic [ref=f9e315]: LearnDash
+            - generic [ref=f9e316]: /
+          - generic [ref=f9e317]:
+            - generic [ref=f9e319]: JotForm
+            - generic [ref=f9e320]: /
+          - generic [ref=f9e321]:
+            - generic [ref=f9e324]: n8n
+            - generic [ref=f9e325]: /
+          - generic [ref=f9e326]:
+            - generic [ref=f9e329]: Make
+            - generic [ref=f9e330]: /
+          - generic [ref=f9e331]:
+            - generic [ref=f9e334]: Claude
+            - generic [ref=f9e335]: /
+          - generic [ref=f9e336]:
+            - generic [ref=f9e339]: OpenAI
+            - generic [ref=f9e340]: /
+          - generic [ref=f9e341]:
+            - generic [ref=f9e344]: GSAP
+            - generic [ref=f9e345]: /
+          - generic [ref=f9e346]:
+            - generic [ref=f9e349]: Stripe
+            - generic [ref=f9e350]: /
+          - generic [ref=f9e351]:
+            - generic [ref=f9e356]: Cloudflare
+            - generic [ref=f9e357]: /
+          - generic [ref=f9e358]:
+            - generic [ref=f9e361]: Vercel
+            - generic [ref=f9e362]: /
+          - generic [ref=f9e363]:
+            - generic [ref=f9e367]: AWS
+            - generic [ref=f9e368]: /
+          - generic [ref=f9e369]:
+            - generic [ref=f9e373]: GitHub Actions
+            - generic [ref=f9e374]: /
+    - generic [ref=f9e376]:
+      - generic [ref=f9e377]:
+        - generic [ref=f9e378]:
+          - generic [ref=f9e379]: CAPABILITIES / 01
+          - heading "One partner across product, automation, and AI." [level=2] [ref=f9e381]
+          - paragraph [ref=f9e382]: Start with one operational bottleneck or compose the full system — digital products, portals, automations, agents, and the infrastructure connecting them.
+        - link "View all capabilities" [ref=f9e383] [cursor=pointer]:
+          - /url: /services
+      - generic [ref=f9e386]:
+        - link "/ 01 AI-First Website Design & Development Marketing sites and brand presences engineered around the way modern teams actually work — content-driven, instrumented, and ready for AI-assisted operations from day one." [ref=f9e387] [cursor=pointer]:
+          - /url: /services
+          - generic [ref=f9e388]: / 01
+          - heading "AI-First Website Design & Development" [level=3] [ref=f9e389]
+          - paragraph [ref=f9e390]: Marketing sites and brand presences engineered around the way modern teams actually work — content-driven, instrumented, and ready for AI-assisted operations from day one.
+        - 'link "/ 02 Web Apps & Client Portals Operational platforms that move teams off spreadsheets and email chains: client portals, internal tools, dashboards, and bespoke web apps with auth, roles, and audit trails." [ref=f9e393] [cursor=pointer]':
+          - /url: /services
+          - generic [ref=f9e394]: / 02
+          - heading "Web Apps & Client Portals" [level=3] [ref=f9e395]
+          - paragraph [ref=f9e396]: "Operational platforms that move teams off spreadsheets and email chains: client portals, internal tools, dashboards, and bespoke web apps with auth, roles, and audit trails."
+        - link "/ 03 Workflow Automation Replace recurring manual work with reliable, observable automations that connect the tools you already use — intake, onboarding, billing, reporting, compliance." [ref=f9e399] [cursor=pointer]:
+          - /url: /services
+          - generic [ref=f9e400]: / 03
+          - heading "Workflow Automation" [level=3] [ref=f9e401]
+          - paragraph [ref=f9e402]: Replace recurring manual work with reliable, observable automations that connect the tools you already use — intake, onboarding, billing, reporting, compliance.
+        - link "/ 04 AI Agents & Intelligent Assistants Domain-specific AI agents that triage support, answer policy questions, run intake, and assist staff — with guardrails, retrieval, and human-in-the-loop where it matters." [ref=f9e405] [cursor=pointer]:
+          - /url: /services
+          - generic [ref=f9e406]: / 04
+          - heading "AI Agents & Intelligent Assistants" [level=3] [ref=f9e407]
+          - paragraph [ref=f9e408]: Domain-specific AI agents that triage support, answer policy questions, run intake, and assist staff — with guardrails, retrieval, and human-in-the-loop where it matters.
+    - generic [ref=f9e412]:
+      - generic [ref=f9e413]:
+        - generic [ref=f9e414]:
+          - generic [ref=f9e415]: SECTOR FOCUS / 02
+          - heading "Built for operators in five sectors." [level=2] [ref=f9e417]
+          - paragraph [ref=f9e418]: Healthcare is our deepest engagement; the rest follow the same operational pattern — replace manual work with designed systems.
+        - link "View all sectors" [ref=f9e419] [cursor=pointer]:
+          - /url: /industries
+      - generic [ref=f9e422]:
+        - link "SECTOR / 01 PRIORITY FOCUS Healthcare Agencies Operational software designed for staffing, home care, and training-heavy healthcare — HOMS, the Compliance Training Platform, AI agents for support and intake. HOMS Compliance Training Platform AI Agents Workflow Automation 4 pain points · 3 use cases" [ref=f9e423] [cursor=pointer]:
+          - /url: /industries
+          - generic [ref=f9e425]:
+            - generic [ref=f9e426]: SECTOR / 01
+            - generic [ref=f9e427]: PRIORITY FOCUS
+          - heading "Healthcare Agencies" [level=3] [ref=f9e428]
+          - paragraph [ref=f9e429]: Operational software designed for staffing, home care, and training-heavy healthcare — HOMS, the Compliance Training Platform, AI agents for support and intake.
+          - list [ref=f9e430]:
+            - listitem [ref=f9e431]: HOMS
+            - listitem [ref=f9e432]: Compliance Training Platform
+            - listitem [ref=f9e433]: AI Agents
+            - listitem [ref=f9e434]: Workflow Automation
+          - generic [ref=f9e435]: 4 pain points · 3 use cases
+        - generic [ref=f9e439]:
+          - link "SECTOR / 02 Education & Training AI-assisted course production, LMS configuration, and learner-side automations that move trainers from manual ops into a working platform. AI Video / Course Production · Web Apps" [ref=f9e440] [cursor=pointer]:
+            - /url: /industries
+            - generic [ref=f9e441]: SECTOR / 02
+            - heading "Education & Training" [level=3] [ref=f9e445]
+            - paragraph [ref=f9e446]: AI-assisted course production, LMS configuration, and learner-side automations that move trainers from manual ops into a working platform.
+            - generic [ref=f9e447]: AI Video / Course Production · Web Apps
+          - link "SECTOR / 03 Professional Services Client portals, intake automation, and reporting pipelines that turn ad-hoc service delivery into a tracked, repeatable system. Web Apps & Portals · Workflow Automation" [ref=f9e448] [cursor=pointer]:
+            - /url: /industries
+            - generic [ref=f9e449]: SECTOR / 03
+            - heading "Professional Services" [level=3] [ref=f9e453]
+            - paragraph [ref=f9e454]: Client portals, intake automation, and reporting pipelines that turn ad-hoc service delivery into a tracked, repeatable system.
+            - generic [ref=f9e455]: Web Apps & Portals · Workflow Automation
+          - link "SECTOR / 04 Small and Medium Businesses AI-first websites paired with operational pipelines, so the marketing presence and the back-office actually share a system. AI-First Websites · Workflow Automation" [ref=f9e456] [cursor=pointer]:
+            - /url: /industries
+            - generic [ref=f9e457]: SECTOR / 04
+            - heading "Small and Medium Businesses" [level=3] [ref=f9e461]
+            - paragraph [ref=f9e462]: AI-first websites paired with operational pipelines, so the marketing presence and the back-office actually share a system.
+            - generic [ref=f9e463]: AI-First Websites · Workflow Automation
+          - link "SECTOR / 05 Operations-Heavy Teams Dashboards, AI agents, and automations sized for operational teams — built to absorb repetitive load and surface what actually needs attention. AI Agents · Workflow Automation" [ref=f9e464] [cursor=pointer]:
+            - /url: /industries
+            - generic [ref=f9e465]: SECTOR / 05
+            - heading "Operations-Heavy Teams" [level=3] [ref=f9e469]
+            - paragraph [ref=f9e470]: Dashboards, AI agents, and automations sized for operational teams — built to absorb repetitive load and surface what actually needs attention.
+            - generic [ref=f9e471]: AI Agents · Workflow Automation
+    - generic [ref=f9e473]:
+      - generic [ref=f9e474]:
+        - generic [ref=f9e475]: SYSTEMS / 03
+        - heading "Internal products and platforms." [level=2] [ref=f9e477]
+        - paragraph [ref=f9e478]: HOMS, the Compliance Training Platform, AI agent systems, and an automation template library — the systems we ship and the ones powering our client work.
+      - generic [ref=f9e479]:
+        - article [ref=f9e480]:
+          - generic [ref=f9e481]:
+            - generic [ref=f9e482]:
+              - generic [ref=f9e483]: SYSTEM / 01
+              - generic [ref=f9e485]: "[HOMS]"
+            - generic [ref=f9e486]: Active development
+          - generic [ref=f9e490]:
+            - generic [ref=f9e491]:
+              - heading "Healthcare Operations Management System" [level=3] [ref=f9e492]
+              - paragraph [ref=f9e493]: A healthcare operations management system for staffing and care agencies — covering recruitment, credentialing, onboarding, training compliance, and future EVV support. Built to replace spreadsheets, email chains, and disconnected portals with one operating layer.
+              - generic [ref=f9e494]:
+                - generic [ref=f9e495]:
+                  - term [ref=f9e496]: Lifecycle
+                  - definition [ref=f9e497]: Development
+                - generic [ref=f9e498]:
+                  - term [ref=f9e499]: Code
+                  - definition [ref=f9e500]: HOMS
+            - generic [ref=f9e501]:
+              - generic [ref=f9e502]:
+                - text: Capabilities
+                - list [ref=f9e503]:
+                  - listitem [ref=f9e504]:
+                    - generic [ref=f9e509]: Recruitment + applicant pipeline
+                  - listitem [ref=f9e510]:
+                    - generic [ref=f9e515]: Credentialing + document expiry tracking
+                  - listitem [ref=f9e516]:
+                    - generic [ref=f9e521]: Structured onboarding workflows
+                  - listitem [ref=f9e522]:
+                    - generic [ref=f9e527]: Training compliance + audit reporting
+                  - listitem [ref=f9e528]:
+                    - generic [ref=f9e533]: Future EVV / scheduling module
+              - generic [ref=f9e534]:
+                - text: Integrations
+                - list [ref=f9e535]:
+                  - listitem [ref=f9e536]: JotForm intake
+                  - listitem [ref=f9e537]: LMS (LearnDash)
+                  - listitem [ref=f9e538]: Email / SMS notifications
+                  - listitem [ref=f9e539]: Document storage
+        - article [ref=f9e540]:
+          - generic [ref=f9e541]:
+            - generic [ref=f9e542]:
+              - generic [ref=f9e543]: SYSTEM / 02
+              - generic [ref=f9e545]: "[CPT]"
+            - generic [ref=f9e546]: Production engagement
+          - generic [ref=f9e550]:
+            - generic [ref=f9e551]:
+              - heading "Compliance Training Platform" [level=3] [ref=f9e552]
+              - paragraph [ref=f9e553]: A managed training and compliance platform for healthcare agencies, built on WordPress, LearnDash, JotForm, automation, and AI-assisted support. Replaces ad-hoc training spreadsheets with a tracked, auditable system staff and regulators can rely on.
+              - generic [ref=f9e554]:
+                - generic [ref=f9e555]:
+                  - term [ref=f9e556]: Lifecycle
+                  - definition [ref=f9e557]: Production
+                - generic [ref=f9e558]:
+                  - term [ref=f9e559]: Code
+                  - definition [ref=f9e560]: CPT
+            - generic [ref=f9e561]:
+              - generic [ref=f9e562]:
+                - text: Capabilities
+                - list [ref=f9e563]:
+                  - listitem [ref=f9e564]:
+                    - generic [ref=f9e569]: Course + curriculum management
+                  - listitem [ref=f9e570]:
+                    - generic [ref=f9e575]: Per-staff training records
+                  - listitem [ref=f9e576]:
+                    - generic [ref=f9e581]: Automated reminder + expiry workflows
+                  - listitem [ref=f9e582]:
+                    - generic [ref=f9e587]: AI-assisted support intake
+                  - listitem [ref=f9e588]:
+                    - generic [ref=f9e593]: Audit-ready reporting
+              - generic [ref=f9e594]:
+                - text: Integrations
+                - list [ref=f9e595]:
+                  - listitem [ref=f9e596]: WordPress
+                  - listitem [ref=f9e597]: LearnDash
+                  - listitem [ref=f9e598]: JotForm
+                  - listitem [ref=f9e599]: Email automation
+      - link "View all products" [ref=f9e600] [cursor=pointer]:
+        - /url: /products
+    - generic [ref=f9e604]:
+      - generic [ref=f9e605]:
+        - generic [ref=f9e606]: PROOF / 04
+        - generic [ref=f9e607]: VERIFIED WORKFLOW CHANGES
+      - generic [ref=f9e608]:
+        - generic [ref=f9e609]:
+          - generic [ref=f9e610]: HEALTHCARE
+          - heading "Spreadsheet credentialing replaced with auditable records" [level=3] [ref=f9e611]
+          - paragraph [ref=f9e612]: A home care agency moved staff training and credential tracking from email chains into a structured LMS with automated expiry reminders and AI-assisted intake.
+        - generic [ref=f9e613]:
+          - generic [ref=f9e614]: OPERATIONS
+          - heading "Tier-1 support handled by an AI agent before staff see it" [level=3] [ref=f9e615]
+          - paragraph [ref=f9e616]: A retrieval-augmented intake agent answers policy and how-to questions directly, escalating only real issues — with full conversational context attached.
+        - generic [ref=f9e617]:
+          - generic [ref=f9e618]: TRAINING
+          - heading "Hours of unused video turned into published courses" [level=3] [ref=f9e619]
+          - paragraph [ref=f9e620]: An AI-assisted production pipeline converted unedited lecture and SOP recordings into structured, captioned LMS courses in weeks rather than months.
+      - generic [ref=f9e621]:
+        - paragraph [ref=f9e622]: Client identities and sensitive metrics are withheld where required. The workflow changes shown reflect delivered or validated systems.
+        - link "View all engagements" [ref=f9e623] [cursor=pointer]:
+          - /url: /work
+    - generic [ref=f9e627]:
+      - generic [ref=f9e628]:
+        - generic [ref=f9e629]: START / 05
+        - heading "Bring us the operation that should work better." [level=2] [ref=f9e631]
+        - paragraph [ref=f9e632]: We map the workflow, identify where software, automation, and AI create leverage, then return with a structured next step.
+        - generic [ref=f9e633]:
+          - link "Start a project" [ref=f9e634] [cursor=pointer]:
+            - /url: /contact
+          - link "See our process" [ref=f9e638] [cursor=pointer]:
+            - /url: /process
+      - generic [ref=f9e640]:
+        - generic [ref=f9e641]: Accepting selected projects
+        - paragraph [ref=f9e645]: We take on engagements where we can ship a real system — not just a deliverable. Healthcare, regulated organizations, and workflow-heavy teams are the strongest fit.
+        - generic [ref=f9e646]:
+          - generic [ref=f9e647]: CHANNEL
+          - link "hello@gridhouse.digital" [ref=f9e648] [cursor=pointer]:
+            - /url: mailto:hello@gridhouse.digital
+  - contentinfo [ref=f9e649]:
+    - generic [ref=f9e650]:
+      - generic [ref=f9e651]:
+        - img "Gridhouse Digital" [ref=f9e652]
+        - paragraph [ref=f9e653]: AI-native operational systems for regulated and workflow-heavy businesses — digital products, automation, and intelligent agents designed around the work.
+        - generic [ref=f9e654]: CANADA / REMOTE — WORLDWIDE
+      - generic [ref=f9e655]:
+        - generic [ref=f9e656]: Platform
+        - list [ref=f9e657]:
+          - listitem [ref=f9e658]:
+            - link "Capabilities" [ref=f9e659] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=f9e660]:
+            - link "Products" [ref=f9e661] [cursor=pointer]:
+              - /url: /products
+          - listitem [ref=f9e662]:
+            - link "Work" [ref=f9e663] [cursor=pointer]:
+              - /url: /work
+      - generic [ref=f9e664]:
+        - generic [ref=f9e665]: Systems
+        - list [ref=f9e666]:
+          - listitem [ref=f9e667]:
+            - link "Industries" [ref=f9e668] [cursor=pointer]:
+              - /url: /industries
+          - listitem [ref=f9e669]:
+            - link "Process" [ref=f9e670] [cursor=pointer]:
+              - /url: /process
+          - listitem [ref=f9e671]:
+            - link "Insights" [ref=f9e672] [cursor=pointer]:
+              - /url: /insights
+          - listitem [ref=f9e673]:
+            - link "Company" [ref=f9e674] [cursor=pointer]:
+              - /url: /about
+      - generic [ref=f9e675]:
+        - generic [ref=f9e676]: Connect
+        - list [ref=f9e677]:
+          - listitem [ref=f9e678]:
+            - link "Contact" [ref=f9e679] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=f9e680]:
+            - link "hello@gridhouse.digital" [ref=f9e681] [cursor=pointer]:
+              - /url: mailto:hello@gridhouse.digital
+    - generic [ref=f9e682]:
+      - generic [ref=f9e683]: © 2026 GRIDHOUSE DIGITAL. ALL RIGHTS RESERVED.
+      - generic [ref=f9e684]: DESIGNED AND ENGINEERED BY GRIDHOUSE

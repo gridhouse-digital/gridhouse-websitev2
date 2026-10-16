@@ -47,7 +47,7 @@ export default function ServiceCard({ service }: Props) {
         </div>
 
         <div className="lg:col-span-5 flex flex-col gap-6">
-          <p className="text-white/50 text-body-md font-light">
+          <p className="text-white/50 text-body-md font-normal">
             {service.description}
           </p>
           <div className="flex flex-wrap items-center gap-4">
@@ -58,7 +58,7 @@ export default function ServiceCard({ service }: Props) {
             ) : (
               <Link
                 to="/contact"
-                className="text-mono-label text-white/40 hover:text-accent inline-flex items-center gap-1.5 transition-colors"
+                className="text-mono-label text-white/55 hover:text-accent inline-flex items-center gap-1.5 transition-colors py-2 -my-2"
               >
                 Request scope
                 <Icon icon="solar:arrow-right-linear" className="w-3 h-3" aria-hidden />
@@ -67,7 +67,7 @@ export default function ServiceCard({ service }: Props) {
             {service.learnMoreTo && (
               <Link
                 to={service.learnMoreTo}
-                className="text-mono-label text-accent/70 hover:text-accent inline-flex items-center gap-1.5 transition-colors"
+                className="text-mono-label text-accent hover:text-accent inline-flex items-center gap-1.5 transition-colors py-2 -my-2"
               >
                 See live systems
                 <Icon icon="solar:arrow-right-up-linear" className="w-3 h-3" aria-hidden />
@@ -97,10 +97,10 @@ function DetailBlock({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <span className="text-mono-label text-white/40">{label}</span>
+      <span className="text-mono-label text-white/55">{label}</span>
       <ul className="flex flex-col gap-1.5">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm font-light text-white/80">
+          <li key={item} className="flex items-start gap-2 text-sm font-normal text-white/80">
             <Icon
               icon={accent ? "solar:point-on-map-linear" : "solar:check-circle-linear"}
               className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${accent ? "text-accent" : "text-white/40"}`}

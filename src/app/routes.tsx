@@ -1,37 +1,33 @@
 import { createBrowserRouter } from "react-router-dom";
+import type { ComponentType } from "react";
 import ShellFrame from "../components/layout/ShellFrame";
-import HomePage from "../pages/HomePage";
-import AboutPage from "../pages/AboutPage";
-import ServicesPage from "../pages/ServicesPage";
-import ProductsPage from "../pages/ProductsPage";
-import ProductDetailPage from "../pages/ProductDetailPage";
-import IndustriesPage from "../pages/IndustriesPage";
-import WorkPage from "../pages/WorkPage";
-import ProcessPage from "../pages/ProcessPage";
-import InsightsPage from "../pages/InsightsPage";
-import InsightDetailPage from "../pages/InsightDetailPage";
-import CaseStudyDetailPage from "../pages/CaseStudyDetailPage";
-import ContactPage from "../pages/ContactPage";
-import NotFoundPage from "../pages/NotFoundPage";
+
+const page = (load: () => Promise<{ default: ComponentType }>) => async () => ({
+  Component: (await load()).default,
+});
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <ShellFrame />,
+    HydrateFallback: () => (
+      <div className="min-h-screen bg-ink" role="status" aria-label="Loading page" />
+    ),
     children: [
-      { index: true, element: <HomePage /> },
-      { path: "about", element: <AboutPage /> },
-      { path: "services", element: <ServicesPage /> },
-      { path: "products", element: <ProductsPage /> },
-      { path: "products/compliance-training", element: <ProductDetailPage /> },
-      { path: "industries", element: <IndustriesPage /> },
-      { path: "work", element: <WorkPage /> },
-      { path: "process", element: <ProcessPage /> },
-      { path: "insights", element: <InsightsPage /> },
-      { path: "insights/:slug", element: <InsightDetailPage /> },
-      { path: "work/:slug", element: <CaseStudyDetailPage /> },
-      { path: "contact", element: <ContactPage /> },
-      { path: "*", element: <NotFoundPage /> },
+      { index: true, lazy: page(() => import("../pages/HomePage")) },
+      { path: "about", lazy: page(() => import("../pages/AboutPage")) },
+      { path: "services", lazy: page(() => import("../pages/ServicesPage")) },
+      { path: "products", lazy: page(() => import("../pages/ProductsPage")) },
+      { path: "products/compliance-training", lazy: page(() => import("../pages/ProductDetailPage")) },
+      { path: "industries", lazy: page(() => import("../pages/IndustriesPage")) },
+      { path: "work", lazy: page(() => import("../pages/WorkPage")) },
+      { path: "process", lazy: page(() => import("../pages/ProcessPage")) },
+      { path: "insights", lazy: page(() => import("../pages/InsightsPage")) },
+      { path: "insights/:slug", lazy: page(() => import("../pages/InsightDetailPage")) },
+      { path: "work/:slug", lazy: page(() => import("../pages/CaseStudyDetailPage")) },
+      { path: "contact", lazy: page(() => import("../pages/ContactPage")) },
+      { path: "demo/hero-visuals", lazy: page(() => import("../pages/HeroVisualDemoPage")) },
+      { path: "*", lazy: page(() => import("../pages/NotFoundPage")) },
     ],
   },
 ]);

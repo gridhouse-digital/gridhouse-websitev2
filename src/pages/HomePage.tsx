@@ -6,8 +6,9 @@ import TerminalLabel from "../components/ui/TerminalLabel";
 import CTAButton from "../components/ui/CTAButton";
 import StatusBadge from "../components/ui/StatusBadge";
 import SectionHeader from "../components/ui/SectionHeader";
-import HeroTicker from "../components/visuals/HeroTicker";
 import HeroCityGrid from "../components/visuals/HeroCityGrid";
+import HeroTicker from "../components/visuals/HeroTicker";
+import ProductUiPreview from "../components/visuals/ProductUiPreview";
 import ProductSystemPanel from "../components/ui/ProductSystemPanel";
 import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
@@ -15,16 +16,27 @@ import { PRODUCTS } from "../data/products";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 const HERO_LINES = [
-  { text: "Build the systems", color: "text-white" },
-  { text: "that run your", color: "text-white/75" },
-  { text: "digital operations.", color: "text-accent" },
+  { text: "Turn complex operations", color: "text-white" },
+  { text: "into systems", color: "text-white/75" },
+  { text: "that move.", color: "text-accent" },
 ];
 
-const HERO_PILLS = [
-  "AI Websites",
-  "Automation Systems",
-  "Compliance Platforms",
-  "Agent Workflows",
+const BUYER_PROOF = [
+  {
+    label: "PRODUCTION ENGAGEMENT",
+    value: "Healthcare compliance platform",
+    to: "/work/healthcare-compliance-training-platform",
+  },
+  {
+    label: "OPERATIONAL CHANGE",
+    value: "Credential tracking moved from spreadsheets to auditable records",
+    to: "/work/healthcare-compliance-training-platform",
+  },
+  {
+    label: "DELIVERY MODEL",
+    value: "Eight-week minimum · two-week sprints · weekly reviews",
+    to: "/process",
+  },
 ];
 
 export default function HomePage() {
@@ -32,7 +44,7 @@ export default function HomePage() {
   const reduced = usePrefersReducedMotion();
   const subCopyRef = useRef<HTMLParagraphElement | null>(null);
   const ctaRef = useRef<HTMLDivElement | null>(null);
-  const pillsRef = useRef<HTMLUListElement | null>(null);
+  const visualRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (reduced || !heroRef.current) return;
@@ -52,7 +64,7 @@ export default function HomePage() {
       );
       const lineCount = lines.length;
       const afterDelay = 0.2 + lineCount * 0.12 + 1.2;
-      const fadeTargets = [subCopyRef.current, ctaRef.current, pillsRef.current].filter(Boolean);
+      const fadeTargets = [subCopyRef.current, ctaRef.current, visualRef.current].filter(Boolean);
       if (fadeTargets.length) {
         gsap.fromTo(
           fadeTargets,
@@ -73,60 +85,83 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO */}
-      <section
-        ref={heroRef}
-        className="theme-fixed-dark relative min-h-[92vh] flex flex-col border-b border-white/10 overflow-hidden"
-      >
-        <HeroCityGrid />
-        <div className="relative z-10 flex-1 flex flex-col justify-center px-4 sm:px-6 md:px-12 py-20 md:py-24">
-          <div className="w-full">
-            <div className="max-w-3xl">
-              <div className="flex items-center gap-4">
-                <TerminalLabel variant="accent">AI OPERATIONS STUDIO</TerminalLabel>
-                <span className="text-mono-label text-white/40">/ 089</span>
+      {/* HERO + proof strip fill the first screen */}
+      <div className="flex min-h-[calc(100svh-60px)] flex-col sm:min-h-[calc(100svh-72px)]">
+        <section
+          ref={heroRef}
+          className="relative flex flex-1 flex-col border-b border-white/10 overflow-hidden bg-ink"
+        >
+          <HeroCityGrid />
+          <div className="relative z-10 flex flex-1 items-center px-4 pt-[54px] pb-[82px] sm:px-6 sm:pt-[62px] md:px-12 md:pt-[62px] md:pb-[90px]">
+            <div className="mx-auto grid w-full max-w-rail items-center gap-8 lg:grid-cols-12 lg:gap-10 xl:gap-12">
+              <div className="lg:col-span-6 xl:col-span-5">
+                <div className="flex items-center gap-4">
+                  <TerminalLabel variant="accent">AI-NATIVE OPERATIONAL SYSTEMS</TerminalLabel>
+                </div>
+                <h1 className="font-display font-light text-white text-display-hero mt-5 mb-5">
+                  {HERO_LINES.map((line, i) => (
+                    <span
+                      key={i}
+                      data-hero-line
+                      className={`block ${line.color}`}
+                    >
+                      {line.text}
+                    </span>
+                  ))}
+                </h1>
+                <p ref={subCopyRef} className="text-white/60 text-body-md font-normal max-w-xl mb-6">
+                  Gridhouse designs digital products, automation, and intelligent
+                  agents around the way regulated and workflow-heavy teams
+                  actually work — with deep experience in healthcare operations.
+                </p>
+                <div ref={ctaRef} className="flex flex-wrap items-center gap-4 mb-5">
+                  <CTAButton variant="primary" to="/contact" icon="solar:arrow-right-linear">
+                    Start a project
+                  </CTAButton>
+                  <CTAButton variant="secondary" to="/work">
+                    View selected work
+                  </CTAButton>
+                </div>
+                <p className="border-t border-white/10 pt-4 text-mono-label text-white/55">
+                  Product engineering · Workflow automation · Intelligent agents
+                </p>
               </div>
-              <h1 className="font-display font-light text-white text-display-hero mt-10 mb-8">
-                {HERO_LINES.map((line, i) => (
-                  <span
-                    key={i}
-                    data-hero-line
-                    className={`block ${line.color}`}
-                  >
-                    {line.text}
-                  </span>
-                ))}
-              </h1>
-              <p ref={subCopyRef} className="text-white/60 text-body-md font-light max-w-xl mb-8">
-                Gridhouse Digital designs and builds AI-powered websites,
-                automation systems, compliance platforms, and operational tools
-                for healthcare teams and growing businesses.
-              </p>
-              <div ref={ctaRef} className="flex flex-wrap items-center gap-4 mb-10">
-                <CTAButton variant="primary" to="/contact" icon="solar:arrow-right-linear">
-                  Start a project
-                </CTAButton>
-                <CTAButton variant="secondary" to="/services">
-                  Explore services
-                </CTAButton>
+              <div ref={visualRef} className="lg:col-span-6 xl:col-span-7">
+                <ProductUiPreview variant="workflow" />
               </div>
-              <ul ref={pillsRef} className="flex flex-wrap gap-2 border-t border-white/10 pt-6">
-                {HERO_PILLS.map((pill) => (
-                  <li
-                    key={pill}
-                    className="text-mono-label text-white/65 border border-white/15 bg-white/[0.03] backdrop-blur-sm px-3 py-2 transition-all duration-300 hover:border-accent/60 hover:text-white hover:-translate-y-0.5"
-                  >
-                    {pill}
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
-        </div>
-        <div className="relative z-10">
-          <HeroTicker />
-        </div>
-      </section>
+        </section>
+
+        <section
+          aria-label="Delivery proof"
+          className="border-b border-white/10 bg-ink-deep"
+        >
+          <div className="mx-auto grid max-w-rail grid-cols-1 divide-y divide-white/10 md:grid-cols-3 md:divide-x md:divide-y-0">
+            {BUYER_PROOF.map((proof) => (
+              <Link
+                key={proof.label}
+                to={proof.to}
+                className="group flex min-h-[72px] items-center justify-between gap-4 px-4 py-3 transition-colors hover:bg-white/[0.025] sm:px-6"
+              >
+                <span className="flex min-w-0 flex-col gap-1">
+                  <span className="text-mono-label text-accent">
+                    {proof.label}
+                  </span>
+                  <span className="text-sm font-normal leading-snug text-white/75 transition-colors group-hover:text-white">
+                    {proof.value}
+                  </span>
+                </span>
+                <Icon
+                  icon="solar:arrow-right-linear"
+                  className="h-4 w-4 shrink-0 text-white/35 transition-colors group-hover:text-accent"
+                  aria-hidden
+                />
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
 
       {/* SERVICES PREVIEW */}
       <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20">
@@ -134,14 +169,14 @@ export default function HomePage() {
           <div className="flex items-end justify-between flex-wrap gap-4">
             <SectionHeader
               label="CAPABILITIES / 01"
-              title="Eight services. One operating system."
-              description="Each capability is a module. Pick one or compose the full system — sites, portals, automations, agents, infrastructure."
+              title="One partner across product, automation, and AI."
+              description="Start with one operational bottleneck or compose the full system — digital products, portals, automations, agents, and the infrastructure connecting them."
             />
             <Link
               to="/services"
-              className="text-mono-label text-white/60 hover:text-accent inline-flex items-center gap-2"
+              className="text-mono-label text-white/60 hover:text-accent inline-flex items-center gap-2 py-2 -my-2"
             >
-              View all 8 services <Icon icon="solar:arrow-right-linear" className="w-3.5 h-3.5" />
+              View all capabilities <Icon icon="solar:arrow-right-linear" className="w-3.5 h-3.5" />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5">
@@ -155,7 +190,7 @@ export default function HomePage() {
                 <h3 className="text-white text-base font-display font-light leading-snug">
                   {s.title}
                 </h3>
-                <p className="text-white/50 text-sm font-light">
+                <p className="text-white/50 text-sm font-normal">
                   {s.description}
                 </p>
                 <Icon icon="solar:arrow-right-linear" className="w-4 h-4 text-white/30 mt-auto" />
@@ -176,7 +211,7 @@ export default function HomePage() {
             />
             <Link
               to="/industries"
-              className="text-mono-label text-white/60 hover:text-accent inline-flex items-center gap-2"
+              className="text-mono-label text-white/60 hover:text-accent inline-flex items-center gap-2 py-2 -my-2"
             >
               View all sectors <Icon icon="solar:arrow-right-linear" className="w-3.5 h-3.5" />
             </Link>
@@ -202,7 +237,7 @@ export default function HomePage() {
                 <h3 className="text-white text-display-md font-display font-light leading-tight">
                   {i.name}
                 </h3>
-                <p className="text-white/65 text-body-md font-light max-w-md">
+                <p className="text-white/65 text-body-md font-normal max-w-md">
                   {i.gridhouseFit}
                 </p>
                 <ul className="flex flex-wrap gap-2 mt-2">
@@ -216,7 +251,7 @@ export default function HomePage() {
                   ))}
                 </ul>
                 <div className="mt-auto pt-6 flex items-center justify-between border-t border-white/10">
-                  <span className="text-mono-label text-white/40">
+                  <span className="text-mono-label text-white/55">
                     {i.painPoints.length} pain points · {i.useCases.length} use cases
                   </span>
                   <Icon
@@ -237,7 +272,7 @@ export default function HomePage() {
                   className="group bg-ink p-6 flex flex-col gap-3 min-h-[200px] transition-colors hover:bg-white/[0.03]"
                 >
                   <header className="flex items-center justify-between">
-                    <span className="text-mono-label text-white/40 group-hover:text-accent transition-colors">
+                    <span className="text-mono-label text-white/55 group-hover:text-accent transition-colors">
                       SECTOR / {i.id}
                     </span>
                     <Icon
@@ -249,10 +284,10 @@ export default function HomePage() {
                   <h3 className="text-white text-lg font-display font-light leading-snug">
                     {i.name}
                   </h3>
-                  <p className="text-white/55 text-sm font-light line-clamp-3">
+                  <p className="text-white/55 text-sm font-normal line-clamp-3">
                     {i.gridhouseFit}
                   </p>
-                  <span className="mt-auto text-mono-label text-white/35">
+                  <span className="mt-auto text-mono-label text-white/55">
                     {i.mappedOfferings.slice(0, 2).join(" · ")}
                   </span>
                 </Link>
@@ -277,9 +312,9 @@ export default function HomePage() {
           </div>
           <Link
             to="/products"
-            className="self-start text-mono-label text-white/60 hover:text-accent inline-flex items-center gap-2"
+            className="self-start text-mono-label text-white/60 hover:text-accent inline-flex items-center gap-2 py-2 -my-2"
           >
-            View product command center <Icon icon="solar:arrow-right-linear" className="w-3.5 h-3.5" />
+            View all products <Icon icon="solar:arrow-right-linear" className="w-3.5 h-3.5" />
           </Link>
         </div>
       </section>
@@ -288,8 +323,8 @@ export default function HomePage() {
       <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 border-t border-white/10 bg-ink-deep">
         <div className="max-w-rail mx-auto flex flex-col gap-8">
           <div className="flex items-center gap-3">
-            <span className="text-mono-label text-accent">OUTCOMES / 03</span>
-            <span className="text-mono-label text-white/30">WHAT ACTUALLY SHIPS</span>
+            <span className="text-mono-label text-accent">PROOF / 04</span>
+            <span className="text-mono-label text-white/55">VERIFIED WORKFLOW CHANGES</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
             {[
@@ -314,32 +349,36 @@ export default function HomePage() {
                 <h3 className="text-white text-display-sm font-display font-light leading-tight">
                   {o.headline}
                 </h3>
-                <p className="text-white/45 text-sm font-light leading-relaxed">{o.detail}</p>
+                <p className="text-white/70 text-body-sm font-normal leading-relaxed">{o.detail}</p>
               </div>
             ))}
           </div>
           <div className="flex items-center justify-between flex-wrap gap-4 pt-2 border-t border-white/10">
-            <p className="text-mono-label text-white/30">
-              * CLIENT DETAILS ANONYMISED. CASE-LEVEL SPECIFICS AVAILABLE UNDER NDA.
+            <p className="max-w-2xl text-xs font-normal leading-relaxed text-white/60">
+              Client identities and sensitive metrics are withheld where
+              required. The workflow changes shown reflect delivered or
+              validated systems.
             </p>
-            <Link to="/work" className="text-mono-label text-white/50 hover:text-accent inline-flex items-center gap-2 transition-colors">
+            <Link to="/work" className="text-mono-label text-white/55 hover:text-accent inline-flex items-center gap-2 transition-colors py-2 -my-2">
               View all engagements <Icon icon="solar:arrow-right-linear" className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
       </section>
 
+      <HeroTicker />
+
       {/* CTA SECTION */}
       <section className="relative px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-24 border-t border-white/10">
         <div className="max-w-rail mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
-            <TerminalLabel variant="accent">DEPLOY / 04</TerminalLabel>
+            <TerminalLabel variant="accent">START / 05</TerminalLabel>
             <h2 className="text-white text-display-md font-display font-light leading-tight">
-              Ready to move from scattered tools into a designed system?
+              Bring us the operation that should work better.
             </h2>
-            <p className="text-white/60 text-body-md font-light max-w-xl">
-              Tell us about the operation. We'll come back with a structured
-              scope and a delivery plan within 24 hours.
+            <p className="text-white/60 text-body-md font-normal max-w-xl">
+              We map the workflow, identify where software, automation, and AI
+              create leverage, then return with a structured next step.
             </p>
             <div className="flex flex-wrap gap-4 mt-2">
               <CTAButton variant="primary" to="/contact" icon="solar:arrow-right-linear">
@@ -352,14 +391,14 @@ export default function HomePage() {
           </div>
           <div className="border border-white/10 bg-white/[0.02] p-8 flex flex-col gap-4">
             <StatusBadge label="Accepting selected projects" />
-            <p className="text-white/70 text-body-md font-light">
+            <p className="text-white/70 text-body-md font-normal">
               We take on engagements where we can ship a real system — not just
-              a deliverable. Healthcare, ops-heavy SMBs, and AI-first operators
-              get priority.
+              a deliverable. Healthcare, regulated organizations, and
+              workflow-heavy teams are the strongest fit.
             </p>
             <div className="border-t border-white/10 pt-4 flex justify-between items-center text-mono-label">
-              <span className="text-white/40">CHANNEL</span>
-              <a className="text-accent" href="mailto:hello@gridhouse.digital">
+              <span className="text-white/60">CHANNEL</span>
+              <a className="text-accent py-2 -my-2" href="mailto:hello@gridhouse.digital">
                 hello@gridhouse.digital
               </a>
             </div>

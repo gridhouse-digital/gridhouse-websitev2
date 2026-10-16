@@ -29,7 +29,7 @@ export default function ProductsPage() {
   return (
     <>
       <PageHeader
-        label="SYSTEMS / COMMAND CENTER"
+        label="PRODUCTS"
         title="Platforms we build and deploy."
         description="HOMS for healthcare operations. The Compliance Training Platform for staffing and care agencies. AI agent systems and an automation template library — the systems we ship and the ones powering our client work."
         meta={[

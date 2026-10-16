@@ -1,0 +1,142 @@
+- generic [ref=f7e3]:
+  - banner [ref=f7e4]:
+    - link "Gridhouse Digital — home" [ref=f7e5] [cursor=pointer]:
+      - /url: /
+      - img "Gridhouse Digital" [ref=f7e6]
+    - navigation [ref=f7e7]:
+      - link "Home" [ref=f7e8] [cursor=pointer]:
+        - /url: /
+      - link "Work" [ref=f7e9] [cursor=pointer]:
+        - /url: /work
+      - link "Capabilities" [ref=f7e10] [cursor=pointer]:
+        - /url: /services
+      - link "Products" [ref=f7e11] [cursor=pointer]:
+        - /url: /products
+      - link "Company" [ref=f7e12] [cursor=pointer]:
+        - /url: /about
+    - generic [ref=f7e13]:
+      - link "Start a Project" [ref=f7e14] [cursor=pointer]:
+        - /url: /contact
+      - button "Switch to light theme" [ref=f7e15] [cursor=pointer]
+  - main [ref=f7e17]:
+    - generic [ref=f7e19]:
+      - generic [ref=f7e20]: INSIGHTS / RESEARCH
+      - heading "Notes on AI, operations, and digital systems." [level=1] [ref=f7e22]
+      - paragraph [ref=f7e23]: Working notes, drafts, and research threads from the build queue. Most pieces are unfinished — published when they're useful, not before.
+      - generic [ref=f7e24]:
+        - generic [ref=f7e25]:
+          - term [ref=f7e26]: Items
+          - definition [ref=f7e27]: "06"
+        - generic [ref=f7e28]:
+          - term [ref=f7e29]: Categories
+          - definition [ref=f7e30]: "08"
+        - generic [ref=f7e31]:
+          - term [ref=f7e32]: Cadence
+          - definition [ref=f7e33]: Irregular
+        - generic [ref=f7e34]:
+          - term [ref=f7e35]: Format
+          - definition [ref=f7e36]: Notes / drafts
+    - generic [ref=f7e38]:
+      - button "ALL" [ref=f7e39] [cursor=pointer]
+      - button "AI for SMBs" [ref=f7e40] [cursor=pointer]
+      - button "Healthcare Operations" [ref=f7e41] [cursor=pointer]
+      - button "Workflow Automation" [ref=f7e42] [cursor=pointer]
+      - button "Web Platforms" [ref=f7e43] [cursor=pointer]
+      - button "Design Systems" [ref=f7e44] [cursor=pointer]
+      - button "Compliance Training" [ref=f7e45] [cursor=pointer]
+      - button "AI Agents" [ref=f7e46] [cursor=pointer]
+      - button "Digital Transformation" [ref=f7e47] [cursor=pointer]
+    - generic [ref=f7e49]:
+      - article [ref=f7e50]:
+        - generic [ref=f7e51]:
+          - generic [ref=f7e52]: AI for SMBs
+          - generic [ref=f7e53]: DRAFT
+        - heading "Why small businesses need operational systems, not just websites" [level=3] [ref=f7e54]
+        - paragraph [ref=f7e55]: A modern site is the surface. The system is what determines whether the business actually scales when traffic shows up.
+        - generic [ref=f7e56]: 6 min read
+      - article [ref=f7e58]:
+        - generic [ref=f7e59]:
+          - generic [ref=f7e60]: Healthcare Operations
+          - generic [ref=f7e61]: DRAFT
+        - heading "How healthcare agencies can modernize compliance training" [level=3] [ref=f7e62]
+        - paragraph [ref=f7e63]: Spreadsheets are an audit risk. A managed training and credentialing platform replaces them — without becoming a multi-year SaaS migration.
+        - generic [ref=f7e64]: 8 min read
+      - article [ref=f7e66]:
+        - generic [ref=f7e67]:
+          - generic [ref=f7e68]: AI Agents
+          - generic [ref=f7e69]: RESEARCH
+        - heading "AI agents as support triage systems" [level=3] [ref=f7e70]
+        - paragraph [ref=f7e71]: Most support load is repetitive. An agent on the front of the queue answers what it can and routes the rest with full context.
+        - generic [ref=f7e72]: 5 min read
+      - article [ref=f7e74]:
+        - generic [ref=f7e75]:
+          - generic [ref=f7e76]: Design Systems
+          - generic [ref=f7e77]: DRAFT
+        - heading "Design systems for AI-first websites" [level=3] [ref=f7e78]
+        - paragraph [ref=f7e79]: AI-first sites need stronger systems, not weaker ones. Tokens and components are how you keep generated work coherent.
+        - generic [ref=f7e80]: 7 min read
+      - article [ref=f7e82]:
+        - generic [ref=f7e83]:
+          - generic [ref=f7e84]: Workflow Automation
+          - generic [ref=f7e85]: RESEARCH
+        - heading "From manual onboarding to automated workflows" [level=3] [ref=f7e86]
+        - paragraph [ref=f7e87]: Onboarding is one of the highest-return surfaces to automate. We map the steps and replace each one that should never have been manual.
+        - generic [ref=f7e88]: 6 min read
+      - article [ref=f7e90]:
+        - generic [ref=f7e91]:
+          - generic [ref=f7e92]: Compliance Training
+          - generic [ref=f7e93]: RESEARCH
+        - heading "What makes a web platform compliance-ready" [level=3] [ref=f7e94]
+        - paragraph [ref=f7e95]: Audit-readiness, access control, retention, and observable workflows — none of which are afterthoughts.
+        - generic [ref=f7e96]: 9 min read
+    - generic [ref=f7e99]:
+      - generic [ref=f7e100]:
+        - heading "Want to talk through any of these topics?" [level=2] [ref=f7e101]
+        - paragraph [ref=f7e102]: Most of what we write about, we build. If a piece connects to a problem you're working on, let's talk.
+      - link "Start a conversation" [ref=f7e104] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f7e106]:
+    - generic [ref=f7e107]:
+      - generic [ref=f7e108]:
+        - img "Gridhouse Digital" [ref=f7e109]
+        - paragraph [ref=f7e110]: AI-native operational systems for regulated and workflow-heavy businesses — digital products, automation, and intelligent agents designed around the work.
+        - generic [ref=f7e111]: CANADA / REMOTE — WORLDWIDE
+      - generic [ref=f7e112]:
+        - generic [ref=f7e113]: Platform
+        - list [ref=f7e114]:
+          - listitem [ref=f7e115]:
+            - link "Capabilities" [ref=f7e116] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=f7e117]:
+            - link "Products" [ref=f7e118] [cursor=pointer]:
+              - /url: /products
+          - listitem [ref=f7e119]:
+            - link "Work" [ref=f7e120] [cursor=pointer]:
+              - /url: /work
+      - generic [ref=f7e121]:
+        - generic [ref=f7e122]: Systems
+        - list [ref=f7e123]:
+          - listitem [ref=f7e124]:
+            - link "Industries" [ref=f7e125] [cursor=pointer]:
+              - /url: /industries
+          - listitem [ref=f7e126]:
+            - link "Process" [ref=f7e127] [cursor=pointer]:
+              - /url: /process
+          - listitem [ref=f7e128]:
+            - link "Insights" [ref=f7e129] [cursor=pointer]:
+              - /url: /insights
+          - listitem [ref=f7e130]:
+            - link "Company" [ref=f7e131] [cursor=pointer]:
+              - /url: /about
+      - generic [ref=f7e132]:
+        - generic [ref=f7e133]: Connect
+        - list [ref=f7e134]:
+          - listitem [ref=f7e135]:
+            - link "Contact" [ref=f7e136] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=f7e137]:
+            - link "hello@gridhouse.digital" [ref=f7e138] [cursor=pointer]:
+              - /url: mailto:hello@gridhouse.digital
+    - generic [ref=f7e139]:
+      - generic [ref=f7e140]: © 2026 GRIDHOUSE DIGITAL. ALL RIGHTS RESERVED.
+      - generic [ref=f7e141]: DESIGNED AND ENGINEERED BY GRIDHOUSE

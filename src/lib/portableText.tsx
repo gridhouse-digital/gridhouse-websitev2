@@ -3,7 +3,7 @@ import type { PortableTextComponents } from "@portabletext/react";
 export const portableTextComponents: PortableTextComponents = {
   block: {
     normal: ({ children }) => (
-      <p className="text-white/75 text-body-md font-light leading-relaxed mb-6">{children}</p>
+      <p className="text-white/75 text-body-md font-normal leading-relaxed mb-6">{children}</p>
     ),
     h2: ({ children }) => (
       <h2 className="font-display font-normal text-white text-display-sm leading-tight mt-12 mb-4">
@@ -59,13 +59,13 @@ export const portableTextComponents: PortableTextComponents = {
   },
   listItem: {
     bullet: ({ children }) => (
-      <li className="text-white/75 font-light text-body-md flex gap-3 items-start">
+      <li className="text-white/75 font-normal text-body-md flex gap-3 items-start">
         <span className="text-accent shrink-0 mt-[0.35em] leading-none">—</span>
         <span>{children}</span>
       </li>
     ),
     number: ({ children }) => (
-      <li className="text-white/75 font-light text-body-md pl-1">{children}</li>
+      <li className="text-white/75 font-normal text-body-md pl-1">{children}</li>
     ),
   },
   types: {
@@ -77,7 +77,7 @@ export const portableTextComponents: PortableTextComponents = {
           className="w-full border border-white/10"
         />
         {value?.caption && (
-          <figcaption className="mt-3 text-center text-mono-label text-white/40">
+          <figcaption className="mt-3 text-center text-mono-label text-white/55">
             {value.caption}
           </figcaption>
         )}
@@ -92,7 +92,7 @@ export const portableTextComponents: PortableTextComponents = {
           className="w-full border border-white/10 bg-black"
         />
         {value?.caption && (
-          <figcaption className="mt-3 text-center text-mono-label text-white/40">
+          <figcaption className="mt-3 text-center text-mono-label text-white/55">
             {value.caption}
           </figcaption>
         )}

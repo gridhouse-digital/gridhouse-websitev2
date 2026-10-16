@@ -1,0 +1,140 @@
+- generic [ref=f4e3]:
+  - banner [ref=f4e4]:
+    - link "Gridhouse Digital — home" [ref=f4e5] [cursor=pointer]:
+      - /url: /
+      - img "Gridhouse Digital" [ref=f4e6]
+    - navigation [ref=f4e7]:
+      - link "Home" [ref=f4e8] [cursor=pointer]:
+        - /url: /
+      - link "Work" [ref=f4e9] [cursor=pointer]:
+        - /url: /work
+      - link "Capabilities" [ref=f4e10] [cursor=pointer]:
+        - /url: /services
+      - link "Products" [ref=f4e11] [cursor=pointer]:
+        - /url: /products
+      - link "Company" [ref=f4e12] [cursor=pointer]:
+        - /url: /about
+    - generic [ref=f4e14]:
+      - link "Start a Project" [ref=f4e15] [cursor=pointer]:
+        - /url: /contact
+      - button "Switch to light theme" [ref=f4e16] [cursor=pointer]
+  - main [ref=f4e18]:
+    - generic [ref=f4e20]:
+      - generic [ref=f4e21]: AGENCY / PROFILE
+      - heading "A digital studio for operators." [level=1] [ref=f4e23]
+      - paragraph [ref=f4e24]: "Gridhouse Digital helps businesses move from scattered tools and manual workflows into designed digital systems: websites, portals, automations, AI agents, and operational platforms built to scale."
+      - generic [ref=f4e25]:
+        - generic [ref=f4e26]:
+          - term [ref=f4e27]: Founded
+          - definition [ref=f4e28]: "2024"
+        - generic [ref=f4e29]:
+          - term [ref=f4e30]: Base
+          - definition [ref=f4e31]: Canada / Remote
+        - generic [ref=f4e32]:
+          - term [ref=f4e33]: Focus
+          - definition [ref=f4e34]: Healthcare / SMB
+        - generic [ref=f4e35]:
+          - term [ref=f4e36]: Status
+          - definition [ref=f4e37]: Accepting projects
+    - generic [ref=f4e39]:
+      - generic [ref=f4e40]:
+        - generic [ref=f4e41]: MISSION / 01
+        - heading "Move teams from manual work to designed systems." [level=2] [ref=f4e43]
+      - generic [ref=f4e44]:
+        - paragraph [ref=f4e45]: "We work with healthcare agencies, professional services, and ops-heavy SMBs. The pattern is consistent: spreadsheets and email chains where there should be platforms; ad-hoc compliance where there should be auditable systems; AI tools deployed as novelties when they could be quietly absorbing the operational load."
+        - paragraph [ref=f4e46]: Gridhouse exists to engineer that transition — and to do it quickly enough that the operator can feel the difference within a quarter, not a year.
+    - generic [ref=f4e48]:
+      - generic [ref=f4e49]:
+        - generic [ref=f4e50]: OPERATING PRINCIPLES / 02
+        - heading "Five principles, applied every engagement." [level=2] [ref=f4e52]
+      - generic [ref=f4e53]:
+        - article [ref=f4e54]:
+          - generic [ref=f4e55]: / 01
+          - heading "System before decoration" [level=3] [ref=f4e57]
+          - paragraph [ref=f4e58]: Architecture and operating logic are decided first — surfaces follow the system, not the other way around.
+        - article [ref=f4e59]:
+          - generic [ref=f4e60]: / 02
+          - heading "Automation before repetition" [level=3] [ref=f4e62]
+          - paragraph [ref=f4e63]: If the same step happens twice, it becomes a candidate for an automation, an agent, or a deletion.
+        - article [ref=f4e64]:
+          - generic [ref=f4e65]: / 03
+          - heading "Clarity before complexity" [level=3] [ref=f4e67]
+          - paragraph [ref=f4e68]: Operators don't have time for clever; they need legible interfaces and predictable behavior.
+        - article [ref=f4e69]:
+          - generic [ref=f4e70]: / 04
+          - heading "Compliance-aware by default" [level=3] [ref=f4e72]
+          - paragraph [ref=f4e73]: Healthcare clients live and die on audit readiness. Access, retention, logging — never an afterthought.
+        - article [ref=f4e74]:
+          - generic [ref=f4e75]: / 05
+          - heading "Build for operators, not just visitors" [level=3] [ref=f4e77]
+          - paragraph [ref=f4e78]: Marketing surfaces matter; operating systems matter more. We build for the people running the work.
+    - generic [ref=f4e80]:
+      - generic [ref=f4e82]:
+        - generic [ref=f4e83]: LEADERSHIP / 03
+        - heading "Founder profile" [level=2] [ref=f4e85]
+      - article [ref=f4e86]:
+        - generic [ref=f4e87]:
+          - generic [ref=f4e88]: FOUNDER / GRIDHOUSE DIGITAL
+          - heading "Adeyemi Oyinlola" [level=3] [ref=f4e89]
+        - paragraph [ref=f4e90]: Adeyemi is the founder of Gridhouse Digital. His work focuses on turning complex workflows into clean, usable digital systems — from compliance training platforms and internal dashboards to AI-powered assistants and automation infrastructure. He helps organizations modernize their operations without adding unnecessary technical complexity.
+        - list [ref=f4e91]:
+          - listitem [ref=f4e92]:
+            - generic [ref=f4e93]: Builds SaaS platforms, internal applications, AI assistants, and workflow automation systems — as well as the websites that front them
+          - listitem [ref=f4e94]:
+            - generic [ref=f4e95]: Healthcare compliance and training platforms — WordPress, LearnDash, JotForm, Supabase, and custom integrations
+          - listitem [ref=f4e96]:
+            - generic [ref=f4e97]: Works with healthcare agencies, service businesses, and growth-focused teams
+          - listitem [ref=f4e98]:
+            - generic [ref=f4e99]: Combines product strategy, system design, web development, and automation architecture
+        - link "linkedin.com/in/aoyinlola" [ref=f4e101] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/aoyinlola/
+    - generic [ref=f4e103]:
+      - generic [ref=f4e104]: CONTACT / 04
+      - heading "If the operation is ready, the system can be live within a quarter." [level=2] [ref=f4e106]
+      - link "Start a project" [ref=f4e107] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=f4e109]:
+    - generic [ref=f4e110]:
+      - generic [ref=f4e111]:
+        - img "Gridhouse Digital" [ref=f4e112]
+        - paragraph [ref=f4e113]: AI-native operational systems for regulated and workflow-heavy businesses — digital products, automation, and intelligent agents designed around the work.
+        - generic [ref=f4e114]: CANADA / REMOTE — WORLDWIDE
+      - generic [ref=f4e115]:
+        - generic [ref=f4e116]: Platform
+        - list [ref=f4e117]:
+          - listitem [ref=f4e118]:
+            - link "Capabilities" [ref=f4e119] [cursor=pointer]:
+              - /url: /services
+          - listitem [ref=f4e120]:
+            - link "Products" [ref=f4e121] [cursor=pointer]:
+              - /url: /products
+          - listitem [ref=f4e122]:
+            - link "Work" [ref=f4e123] [cursor=pointer]:
+              - /url: /work
+      - generic [ref=f4e124]:
+        - generic [ref=f4e125]: Systems
+        - list [ref=f4e126]:
+          - listitem [ref=f4e127]:
+            - link "Industries" [ref=f4e128] [cursor=pointer]:
+              - /url: /industries
+          - listitem [ref=f4e129]:
+            - link "Process" [ref=f4e130] [cursor=pointer]:
+              - /url: /process
+          - listitem [ref=f4e131]:
+            - link "Insights" [ref=f4e132] [cursor=pointer]:
+              - /url: /insights
+          - listitem [ref=f4e133]:
+            - link "Company" [ref=f4e134] [cursor=pointer]:
+              - /url: /about
+      - generic [ref=f4e135]:
+        - generic [ref=f4e136]: Connect
+        - list [ref=f4e137]:
+          - listitem [ref=f4e138]:
+            - link "Contact" [ref=f4e139] [cursor=pointer]:
+              - /url: /contact
+          - listitem [ref=f4e140]:
+            - link "hello@gridhouse.digital" [ref=f4e141] [cursor=pointer]:
+              - /url: mailto:hello@gridhouse.digital
+    - generic [ref=f4e142]:
+      - generic [ref=f4e143]: © 2026 GRIDHOUSE DIGITAL. ALL RIGHTS RESERVED.
+      - generic [ref=f4e144]: DESIGNED AND ENGINEERED BY GRIDHOUSE

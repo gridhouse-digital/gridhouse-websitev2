@@ -1,9 +1,7 @@
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import type { CaseStudy } from "../../data/caseStudies";
 import StatusBadge from "./StatusBadge";
-import { useMagneticTilt } from "../../hooks/useMagneticTilt";
 import { urlFor } from "../../lib/sanity";
 import type { SanityImageSource } from "@sanity/image-url";
 
@@ -12,17 +10,16 @@ interface Props {
 }
 
 export default function CaseStudyCard({ caseStudy }: Props) {
-  const ref = useRef<HTMLElement>(null);
-  useMagneticTilt(ref);
-
   const className =
-    "glow-surface magnetic-card group flex flex-col border border-accent/[0.15] bg-white/[0.02] bg-gradient-to-br from-accent/[0.06] to-transparent backdrop-blur-sm transition-all duration-400 hover:border-accent/[0.4] hover:shadow-glow-accent-subtle";
+    "glass-surface glow-surface group flex flex-col border border-accent/[0.15] bg-gradient-to-br from-accent/[0.06] to-transparent transition-all duration-400 hover:border-accent/[0.4] hover:shadow-glow-accent-subtle";
 
   const inner = (
     <>
       <div className="flex items-center justify-between px-3 py-2 border-b border-white/10 bg-ink-deep">
         <span className="text-mono-label text-accent">{caseStudy.kind.toUpperCase()}</span>
-        <span className="text-mono-label text-white/40">/ {caseStudy.id}</span>
+        <span className="text-mono-label text-white/55">
+          {caseStudy.displayId ? `/ ${caseStudy.displayId}` : "CASE STUDY"}
+        </span>
       </div>
       <div className="aspect-video bg-ink-deep bg-tech-grid relative flex items-center justify-center border-b border-white/10 overflow-hidden">
         {caseStudy.coverImage ? (
@@ -32,32 +29,43 @@ export default function CaseStudyCard({ caseStudy }: Props) {
             className="absolute inset-0 w-full h-full object-cover"
           />
         ) : (
-          <Icon
-            icon="solar:code-square-linear"
-            className="w-12 h-12 text-white/15"
-            aria-hidden
-          />
+          <div className="grid w-full max-w-sm grid-cols-3 gap-px bg-white/10 p-px">
+            {["INPUT", "SYSTEM", "OUTCOME"].map((stage, index) => (
+              <div key={stage} className="bg-ink-deep px-2 py-5 text-center">
+                <span className="text-mono-label text-white/55">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="mt-2 text-mono-label text-white/55">{stage}</p>
+              </div>
+            ))}
+          </div>
         )}
       </div>
       <div className="p-6 flex flex-col gap-4 flex-1">
         {caseStudy.clientLabel && (
-          <span className="text-mono-label text-white/30">{caseStudy.clientLabel.toUpperCase()}</span>
+          <span className="text-mono-label text-white/55">{caseStudy.clientLabel.toUpperCase()}</span>
         )}
         <h3 className="text-white text-lg font-display font-light leading-snug">
           {caseStudy.title}
         </h3>
-        <p className="text-white/50 text-sm font-light">{caseStudy.problem}</p>
+        <p className="text-white/70 text-body-sm font-normal">{caseStudy.problem}</p>
+        {caseStudy.evidenceBasis && (
+          <p className="border-l border-accent/40 pl-3 text-xs font-normal text-white/60">
+            <span className="block text-mono-label text-accent">PROOF BASIS</span>
+            {caseStudy.evidenceBasis}
+          </p>
+        )}
         {caseStudy.outcomes && caseStudy.outcomes.length > 0 ? (
           <ul className="flex flex-col gap-1.5">
             {caseStudy.outcomes.map((o) => (
-              <li key={o} className="flex items-start gap-2 text-sm font-light text-white/65">
+              <li key={o} className="flex items-start gap-2 text-sm font-normal text-white/65">
                 <Icon icon="solar:check-circle-linear" className="w-3.5 h-3.5 mt-0.5 text-accent shrink-0" aria-hidden />
                 <span>{o}</span>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="text-white/50 text-sm font-light border-l border-accent/40 pl-3">
+          <p className="text-white/70 text-body-sm font-normal border-l border-accent/40 pl-3">
             {caseStudy.solution}
           </p>
         )}
@@ -87,15 +95,14 @@ export default function CaseStudyCard({ caseStudy }: Props) {
 
   if (caseStudy.slug) {
     return (
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      <Link to={`/work/${caseStudy.slug}`} ref={ref as any} className={className}>
+      <Link to={`/work/${caseStudy.slug}`} className={className}>
         {inner}
       </Link>
     );
   }
 
   return (
-    <article ref={ref} className={className}>
+    <article className={className}>
       {inner}
     </article>
   );

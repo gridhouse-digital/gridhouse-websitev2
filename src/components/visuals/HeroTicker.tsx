@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Icon } from "@iconify/react";
-import { TECH_STACK } from "../../data/heroTicker";
+import { HOMEPAGE_TECH_STACK } from "../../data/heroTicker";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 
 export default function HeroTicker() {
@@ -29,8 +29,8 @@ export default function HeroTicker() {
       {/* Sticky anchored label */}
       <div className="shrink-0 flex items-center gap-2 px-4 border-r border-white/10 bg-ink-deep z-20">
         <span className="w-1.5 h-1.5 bg-accent" />
-        <span className="text-mono-label text-accent">TECH STACK</span>
-        <span className="text-mono-label text-white/30">:</span>
+        <span className="text-mono-label text-accent">SELECTED STACK</span>
+        <span className="text-mono-label text-white/55">:</span>
       </div>
 
       {/* Scrolling marquee */}
@@ -42,12 +42,25 @@ export default function HeroTicker() {
           {/* Two identical copies for seamless -50% wrap */}
           {[0, 1].map((copy) => (
             <div key={copy} className="flex items-center shrink-0" aria-hidden={copy === 1}>
-              {TECH_STACK.map((item) => (
+              {HOMEPAGE_TECH_STACK.map((item) => (
                 <span
                   key={`${copy}-${item.name}`}
                   className="inline-flex items-center gap-2 px-6 text-mono-label text-white/70 shrink-0"
                 >
-                  <Icon icon={item.icon} className="w-4 h-4 shrink-0" aria-hidden />
+                  {"src" in item ? (
+                    <img
+                      src={item.src}
+                      alt=""
+                      width={16}
+                      height={16}
+                      className="w-4 h-4 shrink-0 object-contain"
+                      decoding="async"
+                      draggable={false}
+                      aria-hidden
+                    />
+                  ) : (
+                    <Icon icon={item.icon} className="w-4 h-4 shrink-0" aria-hidden />
+                  )}
                   <span>{item.name}</span>
                   <span className="text-white/20 ml-4">/</span>
                 </span>

@@ -9,7 +9,7 @@ export default function StatBlock({ value, label }: Props) {
       <span className="font-display font-light text-display-sm text-white leading-none tracking-display">
         {value}
       </span>
-      <span className="text-mono-label text-white/30">{label}</span>
+      <span className="text-mono-label text-white/55">{label}</span>
     </div>
   );
 }

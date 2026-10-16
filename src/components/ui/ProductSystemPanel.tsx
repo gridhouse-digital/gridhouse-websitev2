@@ -17,11 +17,11 @@ const LIFECYCLE_VARIANT: Record<Product["lifecycle"], "active" | "muted" | "acce
 
 export default function ProductSystemPanel({ product, cta }: Props) {
   return (
-    <article className="glow-surface border border-accent/[0.15] bg-white/[0.02] bg-gradient-to-br from-accent/[0.06] to-transparent backdrop-blur-sm transition-all duration-400 hover:border-accent/[0.35] hover:shadow-glow-accent-subtle">
+    <article className="glass-surface glow-surface border border-accent/[0.15] bg-gradient-to-br from-accent/[0.06] to-transparent transition-all duration-400 hover:border-accent/[0.35] hover:shadow-glow-accent-subtle">
       <header className="flex items-center justify-between border-b border-white/10 px-6 py-3">
         <div className="flex items-center gap-3">
           <TerminalLabel variant="accent">SYSTEM / {product.id}</TerminalLabel>
-          <span className="text-mono-label text-white/40">[{product.code}]</span>
+          <span className="text-mono-label text-white/55">[{product.code}]</span>
         </div>
         <StatusBadge label={product.status} variant={LIFECYCLE_VARIANT[product.lifecycle]} />
       </header>
@@ -30,17 +30,17 @@ export default function ProductSystemPanel({ product, cta }: Props) {
           <h3 className="text-white text-display-sm font-display font-light leading-tight">
             {product.name}
           </h3>
-          <p className="text-white/50 text-body-md font-light">
+          <p className="text-white/50 text-body-md font-normal">
             {product.description}
           </p>
           <dl className="grid grid-cols-2 gap-4 mt-2 border-t border-white/10 pt-4">
             <div>
-              <dt className="text-mono-label text-white/40">Lifecycle</dt>
-              <dd className="text-white text-sm font-light">{product.lifecycle}</dd>
+              <dt className="text-mono-label text-white/55">Lifecycle</dt>
+              <dd className="text-white text-sm font-normal">{product.lifecycle}</dd>
             </div>
             <div>
-              <dt className="text-mono-label text-white/40">Code</dt>
-              <dd className="text-white text-sm font-light">{product.code}</dd>
+              <dt className="text-mono-label text-white/55">Code</dt>
+              <dd className="text-white text-sm font-normal">{product.code}</dd>
             </div>
           </dl>
         </div>
@@ -64,7 +64,7 @@ export default function ProductSystemPanel({ product, cta }: Props) {
             </ul>
           </div>
           <div>
-            <span className="text-mono-label text-white/40">Integrations</span>
+            <span className="text-mono-label text-white/55">Integrations</span>
             <ul className="mt-3 flex flex-wrap gap-2">
               {product.integrations.map((i) => (
                 <li
@@ -80,10 +80,10 @@ export default function ProductSystemPanel({ product, cta }: Props) {
       </div>
       {cta && (
         <div className="border-t border-white/10 px-6 py-4 flex items-center justify-between">
-          <span className="text-mono-label text-white/30">INTERESTED?</span>
+          <span className="text-mono-label text-white/55">INTERESTED?</span>
           <Link
             to={cta.to}
-            className="text-mono-label text-accent hover:text-accent/80 inline-flex items-center gap-1.5 transition-colors"
+            className="text-mono-label text-accent hover:text-accent/80 inline-flex items-center gap-1.5 transition-colors py-2 -my-2"
           >
             {cta.label}
             <Icon icon="solar:arrow-right-linear" className="w-3 h-3" aria-hidden />
