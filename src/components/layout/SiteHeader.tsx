@@ -86,7 +86,7 @@ export default function SiteHeader() {
               <NavLink
                 key={link.to}
                 to={link.to}
-                end={link.to === "/"}
+                end={link.end}
                 className={({ isActive }) =>
                   `relative text-nav-label py-2.5 transition-colors duration-300 ${
                     isActive

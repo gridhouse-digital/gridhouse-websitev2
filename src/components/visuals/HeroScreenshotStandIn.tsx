@@ -38,7 +38,7 @@ export default function HeroScreenshotStandIn({ className = '' }: Props) {
         {/* Fake screenshot surface */}
         <div className="relative grid min-h-[20rem] bg-ink sm:min-h-[24rem] lg:grid-cols-[11rem_1fr]">
           <aside className="hidden border-r border-white/10 bg-ink-deep p-4 lg:block">
-            <p className="text-mono-label text-accent">CPT</p>
+            <p className="text-mono-label text-accent">Gridhouse Compliance</p>
             <ul className="mt-5 space-y-3">
               {['Overview', 'Staff', 'Training', 'Credentials', 'Reports'].map((item, i) => (
                 <li
@@ -111,7 +111,7 @@ export default function HeroScreenshotStandIn({ className = '' }: Props) {
 
         <div className="relative flex items-center justify-between border-t border-white/10 bg-ink-deep/90 px-4 py-3">
           <p className="text-mono-label text-white/55">
-            Placeholder until real CPT capture is supplied
+            Placeholder until a Gridhouse Compliance capture is supplied
           </p>
           <p className="text-mono-label text-accent">Option G shape</p>
         </div>

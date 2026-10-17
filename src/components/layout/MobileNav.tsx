@@ -117,7 +117,7 @@ export default function MobileNav({ open, onClose }: Props) {
             <NavLink
               key={link.to}
               to={link.to}
-              end={link.to === "/"}
+              end={link.end}
               onClick={onClose}
               className={({ isActive }) =>
                 `flex items-center justify-between border-b border-white/5 py-4 text-base font-display font-light transition-colors ${

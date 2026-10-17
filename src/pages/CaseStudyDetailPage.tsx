@@ -7,6 +7,8 @@ import { portableTextComponents } from "../lib/portableText";
 import TerminalLabel from "../components/ui/TerminalLabel";
 import GridRails from "../components/ui/GridRails";
 import { CASE_STUDIES } from "../data/caseStudies";
+import { replaceRetiredProductNames } from "../data/naming";
+import { findLocalCaseStudy, overlayRemote } from "../lib/mergeRemote";
 
 interface CaseStudyDetail {
   _id?: string;
@@ -28,11 +30,16 @@ interface CaseStudyDetail {
 
 export default function CaseStudyDetailPage() {
   const { slug } = useParams<{ slug: string }>();
-  const staticMatch = CASE_STUDIES.find((item) => item.slug === slug);
-  const staticStudy: CaseStudyDetail | null =
-    staticMatch?.slug ? { ...staticMatch, slug: staticMatch.slug } : null;
   const [remoteStudy, setRemoteStudy] = useState<CaseStudyDetail | null>(null);
   const [resolvedSlug, setResolvedSlug] = useState<string | null>(null);
+  const staticMatch = findLocalCaseStudy(
+    CASE_STUDIES,
+    slug,
+    resolvedSlug === slug ? remoteStudy?.title : undefined,
+  );
+  const staticStudy: CaseStudyDetail | null = staticMatch
+    ? { ...staticMatch, slug: staticMatch.slug ?? slug ?? "" }
+    : null;
 
   useEffect(() => {
     if (!slug) return;
@@ -57,7 +64,11 @@ export default function CaseStudyDetailPage() {
 
   const study =
     resolvedSlug === slug && remoteStudy
-      ? { ...staticStudy, ...remoteStudy, evidenceBasis: remoteStudy.evidenceBasis || staticStudy?.evidenceBasis }
+      ? {
+          ...(staticStudy ? overlayRemote(staticStudy, remoteStudy) : remoteStudy),
+          title: replaceRetiredProductNames(remoteStudy.title || staticStudy?.title || ""),
+          evidenceBasis: remoteStudy.evidenceBasis || staticStudy?.evidenceBasis,
+        }
       : staticStudy;
   const loading = !staticStudy && resolvedSlug !== slug;
 
@@ -252,7 +263,7 @@ export default function CaseStudyDetailPage() {
                 </div>
                 {study.evidenceBasis && (
                   <div>
-                    <p className="text-mono-label text-white/55 mb-1">PROOF BASIS</p>
+                    <p className="text-mono-label text-white/55 mb-1">Basis</p>
                     <p className="text-white/80 text-sm font-normal">{study.evidenceBasis}</p>
                   </div>
                 )}

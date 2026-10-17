@@ -85,6 +85,7 @@ export default function IntroOverlay() {
   return (
     <div
       ref={overlayRef}
+      data-gh-intro=""
       className="theme-fixed-dark fixed inset-0 z-[200] bg-ink-deep flex flex-col items-center justify-center gap-10 pointer-events-all"
       aria-hidden="true"
     >

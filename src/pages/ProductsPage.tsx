@@ -3,6 +3,7 @@ import PageHeader from "../components/ui/PageHeader";
 import ProductSystemPanel from "../components/ui/ProductSystemPanel";
 import PageCTA from "../components/ui/PageCTA";
 import { PRODUCTS, type Product } from "../data/products";
+import { normalizeProduct } from "../data/naming";
 import { sanityClient, productsQuery } from "../lib/sanity";
 
 const PRODUCT_CTAS: Record<string, { label: string; to: string }> = {
@@ -21,7 +22,7 @@ export default function ProductsPage() {
     sanityClient
       .fetch<Product[]>(productsQuery)
       .then((data) => {
-        if (data && data.length > 0) setProducts(data);
+        if (data && data.length > 0) setProducts(data.map(normalizeProduct));
       })
       .catch(() => {});
   }, []);
@@ -31,7 +32,7 @@ export default function ProductsPage() {
       <PageHeader
         label="PRODUCTS"
         title="Platforms we build and deploy."
-        description="HOMS for healthcare operations. The Compliance Training Platform for staffing and care agencies. AI agent systems and an automation template library — the systems we ship and the ones powering our client work."
+        description="HOMS for healthcare operations. Gridhouse Compliance for OLTL/ODP providers. AI agent systems and an automation template library — the systems we ship and the ones powering our client work."
         meta={[
           { label: "Live systems", value: "04" },
           { label: "In development", value: "01" },
@@ -48,7 +49,7 @@ export default function ProductsPage() {
       </section>
       <PageCTA
         headline="Interested in deploying one of these platforms?"
-        subtext="HOMS early access, Compliance Training Platform deployments, and agent pilots are available for selected operators. Tell us about your operation."
+        subtext="HOMS early access, Gridhouse Compliance deployments, and agent pilots are available for selected operators. Tell us about your operation."
         primaryLabel="Discuss a deployment"
         primaryTo="/contact"
         secondaryLabel="See our process"

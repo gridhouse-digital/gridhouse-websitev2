@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const PLATFORM_LINKS = [
+  { label: "Compliance", to: "/products/compliance-training" },
   { label: "Capabilities", to: "/services" },
   { label: "Products", to: "/products" },
   { label: "Work", to: "/work" },

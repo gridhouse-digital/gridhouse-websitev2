@@ -3,6 +3,7 @@ import PageHeader from "../components/ui/PageHeader";
 import IndustryPanel from "../components/ui/IndustryPanel";
 import PageCTA from "../components/ui/PageCTA";
 import { INDUSTRIES, type Industry } from "../data/industries";
+import { normalizeIndustryCopy } from "../data/naming";
 import { sanityClient, industriesQuery } from "../lib/sanity";
 
 export default function IndustriesPage() {
@@ -12,7 +13,7 @@ export default function IndustriesPage() {
     sanityClient
       .fetch<Industry[]>(industriesQuery)
       .then((data) => {
-        if (data && data.length > 0) setIndustries(data);
+        if (data && data.length > 0) setIndustries(data.map(normalizeIndustryCopy));
       })
       .catch(() => {});
   }, []);

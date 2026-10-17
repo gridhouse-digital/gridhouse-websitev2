@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import CTAButton from "./CTAButton";
 import TerminalLabel from "./TerminalLabel";
+import { COMPLIANCE_DEMO_SERVICE } from "../../data/naming";
 
 const SERVICE_OPTIONS = [
   "AI-First Website Design & Development",
@@ -35,7 +36,11 @@ const REQUEST_TIMEOUT_MS = 15_000;
 const ENDPOINT =
   (import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined) ?? "/api/contact";
 
-export default function ContactFormPanel() {
+export default function ContactFormPanel({
+  complianceDemo = false,
+}: {
+  complianceDemo?: boolean;
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -94,8 +99,7 @@ export default function ContactFormPanel() {
       className="border border-white/10 bg-white/[0.02] p-6 md:p-10 flex flex-col gap-6"
       aria-busy={status === "submitting"}
     >
-      <header className="flex items-center justify-between">
-        <TerminalLabel variant="accent">INITIALIZE_REQUEST</TerminalLabel>
+      <header className="flex items-center justify-end">
         <span className="text-mono-label text-white/55">FORM / 01</span>
       </header>
 
@@ -120,8 +124,18 @@ export default function ContactFormPanel() {
         <Field name="website" label="Website">
           <input id="website" name="website" type="url" maxLength={500} className="field-input" placeholder="https://" />
         </Field>
-        <Field name="service" label="Service interest">
-          <select id="service" name="service" className="field-input" defaultValue="">
+        <Field
+          name="service"
+          label="Service interest"
+          className={complianceDemo ? "md:col-span-2" : ""}
+        >
+          <select
+            id="service"
+            name="service"
+            className="field-input"
+            key={complianceDemo ? "compliance-demo" : "project"}
+            defaultValue={complianceDemo ? COMPLIANCE_DEMO_SERVICE : ""}
+          >
             <option value="" disabled>
               Select…
             </option>
@@ -132,18 +146,20 @@ export default function ContactFormPanel() {
             ))}
           </select>
         </Field>
-        <Field name="budget" label="Budget range">
-          <select id="budget" name="budget" className="field-input" defaultValue="">
-            <option value="" disabled>
-              Select…
-            </option>
-            {BUDGET_OPTIONS.map((b) => (
-              <option key={b} value={b}>
-                {b}
+        {!complianceDemo && (
+          <Field name="budget" label="Budget range">
+            <select id="budget" name="budget" className="field-input" defaultValue="">
+              <option value="" disabled>
+                Select…
               </option>
-            ))}
-          </select>
-        </Field>
+              {BUDGET_OPTIONS.map((b) => (
+                <option key={b} value={b}>
+                  {b}
+                </option>
+              ))}
+            </select>
+          </Field>
+        )}
         <Field name="timeline" label="Timeline" className="md:col-span-2">
           <select id="timeline" name="timeline" className="field-input" defaultValue="">
             <option value="" disabled>

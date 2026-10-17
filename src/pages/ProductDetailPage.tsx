@@ -13,6 +13,8 @@ import {
   type ProductFeature,
 } from "../data/productDetails";
 import { PRODUCTS } from "../data/products";
+import { COMPLIANCE_DEMO_PATH } from "../data/naming";
+import ComplianceDemo from "../components/ui/ComplianceDemo";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 const DETAIL = COMPLIANCE_TRAINING_DETAIL;
@@ -200,7 +202,7 @@ export default function ProductDetailPage() {
               className="text-white/65 text-lg leading-[1.6] font-light max-w-2xl"
               data-hero-item
             >
-              Introducing the{" "}
+              Introducing{" "}
               <strong className="font-medium text-white">
                 {DETAIL.intro.lead}
               </strong>
@@ -209,7 +211,7 @@ export default function ProductDetailPage() {
             <div className="flex flex-wrap gap-3" data-hero-item>
               <CTAButton
                 variant="primary"
-                to="/contact"
+                to={COMPLIANCE_DEMO_PATH}
                 icon="solar:arrow-right-linear"
               >
                 Request a demo
@@ -227,6 +229,8 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </section>
+
+      <ComplianceDemo />
 
       {/* OVERVIEW + FEATURES */}
       <div className="px-4 sm:px-6 md:px-12">
@@ -249,7 +253,7 @@ export default function ProductDetailPage() {
         headline={DETAIL.cta.headline}
         subtext={DETAIL.cta.subtext}
         primaryLabel={DETAIL.cta.primaryLabel}
-        primaryTo="/contact"
+        primaryTo={COMPLIANCE_DEMO_PATH}
         secondaryLabel="See all products"
         secondaryTo="/products"
       />

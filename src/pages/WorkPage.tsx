@@ -3,6 +3,7 @@ import PageHeader from "../components/ui/PageHeader";
 import CaseStudyCard from "../components/ui/CaseStudyCard";
 import PageCTA from "../components/ui/PageCTA";
 import { CASE_STUDIES, type CaseStudy } from "../data/caseStudies";
+import { mergeCaseStudies } from "../lib/mergeRemote";
 import { sanityClient, caseStudiesQuery } from "../lib/sanity";
 
 const CLIENT_KINDS = new Set(["Client System", "Private Engagement", "Prototype"]);
@@ -17,27 +18,7 @@ export default function WorkPage() {
       .then((data) => {
         if (!data || data.length === 0) return;
 
-        const merged = CASE_STUDIES.map((local) => {
-          const remote = data.find(
-            (item) =>
-              (item.slug && item.slug === local.slug) || item.id === local.id,
-          );
-          return remote
-            ? {
-                ...local,
-                ...remote,
-                displayId: remote.displayId || local.displayId,
-                evidenceBasis: remote.evidenceBasis || local.evidenceBasis,
-              }
-            : local;
-        });
-        const localSlugs = new Set(CASE_STUDIES.map((item) => item.slug));
-        const localIds = new Set(CASE_STUDIES.map((item) => item.id));
-        const remoteOnly = data.filter(
-          (item) => !localIds.has(item.id) && !localSlugs.has(item.slug),
-        );
-
-        setCaseStudies([...merged, ...remoteOnly]);
+        setCaseStudies(mergeCaseStudies(CASE_STUDIES, data));
       })
       .catch(() => {});
   }, []);
