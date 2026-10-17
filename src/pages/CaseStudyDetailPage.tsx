@@ -258,7 +258,7 @@ export default function CaseStudyDetailPage() {
                 </div>
                 {study.evidenceBasis && (
                   <div>
-                    <p className="text-mono-label text-white/55 mb-1">PROOF BASIS</p>
+                    <p className="text-mono-label text-white/55 mb-1">Basis</p>
                     <p className="text-white/80 text-sm font-normal">{study.evidenceBasis}</p>
                   </div>
                 )}
