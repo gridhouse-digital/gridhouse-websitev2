@@ -14,6 +14,7 @@ import {
 } from "../data/productDetails";
 import { PRODUCTS } from "../data/products";
 import { COMPLIANCE_DEMO_PATH } from "../data/naming";
+import ComplianceDemo from "../components/ui/ComplianceDemo";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 const DETAIL = COMPLIANCE_TRAINING_DETAIL;
@@ -228,6 +229,8 @@ export default function ProductDetailPage() {
           </div>
         </div>
       </section>
+
+      <ComplianceDemo />
 
       {/* OVERVIEW + FEATURES */}
       <div className="px-4 sm:px-6 md:px-12">
