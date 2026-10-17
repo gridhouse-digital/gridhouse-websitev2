@@ -5,6 +5,7 @@ import PageHeader from "../components/ui/PageHeader";
 import ServiceCard from "../components/ui/ServiceCard";
 import PageCTA from "../components/ui/PageCTA";
 import { SERVICES, type Service } from "../data/services";
+import { mergeServices } from "../lib/mergeRemote";
 import { sanityClient, servicesQuery } from "../lib/sanity";
 
 const STARTER_PACKAGES = [
@@ -38,7 +39,7 @@ export default function ServicesPage() {
     sanityClient
       .fetch<Service[]>(servicesQuery)
       .then((data) => {
-        if (data && data.length > 0) setServices(data);
+        if (data && data.length > 0) setServices(mergeServices(SERVICES, data));
       })
       .catch(() => {});
   }, []);
