@@ -69,8 +69,8 @@ export const COMPLIANCE_TRAINING_DETAIL: ProductDetail = {
       ],
       media: [
         {
-          label: "ADMIN COMPLIANCE DASHBOARD",
-          image: "/images/admin-compliance-dashboard.webp",
+          label: "OVERDUE EMPLOYEES",
+          image: "/images/overdue-employees.webp",
           aspect: "16/9",
         },
       ],
