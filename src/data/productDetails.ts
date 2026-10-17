@@ -71,7 +71,7 @@ export const COMPLIANCE_TRAINING_DETAIL: ProductDetail = {
         {
           label: "ADMIN COMPLIANCE DASHBOARD",
           image: "/images/admin-compliance-dashboard.webp",
-          aspect: "4/3",
+          aspect: "16/9",
         },
       ],
       layout: "left",
