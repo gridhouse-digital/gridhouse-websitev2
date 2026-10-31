@@ -25,3 +25,20 @@ dist-ssr
 
 # design system
 Gridhouse Design System-handoff
+
+# local env (example stays tracked)
+.env
+.env.*
+!.env.example
+
+# playwright / test output
+.playwright-cli/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+*.trace.zip
+storageState*.json
+
+# vercel
+.vercel
