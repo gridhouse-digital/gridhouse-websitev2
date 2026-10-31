@@ -13,6 +13,7 @@ import ProductSystemPanel from "../components/ui/ProductSystemPanel";
 import { SERVICES } from "../data/services";
 import { INDUSTRIES } from "../data/industries";
 import { PRODUCTS } from "../data/products";
+import { COMPLIANCE_DEMO_PATH } from "../data/naming";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 const HERO_LINES = [
@@ -24,18 +25,13 @@ const HERO_LINES = [
 const BUYER_PROOF = [
   {
     label: "PRODUCTION ENGAGEMENT",
-    value: "Healthcare compliance platform",
-    to: "/work/healthcare-compliance-training-platform",
+    value: "Gridhouse Compliance",
+    to: "/products/compliance-training",
   },
   {
     label: "OPERATIONAL CHANGE",
     value: "Credential tracking moved from spreadsheets to auditable records",
     to: "/work/healthcare-compliance-training-platform",
-  },
-  {
-    label: "DELIVERY MODEL",
-    value: "Eight-week minimum · two-week sprints · weekly reviews",
-    to: "/process",
   },
 ];
 
@@ -85,7 +81,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* HERO + proof strip fill the first screen */}
       <div className="flex min-h-[calc(100svh-60px)] flex-col sm:min-h-[calc(100svh-72px)]">
         <section
           ref={heroRef}
@@ -132,12 +127,38 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+      </div>
 
-        <section
-          aria-label="Delivery proof"
-          className="border-b border-white/10 bg-ink-deep"
-        >
-          <div className="mx-auto grid max-w-rail grid-cols-1 divide-y divide-white/10 md:grid-cols-3 md:divide-x md:divide-y-0">
+      <section
+        aria-label="Featured product"
+        className="border-b border-white/10 bg-ink-deep"
+      >
+        <div className="mx-auto grid max-w-rail items-center gap-8 px-4 py-10 sm:px-6 md:px-12 md:py-12 lg:grid-cols-[minmax(0,1fr)_auto]">
+          <div className="flex max-w-3xl flex-col gap-4 border-l border-accent pl-5">
+            <TerminalLabel variant="accent">Featured product</TerminalLabel>
+            <h2 className="font-display text-display-sm font-light leading-tight text-white">
+              Gridhouse Compliance: training compliance for Pennsylvania ODP providers.
+            </h2>
+            <p className="max-w-2xl text-body-md font-normal text-white/65">
+              Track required staff training, issue certificates, catch overdue staff before inspections, and see it all on one dashboard.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <CTAButton variant="primary" to={COMPLIANCE_DEMO_PATH} icon="solar:arrow-right-linear">
+              Book a demo
+            </CTAButton>
+            <CTAButton variant="secondary" to="/products/compliance-training">
+              See the platform
+            </CTAButton>
+          </div>
+        </div>
+      </section>
+
+      <section
+        aria-label="Delivery proof"
+        className="border-b border-white/10 bg-ink-deep"
+      >
+        <div className="mx-auto grid max-w-rail grid-cols-1 divide-y divide-white/10 md:grid-cols-2 md:divide-x md:divide-y-0">
             {BUYER_PROOF.map((proof) => (
               <Link
                 key={proof.label}
@@ -159,9 +180,8 @@ export default function HomePage() {
                 />
               </Link>
             ))}
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       {/* SERVICES PREVIEW */}
       <section className="relative px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20">
@@ -303,7 +323,7 @@ export default function HomePage() {
           <SectionHeader
             label="SYSTEMS / 03"
             title="Internal products and platforms."
-            description="HOMS, the Compliance Training Platform, AI agent systems, and an automation template library — the systems we ship and the ones powering our client work."
+            description="HOMS, Gridhouse Compliance, AI agent systems, and an automation template library — the systems we ship and the ones powering our client work."
           />
           <div className="grid grid-cols-1 gap-6">
             {PRODUCTS.slice(0, 2).map((p) => (
@@ -324,7 +344,7 @@ export default function HomePage() {
         <div className="max-w-rail mx-auto flex flex-col gap-8">
           <div className="flex items-center gap-3">
             <span className="text-mono-label text-accent">PROOF / 04</span>
-            <span className="text-mono-label text-white/55">VERIFIED WORKFLOW CHANGES</span>
+            <span className="text-mono-label text-white/55">Delivered workflow changes</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
             {[

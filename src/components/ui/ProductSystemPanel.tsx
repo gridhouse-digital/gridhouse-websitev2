@@ -21,7 +21,9 @@ export default function ProductSystemPanel({ product, cta }: Props) {
       <header className="flex items-center justify-between border-b border-white/10 px-6 py-3">
         <div className="flex items-center gap-3">
           <TerminalLabel variant="accent">SYSTEM / {product.id}</TerminalLabel>
-          <span className="text-mono-label text-white/55">[{product.code}]</span>
+          {product.code ? (
+            <span className="text-mono-label text-white/55">[{product.code}]</span>
+          ) : null}
         </div>
         <StatusBadge label={product.status} variant={LIFECYCLE_VARIANT[product.lifecycle]} />
       </header>
@@ -30,18 +32,23 @@ export default function ProductSystemPanel({ product, cta }: Props) {
           <h3 className="text-white text-display-sm font-display font-light leading-tight">
             {product.name}
           </h3>
+          {product.tagline ? (
+            <p className="text-sm font-normal text-white/60">{product.tagline}</p>
+          ) : null}
           <p className="text-white/50 text-body-md font-normal">
             {product.description}
           </p>
-          <dl className="grid grid-cols-2 gap-4 mt-2 border-t border-white/10 pt-4">
+          <dl className={`mt-2 grid gap-4 border-t border-white/10 pt-4 ${product.code ? "grid-cols-2" : "grid-cols-1"}`}>
             <div>
               <dt className="text-mono-label text-white/55">Lifecycle</dt>
               <dd className="text-white text-sm font-normal">{product.lifecycle}</dd>
             </div>
-            <div>
-              <dt className="text-mono-label text-white/55">Code</dt>
-              <dd className="text-white text-sm font-normal">{product.code}</dd>
-            </div>
+            {product.code ? (
+              <div>
+                <dt className="text-mono-label text-white/55">Code</dt>
+                <dd className="text-white text-sm font-normal">{product.code}</dd>
+              </div>
+            ) : null}
           </dl>
         </div>
         <div className="bg-ink p-5 sm:p-6 md:p-8 flex flex-col gap-6">

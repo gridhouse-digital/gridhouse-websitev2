@@ -1,14 +1,22 @@
+import { useSearchParams } from "react-router-dom";
 import PageHeader from "../components/ui/PageHeader";
 import ContactFormPanel from "../components/ui/ContactFormPanel";
 import StatusBadge from "../components/ui/StatusBadge";
 import TerminalLabel from "../components/ui/TerminalLabel";
+import {
+  COMPLIANCE_DEMO_HEADING,
+  COMPLIANCE_DEMO_INTEREST,
+} from "../data/naming";
 
 export default function ContactPage() {
+  const [params] = useSearchParams();
+  const complianceDemo = params.get("interest") === COMPLIANCE_DEMO_INTEREST;
+
   return (
     <>
       <PageHeader
         label="CONTACT / INTAKE"
-        title="Start a project request."
+        title={complianceDemo ? COMPLIANCE_DEMO_HEADING : "Start a project request."}
         description="Tell us about the operation. We'll come back with a structured scope and a delivery plan within 24 hours."
         meta={[
           { label: "Channel", value: "hello@gridhouse.digital" },
@@ -20,7 +28,7 @@ export default function ContactPage() {
       <section className="px-6 md:px-12 py-16">
         <div className="max-w-rail mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <ContactFormPanel />
+            <ContactFormPanel complianceDemo={complianceDemo} />
           </div>
           <aside className="flex flex-col gap-6">
             <article className="border border-white/10 bg-white/[0.02] p-6 flex flex-col gap-4">

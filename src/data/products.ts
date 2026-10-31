@@ -4,6 +4,8 @@ export interface Product {
   id: string;
   code: string;
   name: string;
+  tagline?: string;
+  href?: string;
   status: string;
   description: string;
   capabilities: string[];
@@ -36,11 +38,13 @@ export const PRODUCTS: readonly Product[] = [
   },
   {
     id: "02",
-    code: "CPT",
-    name: "Compliance Training Platform",
+    code: "",
+    name: "Gridhouse Compliance",
+    tagline: "Training & compliance for OLTL/ODP providers",
+    href: "/products/compliance-training",
     status: "Production engagement",
     description:
-      "A managed training and compliance platform for healthcare agencies, built on WordPress, LearnDash, JotForm, automation, and AI-assisted support. Replaces ad-hoc training spreadsheets with a tracked, auditable system staff and regulators can rely on.",
+      "Training and compliance for OLTL/ODP providers. A managed platform for healthcare agencies, built on WordPress, LearnDash, JotForm, automation, and AI-assisted support. Replaces ad-hoc training spreadsheets with a tracked, auditable system staff and regulators can rely on.",
     capabilities: [
       "Course + curriculum management",
       "Per-staff training records",

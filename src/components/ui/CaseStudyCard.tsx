@@ -51,7 +51,7 @@ export default function CaseStudyCard({ caseStudy }: Props) {
         <p className="text-white/70 text-body-sm font-normal">{caseStudy.problem}</p>
         {caseStudy.evidenceBasis && (
           <p className="border-l border-accent/40 pl-3 text-xs font-normal text-white/60">
-            <span className="block text-mono-label text-accent">PROOF BASIS</span>
+            <span className="block text-mono-label text-accent">Basis</span>
             {caseStudy.evidenceBasis}
           </p>
         )}

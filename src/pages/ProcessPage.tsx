@@ -11,7 +11,7 @@ export default function ProcessPage() {
       <PageHeader
         label="DELIVERY / PIPELINE"
         title="A 7-phase delivery pipeline."
-        description="Each engagement runs the same pipeline — discovery to iteration — with telemetry at every step. AI accelerates the work; it doesn't replace the structure."
+        description="Each engagement runs the same pipeline — discovery to iteration — with telemetry at every step. Eight-week minimum · two-week sprints · weekly reviews. AI accelerates the work; it doesn't replace the structure."
         meta={[
           { label: "Phases", value: "07" },
           { label: "Engagement min", value: "8 weeks" },

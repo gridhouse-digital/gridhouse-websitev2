@@ -60,7 +60,7 @@ const DEMOS: {
     key: 'G',
     label: 'G · Screenshot',
     title: 'Product screenshot treatment',
-    blurb: 'Browser-chrome capture shape. Stand-in UI until a real CPT screenshot is supplied.',
+    blurb: 'Browser-chrome capture shape. Stand-in UI until a Gridhouse Compliance screenshot is supplied.',
   },
   {
     key: 'H',
