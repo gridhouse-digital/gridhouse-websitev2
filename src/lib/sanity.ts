@@ -1,20 +1,21 @@
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url";
 
 export const sanityClient = createClient({
   projectId: import.meta.env.VITE_SANITY_PROJECT_ID ?? "40pygomb",
   dataset: import.meta.env.VITE_SANITY_DATASET ?? "production",
   apiVersion: "2024-01-01",
-  useCdn: false,
+  useCdn: true,
 });
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = createImageUrlBuilder(sanityClient);
 export function urlFor(source: SanityImageSource) {
   return builder.image(source);
 }
 
 export const insightsQuery = `*[_type == "insight" && status == "Published"] | order(publishedAt desc) {
+  "id": _id,
   _id,
   title,
   "slug": slug.current,
@@ -25,7 +26,7 @@ export const insightsQuery = `*[_type == "insight" && status == "Published"] | o
   publishedAt
 }`;
 
-export const insightBySlugQuery = `*[_type == "insight" && slug.current == $slug][0] {
+export const insightBySlugQuery = `*[_type == "insight" && status == "Published" && slug.current == $slug][0] {
   _id,
   title,
   "slug": slug.current,
@@ -38,6 +39,8 @@ export const insightBySlugQuery = `*[_type == "insight" && slug.current == $slug
 }`;
 
 export const caseStudiesQuery = `*[_type == "caseStudy"] | order(publishedAt desc) {
+  "id": _id,
+  "displayId": caseStudyId,
   _id,
   title,
   "slug": slug.current,
@@ -46,7 +49,11 @@ export const caseStudiesQuery = `*[_type == "caseStudy"] | order(publishedAt des
   problem,
   solution,
   stack,
-  coverImage
+  coverImage,
+  outcomes,
+  clientLabel,
+  featured,
+  evidenceBasis
 }`;
 
 export const caseStudyBySlugQuery = `*[_type == "caseStudy" && slug.current == $slug][0] {
@@ -59,6 +66,11 @@ export const caseStudyBySlugQuery = `*[_type == "caseStudy" && slug.current == $
   solution,
   stack,
   coverImage,
+  outcomes,
+  clientLabel,
+  systemStages,
+  disclosure,
+  evidenceBasis,
   body[] {
     ...,
     _type == "image" => { ..., asset-> },

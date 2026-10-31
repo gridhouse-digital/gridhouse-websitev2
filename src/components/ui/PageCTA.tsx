@@ -27,7 +27,7 @@ export default function PageCTA({
             {headline}
           </h2>
           {subtext && (
-            <p className="text-white/50 text-sm font-light">{subtext}</p>
+            <p className="text-white/70 text-body-sm font-normal">{subtext}</p>
           )}
         </div>
         <div className="flex flex-wrap gap-3 shrink-0">

@@ -2,24 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 
-const BOOT_LINES = [
-  "INITIALISING GRIDHOUSE OS...",
-  "LOADING SYSTEM MODULES........OK",
-  "CONNECTING TO CONTENT LAYER...OK",
-  "RENDERING ENVIRONMENT.........OK",
-];
-
 const SESSION_KEY = "gh_intro_seen";
 
 export default function IntroOverlay() {
   const reduced = usePrefersReducedMotion();
   const [visible, setVisible] = useState(() => {
     if (typeof window === "undefined") return false;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      sessionStorage.setItem(SESSION_KEY, "1");
+      return false;
+    }
     return !sessionStorage.getItem(SESSION_KEY);
   });
   const overlayRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLImageElement>(null);
-  const linesRef = useRef<HTMLDivElement>(null);
+  const taglineRef = useRef<HTMLParagraphElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
   const barFillRef = useRef<HTMLDivElement>(null);
 
@@ -28,8 +25,8 @@ export default function IntroOverlay() {
 
     if (reduced) {
       sessionStorage.setItem(SESSION_KEY, "1");
-      setVisible(false);
-      return;
+      const frame = window.requestAnimationFrame(() => setVisible(false));
+      return () => window.cancelAnimationFrame(frame);
     }
 
     const ctx = gsap.context(() => {
@@ -40,50 +37,40 @@ export default function IntroOverlay() {
         },
       });
 
-      // Lock scroll while overlay is up
       document.body.style.overflow = "hidden";
 
-      // Logo fades in
       tl.fromTo(
         logoRef.current,
         { opacity: 0, y: 16 },
-        { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" },
-        0.2,
+        { opacity: 1, y: 0, duration: 0.55, ease: "expo.out" },
+        0.1,
       );
-
-      // Boot lines appear one by one
-      const lines = linesRef.current
-        ? Array.from(linesRef.current.querySelectorAll("[data-boot-line]"))
-        : [];
 
       tl.fromTo(
-        lines,
-        { opacity: 0, x: -8 },
-        { opacity: 1, x: 0, duration: 0.25, ease: "power2.out", stagger: 0.18 },
-        0.8,
+        taglineRef.current,
+        { opacity: 0, y: 6 },
+        { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" },
+        0.35,
       );
 
-      // Progress bar container appears
       tl.fromTo(
         barRef.current,
         { opacity: 0 },
         { opacity: 1, duration: 0.2 },
-        0.9,
+        0.4,
       );
 
-      // Bar fills
       tl.fromTo(
         barFillRef.current,
         { scaleX: 0 },
-        { scaleX: 1, duration: 1.2, ease: "power2.inOut", transformOrigin: "left" },
-        1.0,
+        { scaleX: 1, duration: 0.7, ease: "power2.inOut", transformOrigin: "left" },
+        0.45,
       );
 
-      // Everything fades out then overlay exits
       tl.to(
         overlayRef.current,
-        { opacity: 0, duration: 0.5, ease: "power2.inOut" },
-        "+=0.2",
+        { opacity: 0, duration: 0.35, ease: "power2.inOut" },
+        "+=0.05",
       );
     });
 
@@ -98,10 +85,10 @@ export default function IntroOverlay() {
   return (
     <div
       ref={overlayRef}
+      data-gh-intro=""
       className="theme-fixed-dark fixed inset-0 z-[200] bg-ink-deep flex flex-col items-center justify-center gap-10 pointer-events-all"
       aria-hidden="true"
     >
-      {/* Logo */}
       <img
         ref={logoRef}
         src="/gridhouse-logo.svg"
@@ -110,21 +97,10 @@ export default function IntroOverlay() {
         draggable={false}
       />
 
-      {/* Boot lines */}
-      <div ref={linesRef} className="flex flex-col gap-2">
-        {BOOT_LINES.map((line) => (
-          <p
-            key={line}
-            data-boot-line
-            className="text-mono-label text-white/30 opacity-0"
-            style={{ fontSize: "10px", letterSpacing: "0.16em" }}
-          >
-            {line}
-          </p>
-        ))}
-      </div>
+      <p ref={taglineRef} className="text-mono-label text-white/55 opacity-0">
+        Operational systems, designed around the work
+      </p>
 
-      {/* Progress bar */}
       <div
         ref={barRef}
         className="w-48 sm:w-64 h-px bg-white/10 relative overflow-hidden opacity-0"

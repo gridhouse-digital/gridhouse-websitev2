@@ -81,7 +81,6 @@ export default function SimulationMatrixCanvas({
       gl.shaderSource(shader, source);
       gl.compileShader(shader);
       if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-        // eslint-disable-next-line no-console
         console.error("Shader compile failed:", gl.getShaderInfoLog(shader));
         gl.deleteShader(shader);
         return null;
@@ -104,7 +103,6 @@ export default function SimulationMatrixCanvas({
     gl.attachShader(program, fs);
     gl.linkProgram(program);
     if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-      // eslint-disable-next-line no-console
       console.error("Program link failed:", gl.getProgramInfoLog(program));
       setFailed(true);
       return;

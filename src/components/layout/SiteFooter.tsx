@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 
 const PLATFORM_LINKS = [
-  { label: "Services", to: "/services" },
+  { label: "Compliance", to: "/products/compliance-training" },
+  { label: "Capabilities", to: "/services" },
   { label: "Products", to: "/products" },
-  { label: "Process", to: "/process" },
   { label: "Work", to: "/work" },
 ];
 
 const SYSTEMS_LINKS = [
   { label: "Industries", to: "/industries" },
+  { label: "Process", to: "/process" },
   { label: "Insights", to: "/insights" },
-  { label: "About", to: "/about" },
+  { label: "Company", to: "/about" },
 ];
 
 const CONNECT_LINKS = [
@@ -39,22 +40,38 @@ export default function SiteFooter() {
             className="gh-logo-light h-10 md:h-14 lg:h-16 w-auto max-w-none"
             draggable={false}
           />
-          <p className="text-white/60 text-sm font-light max-w-md">
-            Engineering AI-first digital systems for operators. Websites, portals,
-            automation, AI agents, and operational platforms — built to scale.
+          <p className="text-white/60 text-sm font-normal max-w-md">
+            AI-native operational systems for regulated and workflow-heavy
+            businesses — digital products, automation, and intelligent agents
+            designed around the work.
           </p>
-          <span className="text-mono-label text-white/40">CANADA / REMOTE — WORLDWIDE</span>
+          <span className="text-mono-label text-white/55">CANADA / REMOTE — WORLDWIDE</span>
+          <a
+            href="https://www.jotform.com/partnership/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-block rounded-xl transition-opacity duration-300 hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+          >
+            <img
+              src="/jotform-partner-badge.png"
+              alt="Jotform Partner"
+              width={342}
+              height={222}
+              className="h-16 md:h-20 w-auto"
+              draggable={false}
+            />
+          </a>
         </div>
         <FooterColumn title="Platform" items={PLATFORM_LINKS} />
         <FooterColumn title="Systems" items={SYSTEMS_LINKS} />
         <FooterColumn title="Connect" items={CONNECT_LINKS} />
       </div>
       <div className="max-w-rail mx-auto mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between gap-4">
-        <span className="text-mono-label text-white/40">
+        <span className="text-mono-label text-white/55">
           © 2026 GRIDHOUSE DIGITAL. ALL RIGHTS RESERVED.
         </span>
-        <span className="text-mono-label text-white/40">
-          BUILT WITH AETHER SYSTEM TERMINAL
+        <span className="text-mono-label text-white/55">
+          DESIGNED AND ENGINEERED BY GRIDHOUSE
         </span>
       </div>
     </footer>
@@ -71,20 +88,20 @@ function FooterColumn({ title, items }: { title: string; items: ColumnLink[] }) 
   return (
     <div className="md:col-span-2 flex flex-col gap-3">
       <span className="text-mono-label text-accent">{title}</span>
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-0.5">
         {items.map((item) => (
           <li key={item.label}>
             {item.to ? (
               <Link
                 to={item.to}
-                className="text-sm font-light text-white/70 hover:text-white transition-colors"
+                className="inline-block py-2.5 text-sm font-normal text-white/70 hover:text-white transition-colors"
               >
                 {item.label}
               </Link>
             ) : (
               <a
                 href={item.href}
-                className="text-sm font-light text-white/70 hover:text-white transition-colors"
+                className="inline-block py-2.5 text-sm font-normal text-white/70 hover:text-white transition-colors"
               >
                 {item.label}
               </a>

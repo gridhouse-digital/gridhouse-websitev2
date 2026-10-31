@@ -52,7 +52,7 @@ export default function IndustryPanel({ industry }: Props) {
           )}
         </div>
         <div className="lg:col-span-4 flex flex-col gap-2">
-          <span className="text-mono-label text-white/40">Pain points</span>
+          <span className="text-mono-label text-white/55">Pain points</span>
           <ul className="flex flex-col gap-1.5">
             {industry.painPoints.map((p) => (
               <li
@@ -61,7 +61,7 @@ export default function IndustryPanel({ industry }: Props) {
               >
                 <Icon
                   icon="solar:danger-triangle-linear"
-                  className="w-3.5 h-3.5 mt-0.5 text-accent/70 shrink-0"
+                  className="w-3.5 h-3.5 mt-0.5 text-accent shrink-0"
                   aria-hidden
                 />
                 <span>{p}</span>
@@ -71,8 +71,8 @@ export default function IndustryPanel({ industry }: Props) {
         </div>
         <div className="lg:col-span-5 flex flex-col gap-4">
           <div>
-            <span className="text-mono-label text-white/40">Gridhouse fit</span>
-            <p className="mt-2 text-white/80 text-sm font-light">
+            <span className="text-mono-label text-white/55">Gridhouse fit</span>
+            <p className="mt-2 text-white/80 text-body-sm font-normal">
               {industry.gridhouseFit}
             </p>
           </div>

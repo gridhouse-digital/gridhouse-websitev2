@@ -3,6 +3,7 @@ import PageHeader from "../components/ui/PageHeader";
 import CaseStudyCard from "../components/ui/CaseStudyCard";
 import PageCTA from "../components/ui/PageCTA";
 import { CASE_STUDIES, type CaseStudy } from "../data/caseStudies";
+import { mergeCaseStudies } from "../lib/mergeRemote";
 import { sanityClient, caseStudiesQuery } from "../lib/sanity";
 
 const CLIENT_KINDS = new Set(["Client System", "Private Engagement", "Prototype"]);
@@ -15,7 +16,9 @@ export default function WorkPage() {
     sanityClient
       .fetch<CaseStudy[]>(caseStudiesQuery)
       .then((data) => {
-        if (data && data.length > 0) setCaseStudies(data);
+        if (!data || data.length === 0) return;
+
+        setCaseStudies(mergeCaseStudies(CASE_STUDIES, data));
       })
       .catch(() => {});
   }, []);
@@ -27,8 +30,8 @@ export default function WorkPage() {
     <>
       <PageHeader
         label="WORK / CASE STUDIES"
-        title="Selected engagements and internal products."
-        description="Client systems, prototypes, and private engagements — each showing the operating pattern: replace manual work with a designed system."
+        title="Operational problems, turned into working systems."
+        description="Selected client engagements, prototypes, and internal products — documented through the problem, the system designed, and the evidence available at each stage."
         meta={[
           { label: "Engagements", value: String(caseStudies.length).padStart(2, "0") },
           { label: "Client work", value: String(clientWork.length).padStart(2, "0") },
@@ -41,7 +44,7 @@ export default function WorkPage() {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <span className="text-mono-label text-accent">CLIENT WORK</span>
-              <span className="text-mono-label text-white/30">/ {String(clientWork.length).padStart(2, "0")}</span>
+              <span className="text-mono-label text-white/55">/ {String(clientWork.length).padStart(2, "0")}</span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {clientWork.map((c) => (
@@ -52,8 +55,8 @@ export default function WorkPage() {
           {rdWork.length > 0 && (
             <div className="flex flex-col gap-6 pt-4 border-t border-white/10">
               <div className="flex items-center gap-3">
-                <span className="text-mono-label text-white/40">INTERNAL R&amp;D</span>
-                <span className="text-mono-label text-white/20">/ {String(rdWork.length).padStart(2, "0")}</span>
+                <span className="text-mono-label text-white/55">INTERNAL R&amp;D</span>
+                <span className="text-mono-label text-white/55">/ {String(rdWork.length).padStart(2, "0")}</span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {rdWork.map((c) => (
@@ -62,8 +65,10 @@ export default function WorkPage() {
               </div>
             </div>
           )}
-          <p className="text-mono-label text-white/30">
-            * CASE-LEVEL METRICS AND CLIENT DETAIL AVAILABLE UNDER NDA.
+          <p className="max-w-2xl text-xs font-normal leading-relaxed text-white/60">
+            Client identities and sensitive metrics are withheld where required.
+            Detail pages distinguish delivered outcomes from validated prototype
+            capabilities without manufacturing proxy numbers.
           </p>
         </div>
       </section>

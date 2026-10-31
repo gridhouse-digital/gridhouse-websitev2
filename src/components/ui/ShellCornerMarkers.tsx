@@ -1,6 +1,6 @@
 export default function ShellCornerMarkers() {
   const base =
-    "absolute w-2 h-2 border border-black/20 z-50 pointer-events-none";
+    "absolute w-2 h-2 border border-white/20 z-50 pointer-events-none";
   return (
     <>
       <span className={`${base} top-2 left-2`} />

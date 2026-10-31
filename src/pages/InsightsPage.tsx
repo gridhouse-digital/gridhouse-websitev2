@@ -13,7 +13,20 @@ export default function InsightsPage() {
     sanityClient
       .fetch<Insight[]>(insightsQuery)
       .then((data) => {
-        if (data && data.length > 0) setPosts(data);
+        if (!data || data.length === 0) return;
+
+        const merged = INSIGHTS.map((local) => {
+          const remote = data.find(
+            (item) =>
+              (item.slug && item.slug === local.slug) ||
+              item.title === local.title,
+          );
+          return remote ? { ...local, ...remote } : local;
+        });
+        const localTitles = new Set(INSIGHTS.map((item) => item.title));
+        const remoteOnly = data.filter((item) => !localTitles.has(item.title));
+
+        setPosts([...merged, ...remoteOnly]);
       })
       .catch(() => {
         // silently fall back to static data
@@ -62,7 +75,7 @@ export default function InsightsPage() {
           ))}
         </div>
         {filtered.length === 0 && (
-          <p className="max-w-rail mx-auto mt-8 text-white/50 text-sm font-light">
+          <p className="max-w-rail mx-auto mt-8 text-white/50 text-sm font-normal">
             No notes published in this category yet.
           </p>
         )}
@@ -92,7 +105,7 @@ function FilterPill({
       onClick={onClick}
       className={`text-mono-label px-3 py-2 sm:py-1.5 border transition-colors ${
         active
-          ? "bg-accent text-white border-accent"
+          ? "bg-accent text-ink border-accent"
           : "border-white/15 text-white/60 hover:text-white hover:border-white/40"
       }`}
     >

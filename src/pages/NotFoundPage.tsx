@@ -9,7 +9,7 @@ export default function NotFoundPage() {
         <h1 className="text-white text-display-md font-display font-light leading-tight max-w-2xl">
           That route is offline.
         </h1>
-        <p className="text-white/60 text-body-md font-light max-w-xl">
+        <p className="text-white/60 text-body-md font-normal max-w-xl">
           The page you requested isn't part of the current system. Head back to
           the home grid or browse the modules.
         </p>

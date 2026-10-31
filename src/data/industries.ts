@@ -20,8 +20,8 @@ export const INDUSTRIES: readonly Industry[] = [
       "Disconnected portals across staffing and care",
     ],
     gridhouseFit:
-      "Operational software designed for staffing, home care, and training-heavy healthcare — HOMS, the Compliance Training Platform, AI agents for support and intake.",
-    mappedOfferings: ["HOMS", "Compliance Training Platform", "AI Agents", "Workflow Automation"],
+      "Operational software designed for staffing, home care, and training-heavy healthcare — HOMS, Gridhouse Compliance, AI agents for support and intake.",
+    mappedOfferings: ["HOMS", "Gridhouse Compliance", "AI Agents", "Workflow Automation"],
     useCases: [
       "Replace credential spreadsheets with HOMS",
       "Automate onboarding for new hires and contractors",

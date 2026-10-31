@@ -1,7 +1,11 @@
-export interface TechItem {
-  name: string;
-  icon: string; // Iconify icon name (logos:* or simple-icons:*)
-}
+/**
+ * Marks absent from every Iconify set ship as local PNGs in /public/tech
+ * instead. The union keeps each entry to exactly one source, so an entry can
+ * never end up with no mark at all.
+ */
+export type TechItem =
+  | { name: string; icon: string } // Iconify name (logos:* or simple-icons:*)
+  | { name: string; src: string }; // Path under /public
 
 /**
  * The Aether hero's bottom rail is now a TECH STACK scroller.
@@ -18,10 +22,11 @@ export const TECH_STACK: readonly TechItem[] = [
   { name: "Postgres", icon: "logos:postgresql" },
   { name: "Supabase", icon: "logos:supabase-icon" },
   { name: "WordPress", icon: "logos:wordpress-icon" },
-  { name: "LearnDash", icon: "simple-icons:wordpress" },
-  { name: "JotForm", icon: "simple-icons:jotform" },
-  { name: "n8n", icon: "logos:n8n" },
-  { name: "Make", icon: "simple-icons:makerbot" },
+  { name: "InstaWP", src: "/tech/instawp.png" },
+  { name: "LearnDash", src: "/tech/learndash.png" },
+  { name: "JotForm", src: "/tech/jotform.png" },
+  { name: "n8n", icon: "simple-icons:n8n" },
+  { name: "Make", icon: "simple-icons:make" },
   { name: "Claude", icon: "simple-icons:anthropic" },
   { name: "OpenAI", icon: "simple-icons:openai" },
   { name: "GSAP", icon: "simple-icons:greensock" },
@@ -31,3 +36,18 @@ export const TECH_STACK: readonly TechItem[] = [
   { name: "AWS", icon: "logos:aws" },
   { name: "GitHub Actions", icon: "logos:github-actions" },
 ];
+
+const HOMEPAGE_TECH_NAMES = new Set([
+  "WordPress",
+  "LearnDash",
+  "JotForm",
+  "React",
+  "Supabase",
+  "n8n",
+  "OpenAI",
+  "Cloudflare",
+]);
+
+export const HOMEPAGE_TECH_STACK = TECH_STACK.filter((item) =>
+  HOMEPAGE_TECH_NAMES.has(item.name),
+);

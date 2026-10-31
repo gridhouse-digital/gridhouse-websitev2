@@ -32,8 +32,9 @@ interface ExternalLinkProps extends BaseProps {
 type Props = ButtonProps | InternalLinkProps | ExternalLinkProps;
 
 const VARIANTS: Record<Variant, string> = {
+  // Near-black on #FF4500 is 5.56:1; white is only 3.44:1 and fails AA.
   primary:
-    "bg-accent text-white hover:bg-accent/90 hover:shadow-glow-accent-subtle focus-visible:ring-2 focus-visible:ring-accent/60",
+    "bg-accent text-ink hover:bg-accent/90 hover:shadow-glow-accent-subtle focus-visible:ring-2 focus-visible:ring-accent/60",
   secondary:
     "border border-white/30 text-white hover:bg-white/5 hover:border-white/60 focus-visible:ring-2 focus-visible:ring-white/40",
   ghost:
@@ -41,7 +42,7 @@ const VARIANTS: Record<Variant, string> = {
 };
 
 const BASE =
-  "group inline-flex items-center gap-2 px-5 py-3 text-mono-label rounded-none transition-all duration-300 active:translate-y-px outline-none focus-visible:outline-none";
+  "group inline-flex items-center gap-2 px-5 py-3.5 min-h-[44px] text-mono-label rounded-none transition-all duration-300 active:translate-y-px outline-none focus-visible:outline-none";
 
 export default function CTAButton(props: Props) {
   const { children, variant = "primary", icon, className = "" } = props;

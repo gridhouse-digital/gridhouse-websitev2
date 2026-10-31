@@ -27,9 +27,11 @@ html {
   background-color: var(--color-ink);
   color: #ffffff;
   font-family: "Space Grotesk", system-ui, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Clears the fixed header so anchored headings are not hidden behind it. */
+  scroll-padding-top: 96px;
 }
 
 body {
@@ -82,15 +84,39 @@ h3 {
     background-size: 16px 16px;
   }
 
+  /* Functional label — buttons, links, tags, nav, metadata.
+     Space Grotesk holds its shape at small sizes where Syncopate does not. */
   .text-mono-label {
+    font-family: var(--font-display);
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* Primary desktop navigation. Light stroke with generous tracking reads as
+     editorial rather than utilitarian; the wide letterfit carries the size, so
+     the point size steps back down as tracking opens up. */
+  .text-nav-label {
+    font-family: var(--font-display);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  /* Decorative eyebrow — Syncopate kept for brand voice above display headings.
+     Opt-in only; never for interactive or dense text. */
+  .text-display-label {
     font-family: var(--font-mono);
-    font-size: 10px;
-    line-height: 15px;
-    letter-spacing: 0.08em;
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 400;
   }
-
   /* Top-edge glow line on hover */
   .glow-surface {
     position: relative;
@@ -137,15 +163,21 @@ h3 {
 
 /* Form controls — sharp, dark, focus accent */
 @layer components {
+  .glass-surface {
+    background-color: var(--gh-s-02, rgba(255, 255, 255, 0.02));
+    border-color: var(--gh-br-10, rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(12px) saturate(130%);
+  }
+
   .field-input {
-    @apply w-full bg-black/40 border border-white/10 px-4 py-3 text-white text-sm font-body font-light placeholder-white/30 outline-none transition-colors;
+    @apply w-full bg-black/40 border border-white/10 px-4 py-3 min-h-[44px] text-white text-body-sm font-body font-normal placeholder-white/45 outline-none transition-colors;
   }
   .field-input:focus {
     border-color: rgba(255, 69, 0, 0.6);
     box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.15);
   }
   .field-label {
-    @apply text-mono-label text-white/50 mb-2 block;
+    @apply text-mono-label text-white/60 mb-2 block;
   }
 }
 
@@ -367,8 +399,8 @@ html.theme-light,
   border-color: var(--gh-br-15);
   color: var(--gh-t-100);
 }
-.theme-light .field-input::placeholder { color: var(--gh-t-30); }
-.theme-light .field-label { color: var(--gh-t-50); }
+.theme-light .field-input::placeholder { color: var(--gh-t-45); }
+.theme-light .field-label { color: var(--gh-t-60); }
 
 /* tech grid lines flip to ink on paper */
 .theme-light .bg-tech-grid {
@@ -391,10 +423,34 @@ html.theme-light,
     linear-gradient(rgba(28, 27, 25, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(28, 27, 25, 0.04) 1px, transparent 1px);
 }
+.theme-light .theme-fixed-dark .bg-tech-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+.theme-light .theme-fixed-dark .bg-tech-grid-16 {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+.theme-light .theme-fixed-dark .bg-tech-grid-32 {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+.theme-light .theme-fixed-dark .bg-tech-grid-64 {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
 
 /* header pill shadow softens on light */
 .theme-light .shadow-nav-pill {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65), 0 8px 32px rgba(28, 27, 25, 0.14);
+}
+.theme-light .site-header {
+  background-color: rgba(244, 243, 237, 0.96);
+  border-color: rgba(28, 27, 25, 0.12);
 }
 
 /* theme-aware logo swap */

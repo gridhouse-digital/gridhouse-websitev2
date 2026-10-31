@@ -7,11 +7,14 @@ import CTAButton from "../components/ui/CTAButton";
 import StatusBadge from "../components/ui/StatusBadge";
 import PageCTA from "../components/ui/PageCTA";
 import GridRails from "../components/ui/GridRails";
+import ProductUiPreview from "../components/visuals/ProductUiPreview";
 import {
   COMPLIANCE_TRAINING_DETAIL,
   type ProductFeature,
 } from "../data/productDetails";
 import { PRODUCTS } from "../data/products";
+import { COMPLIANCE_DEMO_PATH } from "../data/naming";
+import ComplianceDemo from "../components/ui/ComplianceDemo";
 import { usePrefersReducedMotion } from "../hooks/usePrefersReducedMotion";
 
 const DETAIL = COMPLIANCE_TRAINING_DETAIL;
@@ -42,16 +45,18 @@ function MediaSlot({
       </div>
     );
   }
+
+  const normalized = label.toLowerCase();
+  const variant = normalized.includes("employee table") || normalized.includes("record drawer")
+    ? "records"
+    : normalized.includes("employee")
+      ? "employee"
+      : normalized.includes("audit")
+        ? "audit"
+        : "compliance";
+
   return (
-    <div
-      style={{ aspectRatio: aspect }}
-      className="ph-surface border border-white/10 flex items-center justify-center"
-      aria-hidden
-    >
-      <span className="text-mono-label text-white/55 text-center px-6">
-        {label}
-      </span>
-    </div>
+    <ProductUiPreview variant={variant} label={`${label}, representative interface`} />
   );
 }
 
@@ -84,7 +89,7 @@ function FeatureCopy({ feature }: { feature: ProductFeature }) {
       <h2 className="font-display font-light text-white text-display-md leading-[1.08]">
         {feature.title}
       </h2>
-      <p className="text-white/65 text-body-md font-light">
+      <p className="text-white/65 text-body-md font-normal">
         {feature.description}
       </p>
       <FeatureBullets feature={feature} />
@@ -164,7 +169,7 @@ export default function ProductDetailPage() {
       {/* HERO */}
       <section
         ref={heroRef}
-        className="relative border-b border-white/5 px-4 sm:px-6 md:px-12 py-14 sm:py-16 md:py-24 overflow-hidden"
+        className="relative border-b border-white/5 px-4 sm:px-6 md:px-12 py-12 sm:py-14 md:py-20 overflow-hidden"
       >
         <GridRails />
         <div className="relative max-w-rail mx-auto flex flex-col gap-10 md:gap-12">
@@ -181,7 +186,7 @@ export default function ProductDetailPage() {
               )}
               <Link
                 to="/products"
-                className="text-mono-label text-white/40 hover:text-accent inline-flex items-center gap-1.5 transition-colors"
+                className="text-mono-label text-white/55 hover:text-accent inline-flex items-center gap-1.5 transition-colors py-2 -my-2"
               >
                 <Icon icon="solar:arrow-left-linear" className="w-3 h-3" />
                 All Products
@@ -197,7 +202,7 @@ export default function ProductDetailPage() {
               className="text-white/65 text-lg leading-[1.6] font-light max-w-2xl"
               data-hero-item
             >
-              Introducing the{" "}
+              Introducing{" "}
               <strong className="font-medium text-white">
                 {DETAIL.intro.lead}
               </strong>
@@ -206,7 +211,7 @@ export default function ProductDetailPage() {
             <div className="flex flex-wrap gap-3" data-hero-item>
               <CTAButton
                 variant="primary"
-                to="/contact"
+                to={COMPLIANCE_DEMO_PATH}
                 icon="solar:arrow-right-linear"
               >
                 Request a demo
@@ -218,9 +223,14 @@ export default function ProductDetailPage() {
           </div>
           <div className="flex flex-col gap-2" data-hero-item>
             <MediaSlot label={DETAIL.hero.label} image={DETAIL.hero.image} aspect="16/9" eager />
+            {DETAIL.hero.caption && (
+              <p className="text-xs font-normal text-white/60">{DETAIL.hero.caption}</p>
+            )}
           </div>
         </div>
       </section>
+
+      <ComplianceDemo />
 
       {/* OVERVIEW + FEATURES */}
       <div className="px-4 sm:px-6 md:px-12">
@@ -229,7 +239,7 @@ export default function ProductDetailPage() {
             <h2 className="font-display font-light text-white text-display-md leading-[1.08] max-w-3xl">
               {DETAIL.overview.title}
             </h2>
-            <p className="text-white/65 text-body-md font-light max-w-3xl">
+            <p className="text-white/65 text-body-md font-normal max-w-3xl">
               {DETAIL.overview.text}
             </p>
           </section>
@@ -243,7 +253,7 @@ export default function ProductDetailPage() {
         headline={DETAIL.cta.headline}
         subtext={DETAIL.cta.subtext}
         primaryLabel={DETAIL.cta.primaryLabel}
-        primaryTo="/contact"
+        primaryTo={COMPLIANCE_DEMO_PATH}
         secondaryLabel="See all products"
         secondaryTo="/products"
       />

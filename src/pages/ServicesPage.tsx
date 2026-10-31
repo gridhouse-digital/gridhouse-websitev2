@@ -5,6 +5,7 @@ import PageHeader from "../components/ui/PageHeader";
 import ServiceCard from "../components/ui/ServiceCard";
 import PageCTA from "../components/ui/PageCTA";
 import { SERVICES, type Service } from "../data/services";
+import { mergeServices } from "../lib/mergeRemote";
 import { sanityClient, servicesQuery } from "../lib/sanity";
 
 const STARTER_PACKAGES = [
@@ -12,7 +13,7 @@ const STARTER_PACKAGES = [
     label: "Compliance Modernisation",
     description: "Replace credential spreadsheets and ad-hoc training with an auditable LMS + workflow layer.",
     modules: ["05", "03"],
-    moduleCodes: ["CPT", "AUTO"],
+    moduleCodes: ["COMPLIANCE", "AUTO"],
     icon: "solar:shield-check-linear",
   },
   {
@@ -38,7 +39,7 @@ export default function ServicesPage() {
     sanityClient
       .fetch<Service[]>(servicesQuery)
       .then((data) => {
-        if (data && data.length > 0) setServices(data);
+        if (data && data.length > 0) setServices(mergeServices(SERVICES, data));
       })
       .catch(() => {});
   }, []);
@@ -46,14 +47,14 @@ export default function ServicesPage() {
   return (
     <>
       <PageHeader
-        label="CAPABILITIES / INVENTORY"
-        title="Services. Eight modules, one operating system."
-        description="Each service is a working module of the Gridhouse operating system. Compose one or all eight — websites, portals, automation, agents, infrastructure, training."
+        label="CAPABILITIES"
+        title="Product, automation, and AI capabilities."
+        description="Start with one operational bottleneck or compose the full system — websites, portals, workflow automation, intelligent agents, infrastructure, and training platforms."
         meta={[
           { label: "Active modules", value: "08" },
-          { label: "Archived", value: "00" },
-          { label: "Lead engineer", value: "On rotation" },
-          { label: "Intake", value: "24h" },
+          { label: "Primary focus", value: "Operational systems" },
+          { label: "Sector depth", value: "Healthcare" },
+          { label: "Delivery", value: "Remote / Worldwide" },
         ]}
       />
 
@@ -61,7 +62,7 @@ export default function ServicesPage() {
       <section className="px-4 sm:px-6 md:px-12 py-10 border-b border-white/10 bg-white/[0.01]">
         <div className="max-w-rail mx-auto flex flex-col gap-6">
           <div className="flex items-center gap-3">
-            <span className="text-mono-label text-white/40">WHERE TO START /</span>
+            <span className="text-mono-label text-white/55">WHERE TO START /</span>
             <span className="text-mono-label text-accent">THREE COMMON ENTRY POINTS</span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
@@ -71,22 +72,25 @@ export default function ServicesPage() {
                 to="/contact"
                 className="group bg-ink p-6 flex flex-col gap-4 hover:bg-white/[0.03] transition-colors relative overflow-hidden"
               >
-                <span className="font-display font-light text-display-numeral text-white/[0.06] absolute top-3 right-5 select-none">
+                <span
+                  aria-hidden
+                  className="font-display font-light text-display-numeral text-white/[0.06] absolute top-3 right-5 select-none"
+                >
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <Icon icon={pkg.icon} className="w-7 h-7 text-accent" aria-hidden />
                 <h3 className="text-white text-base font-display font-light leading-snug">
                   {pkg.label}
                 </h3>
-                <p className="text-white/50 text-sm font-light flex-1">{pkg.description}</p>
+                <p className="text-white/50 text-sm font-normal flex-1">{pkg.description}</p>
                 <div className="flex flex-wrap gap-2 pt-2 border-t border-white/10">
                   {pkg.moduleCodes.map((code) => (
-                    <span key={code} className="text-mono-label text-accent/60 border border-accent/20 px-2 py-0.5">
+                    <span key={code} className="text-mono-label text-accent border border-accent/20 px-2 py-0.5">
                       {code}
                     </span>
                   ))}
                 </div>
-                <span className="text-mono-label text-accent group-hover:text-accent/70 inline-flex items-center gap-1.5 transition-colors border-b border-accent/0 group-hover:border-accent/40 pb-px w-fit">
+                <span className="text-mono-label text-accent group-hover:text-accent inline-flex items-center gap-1.5 transition-colors border-b border-accent/0 group-hover:border-accent/40 pb-px w-fit">
                   Scope this package
                   <Icon icon="solar:arrow-right-linear" className="w-3 h-3" aria-hidden />
                 </span>
@@ -99,14 +103,14 @@ export default function ServicesPage() {
       <section className="px-4 sm:px-6 md:px-12 py-12">
         <div className="max-w-rail mx-auto">
           <div className="flex items-center gap-4 mb-8">
-            <span className="text-mono-label text-white/30">FULL MODULE INVENTORY</span>
+            <span className="text-mono-label text-white/55">FULL MODULE INVENTORY</span>
             <span className="flex-1 h-px bg-accent/20" />
             <span className="text-mono-label text-accent">08 ACTIVE</span>
           </div>
           <header className="grid grid-cols-12 gap-8 pb-4 mb-2 border-b border-white/20">
-            <span className="col-span-3 text-mono-label text-white/40">Module</span>
-            <span className="col-span-5 text-mono-label text-white/40">Description</span>
-            <span className="col-span-4 text-mono-label text-white/40">Details</span>
+            <span className="col-span-3 text-mono-label text-white/55">Module</span>
+            <span className="col-span-5 text-mono-label text-white/55">Description</span>
+            <span className="col-span-4 text-mono-label text-white/55">Details</span>
           </header>
           <div className="flex flex-col gap-4">
             {services.map((s) => (

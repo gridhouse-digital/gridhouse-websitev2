@@ -16,10 +16,12 @@ function currentTheme(): Theme {
 
 function applyTheme(theme: Theme) {
   const root = document.documentElement;
+  const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
   // Cross-fade colors during the swap; class is removed after the
   // transition so it never interferes with normal interactions.
   root.classList.add(TRANSITION_CLASS);
   root.classList.toggle(LIGHT_CLASS, theme === "light");
+  themeColor?.setAttribute("content", theme === "light" ? "#F4F3ED" : "#0F0F0F");
   try {
     localStorage.setItem(STORAGE_KEY, theme);
   } catch {

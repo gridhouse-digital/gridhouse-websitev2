@@ -36,7 +36,7 @@ export default {
         ],
       },
       fontSize: {
-        "label-md": ["10px", { lineHeight: "15px", letterSpacing: "0.16em" }],
+        "body-sm": ["15px", { lineHeight: "24px" }],
         "body-md": ["16px", { lineHeight: "26px" }],
         "display-sm": ["clamp(22px, 2.5vw, 32px)", { lineHeight: "1.1", letterSpacing: "-0.03em" }],
         "display-md": ["clamp(28px, 4vw, 48px)", { lineHeight: "1.05", letterSpacing: "-0.04em" }],
@@ -45,7 +45,6 @@ export default {
         "display-numeral": ["64px", { lineHeight: "1" }],
       },
       letterSpacing: {
-        mono: "0.16em",
         display: "-0.04em",
       },
       maxWidth: {
